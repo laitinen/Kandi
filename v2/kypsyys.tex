@@ -1,0 +1,43 @@
+%\documentclass[a4paper, 12pt, finnish]{article}
+\documentclass{tktltiki}
+\usepackage{babel}
+\usepackage[latin9]{inputenc}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage[T1]{fontenc}
+\usepackage[pdftex]{graphicx}
+\usepackage{amsmath}
+\usepackage{url}
+\begin{document}
+\onehalfspacing
+
+\section*{Paikalliset hajautetut verkkoalgoritmit}
+
+%Tyypillisesti tietojenkäsittelytieteessä esiintyvät ongelmat ovat sellaisia, että niihin voidaan kehittää algoritmi, jo
+%Monet tietojenkäsittelytieteessä esiintyvät ongelmat ovat luonteeltaan sellaisia, että yksi kokonaisuus, jolla on 
+
+Monet tietojenkäsittelytieteessä vastaan tulevat ongelmat ovat luonteeltaan sellaisia, että yksi laskentayksikkö, jolle on annettu kaikki tieto ongelmasta, voi luontevasti löytää ratkaisun sopivalla algoritmilla. Kaikki ongelmat eivät kuitenkaan ole helppoja yksittäisten laskentayksiköiden ratkaistaviksi. Varsinkin suurikokoisia ja monimutkaisia verkkoja, kuten Internetiä tai suuria sensoriverkkoja on vaikeaa tai mahdotonta hallita yhdellä kaikkitietävällä laskentayksiköllä. Mikäli verkon tietomäärää ei voida käsitellä keskitetysti, voidaan käyttää paikallisia hajautettuja verkkoalgoritmeja, \textit{PHV}:eitä, joissa verkon osat ratkaisevat itseään koskevia osaongelmia vain paikallista tietoa hyödyntämällä.
+
+Paikalliset hajautetut verkkoalgoritmit ovat algoritmeja, joissa jokaisella verkon alueella on käytössään vain rajallinen määrä tietoa ympäristöstään. PHV:t toimivat suuntaamattomissa verkoissa, joiden jokainen solmu esittää prosessoria. Näiden verkkojen kaaret kuvaavat prosessorien välisiä välittömiä kommunikointiyhteyksiä. Verkon solmujen asteluvut ovat rajoitettuja, eli jokaisella prosessorilla saa olla vain äärellinen määrä yhteyksiä muihin prosessoreihin.
+
+%on algoritmi, joka ajetaan jokaisessa verkon solmussa. Jokainen verkon solmu sisältää prosessorin. Prosessorit voivat välittää muille prosessoreille lisätietoa, mikäli niiden välinen keskustelu on etukäteen mahdollistettu. Verkossa tämä tarkoittaa sitä, että prosessorisolmut voivat keskustella keskenään, jos ja vain jos näiden kahden prosessorisolmun välillä on kaari.
+
+%PHV:t ovat siis algoritmeja, joissa prosessorien muodostama verkko on ongelmanratkaisijan lisäksi myös itse ongelma. Vaikka PHV:t kykenevät 
+%Prosessorien muodostama verkko luo ympäristön, jossa prosessorien väliset rajoitetut kommunikointimahdollisuudet 
+
+Paikalliset hajautetut verkkoalgoritmit poikkeavat ohjelmoinnille tyypillisestä ajatusmaailmasta --- sen sijaan, että ohjelmoitaisiin yksittäisiä prosessoreita, ohjelmoidaan verkkoja. Verkoissa tehokkaasti ratkeavat ongelmat poikkeavat usein merkittävästi yksittäisillä prosessoreilla tehokkaasti ratkeavista ongelmista. Esimerkiksi pienimmän virittävän puun löytäminen on PHV:eille mahdotonta, mikäli sen alussa saama tieto on rajallista. PHV:t sen sijaan voivat kyetä ratkaisemaan hyvin tehokkaasti sellaisia ongelmia, joissa paikallisen ratkaisun oikeellisuuden osoittaminen ei ole hankalaa. Esimerkiksi solmuvärityksen oikeellisuuden osoittaminen on paikallisesti helppoa, sillä on yksinkertaista tarkistaa, että kaikkien naapurisolmujen väri poikkeaa omasta väristä.
+
+PHV:eillä pyritään tyypillisesti ratkaisemaan ongelmia hyvin suurissa verkoissa, sillä PHV:eiden aikavaatimukset kasvavat usein hyvin hitaasti verkon koon funktiona, ja toisinaan ongelmat voidaan ratkaista jopa vakioajassa. Mikäli nopeaa tarkan vastauksen antavaa PHV:tä ei ole mahdollista kehittää, on usein kuitenkin mahdollista kehittää nopea PHV approksimoimaan oikeaa tulosta. Varsinkin hyvin suurten verkkojen tapauksessa hyvä approksimaatio on usein lähes yhtä arvokas kuin optimaalinen ratkaisu.
+
+Usein suurissa verkoissa kommunikaatio solmujen välillä on huomattavasti hitaampaa kuin operaatiot itse solmujen sisällä. Esimerkiksi suurissa sensoriverkoissa yhteyden muodostaminen ja tiedon siirtäminen kahden sensorin välillä on suuri operaatio. Tästä syystä PHV:eiden aikavaativuusanalyysissa ollaan kiinnostuneita vain prosessorien välisten kommunikaatiokierrosten määrästä. Perinteiseseen aikavaativuusanalyysiin verrattuna ero on merkittävä, sillä kommunikaatiokierrosten väleissä prosessorit voivat tehdä minkä tahansa äärellisen määrän työtä vaikuttamatta aikavaativuuteen.
+
+Verkkojen ohjelmointi ajamalla samaa algoritmia jokaisessa verkon solmussa on mielenkiintoinen lähestymistapa myös siksi, että tällaista laskentamallia ei tunneta vielä kovin hyvin. On kuitenkin olemassa viitteitä, että joihinkin tiettyihin ongelmiin hajautettu laskentamalli voisi soveltua paremmin kuin aiemmat olemassaolevat mallit. Esimerkiksi ihmisten aivosolut näyttävät pystyvän tekemään päätöksiä oman tilansa suhteen vain paikallisen tiedon perusteella. Analogia PHV:eihin on huomattava, sillä neuronit voivat olla yhteydessä vain rajalliseen määrään lähistöllä sijaitseviin muihin neuroneihin. Näiden neuroneiden täytyy keskenäisen kommunikointinsa perusteella tulla yhteiseen lopputulokseen, joka vaikuttaa ihmisen toimintaan.
+
+Paikalliset hajautetut verkkoalgoritmit on tutkimusalana vielä nuori, eikä tutkimus ole jumiutunut tietyille urille, vaan alalla on vielä useita avoimia tutkimusongelmia, jotka poikkeavat parhaimmillaan hyvin paljon toisistaan. Tässä esseessä annetaan yleiskuva PHV:eillä ratkeavista ongelmista sekä tällä hetkellä hankalista ongelmista. Lisäksi pyritään havainnollistamaan PHV:eiden toimintaa esittelemällä PHV:eitä yksinkertaisiin ongelmiin.
+
+
+%Tässä aineessa tutustutaan siihen, minkälaisia ongelmia paikallisilla hajautetuilla algoritmeilla voidaan ratkaista.
+
+%Tutkielmassa katetaan sekä positiivisia että negatiivisia tuloksia eri ongelmiin, ja pyritään muodostamaan kokonaiskuva PHV:eiden mahdollisista käyttötarkoituksista.
+
+\end{document}

@@ -1,0 +1,7 @@
+\select@language {finnish}
+\contentsline {section}{\numberline {1}Johdanto}{ii}
+\contentsline {section}{\numberline {2}Hajautettu laskentamalli}{ii}
+\contentsline {subsection}{\numberline {2.1}Porttinumerointimalli}{iii}
+\contentsline {subsection}{\numberline {2.2}Tunnistenumeromalli}{iv}
+\contentsline {section}{\numberline {3}Tyypilliset ongelmat}{v}
+\contentsline {section}{L\"ahteet}{vi}

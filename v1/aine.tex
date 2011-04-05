@@ -1,0 +1,116 @@
+\documentclass[a4paper, 12pt, finnish]{article}
+\usepackage{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage[T1]{fontenc}
+\usepackage[pdftex]{graphicx}
+\usepackage{amsmath}
+\usepackage{url}
+\begin{document}
+
+\title{Paikalliset hajautetut verkkoalgoritmit}
+\normalsize
+\author{Mika Laitinen}
+\date{\today}
+
+\maketitle
+\thispagestyle{empty}
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Johdanto}
+Paikalliset hajautetut verkkoalgoritmit ovat algoritmeja, joissa verkon tietom‰‰r‰‰ ei k‰sitell‰ keskitetysti, vaan jokaisella verkon alueella on k‰ytˆss‰‰n vain rajallinen m‰‰r‰ tietoa ymp‰ristˆst‰‰n. Paikallinen hajautettu verkkoalgoritmi, \textit{PHV}, on algoritmi, joka ajetaan jokaisessa verkon solmussa. Jokainen verkon solmu sis‰lt‰‰ prosessorin. Prosessorit voivat v‰litt‰‰ muille prosessoreille lis‰tietoa, mik‰li niiden v‰linen keskustelu on etuk‰teen mahdollistettu. Verkossa t‰m‰ tarkoittaa sit‰, ett‰ prosessorisolmut voivat keskustella kesken‰‰n, jos ja vain jos n‰iden kahden prosessorisolmun v‰lill‰ on kaari.
+
+%PHV:t ovat siis algoritmeja, joissa prosessorien muodostama verkko on ongelmanratkaisijan lis‰ksi myˆs itse ongelma. Vaikka PHV:t kykenev‰t 
+%Prosessorien muodostama verkko luo ymp‰ristˆn, jossa prosessorien v‰liset rajoitetut kommunikointimahdollisuudet 
+
+Paikalliset hajautetut verkkoalgoritmit poikkeavat ohjelmoinnille tyypillisest‰ ajatusmaailmasta --- sen sijaan, ett‰ ohjelmoidaan yksitt‰isi‰ prosessoreita, ohjelmoidaan verkkoja, joissa tehokkaasti ratkeavat ongelmat poikkeavat yksitt‰isill‰ prosessoreilla ratkaistavista ongelmista, tai joihin ei ole olemassa k‰yt‰nnˆllist‰ tehokasta algoritmia. PHV:eill‰ pyrit‰‰n tyypillisesti ratkaisemaan ongelmia hyvin suurissa verkoissa, sill‰ PHV:iden aikavaatimukset kasvavat usein hyvin hitaasti verkon koon funktiona, ja toisinaan ongelmat voidaan jopa ratkaista vakioajassa. Mik‰li nopeaa tarkan vastauksen antavaa PHV:t‰ ei ole mahdollista kehitt‰‰, on usein kuitenkin mahdollista kehitt‰‰ nopea PHV approksimoimaan oikeaa tulosta, ja toisinaan, varsinkin hyvin suurten verkkojen tapauksessa, t‰llainen tulos voi olla riitt‰v‰.
+
+Verkkojen ohjelmointi ajamalla samaa algoritmia jokaisessa verkon solmussa on mielenkiintoinen l‰hestymistapa myˆs siksi, ett‰ t‰llaista laskentamallia ei tunneta viel‰ kovin hyvin, mutta on olemassa kuitenkin viitteit‰, ett‰ joihinkin tiettyihin ongelmiin hajautettu laskentamalli voisi soveltua paremmin kuin aiemmat olemassaolevat mallit. Esimerkiksi ihmisten aivosolut n‰ytt‰v‰t pystyv‰n tekem‰‰n p‰‰tˆksi‰ oman tilansa suhteen vain paikallisen tiedon perusteella.
+
+T‰ss‰ tutkielmassa tutustutaan siihen, mink‰laisia ongelmia paikallisilla hajautetuilla algoritmeilla voidaan ratkaista. Tutkielmassa katetaan sek‰ positiivisia ett‰ negatiivisia tuloksia eri ongelmiin, ja pyrit‰‰n muodostamaan kokonaiskuva PHV:eiden mahdollisista k‰yttˆtarkoituksista.
+
+\section{Hajautettu laskentamalli}
+Kyseess‰ oleva malli koostuu suuntaamattomasta verkosta $G = (V,E)$, jonka jokaisessa solmussa $v \in V$ on prosessori. Solmussa $x$ sijaitseva prosessori $v_x$ voi kommunikoida solmussa $y$ sijaitsevan prosessorin $v_y$ kanssa jos, ja vain jos on olemassa $e \in E$ siten, ett‰ $e = \{x,y\}$, jossa $\{x,y\}$ on j‰rjest‰m‰tˆn pari. Prosessorit eiv‰t jaa muistia kesken‰‰n, vaan ovat t‰ysin itsen‰isi‰, ja saavat ajon alussa tiet‰‰ vain niist‰ prosessoreista, joiden kanssa ne voivat kommunikoida.
+
+Itse ongelmanratkaisu hajautetussa laskentamallissa toimii siten, ett‰ jokaiselle prosessorille annetaan sama PHV, jota prosessorit ajavat, kunnes ovat ratkaisseet oman lokaalin ongelmansa ja pys‰htyneet. Lokaali ongelma, jota prosessorit ratkaisevat, on prosessorin oma lopputila. Prosessorin lopputila tarkoittaa verkon kannalta solmun tilaa, johon prosessori on sijoitettu. Esimerkiksi verkon v‰ritysongelmissa prosessorin lopputila on prosessorin omalle solmulleen valitsema v‰ri.
+
+PHV:t toimivat laskevat saadun tiedon perusteella, onko oma tila ratkaistavissa. Jos algoritmi p‰‰tt‰‰, ett‰ omaa tilaa ei voida viel‰ ratkaista, se pyrkii saamaan lis‰‰ tietoa kommunikoimalla niiden prosessorien kanssa, joihin sill‰ on yhteys. Kommunikaatiokierrosten rooli on hajautetussa laskentamallissa hyvin suuri --- itse asiassa olemme algoritmien aikavaatimuksia analysoidessamme kiinnostuneita vain algoritmin k‰ytt‰mien kommunikaatiokierrosten m‰‰r‰st‰. T‰m‰ tarkoittaa sit‰, ett‰ prosessorit saavat k‰ytt‰‰ rajoittamattoman m‰‰r‰n laskenta-aikaa jokaisen kommunikaatiokierroksen v‰liss‰.
+
+Mik‰li prosessorit voidaan erottaa toisistaan esimerkiksi tunnistenumeroilla, voidaan kaikki ongelmat ratkaista ajassa $O$(diam($G$)), jossa diam($G$) on verkon halkaisija. T‰ss‰ ajassa kaikille prosessoreille saadaan kommunikoitua koko verkon rakenne. Koska prosessorien k‰ytt‰m‰‰ laskenta-aikaa ei ole rajoitettu, voi jokainen prosessori k‰ytt‰‰ tarvittavan ajan ratkaisun lˆyt‰miseen, valita oman tilansa, ja lopettaa algoritmin suorituksen. T‰st‰ syyst‰ yleens‰ ollaan kiinnostuneita huomattavasti nopeammista algoritmeista, esimerkiksi polylogaritmisen tai vakioajan vaativista algoritmeista. Linial \cite{Lin92} kutsuu ongelmaa \textit{paikallisesti laskettavaksi}, mik‰li ongelma voidaan ratkaista alle $O$(diam($G$))-ajassa.
+
+\subsection{Porttinumerointimalli}
+Suomela \cite{Suopdf} mainitsee kaksi mielenkiintoista tutkimuskohdetta hajautetussa laskentamallissa: mit‰ voidaan ratkaista alle $O$(diam($G$))-ajassa, mik‰li tunnistenumerot ovat k‰ytˆss‰, ja mit‰ voidaan ratkaista, jos tunnistenumeroita ei ole k‰ytˆss‰. Malleista, joissa prosessoreilla ei ole tunnistenumeroita, Suomela mainitsee porttinumerointimallin. Porttinumerointimalli ei ole kovin vahva malli, ja se pystyy ratkaisemaan vain tietynlaisia ongelmia. Porttinumerointimallissa solmu, jonka asteluku on $d$, voi viitata sen naapureihin kokonaisluvuilla $1,2,\dots{},d$. N‰m‰ viitenumerot annetaan jokaiselle solmulle ennen algoritmin ajoa.
+
+Huolimatta siit‰, ett‰ kyseess‰ on heikko malli, voidaan porttinumerointimallilla ratkaista joitain ep‰triviaaleja verkko-ongelmia. Suomela \cite{SuoLec1} osoittaa, ett‰ porttinumerointimallilla voidaan luoda 3-approksimointialgoritmi pienimm‰n solmupeitteen lˆyt‰miseen. Porttinumerointimallin suurin ongelma on kuitenkin se, ett‰ on olemassa paljon ongelmia, joissa voidaan konstruoida tilanne, jossa porttinumerointimallissa ei ole mahdollista lˆyt‰‰ algoritmia, joka kykenisi ratkaisemaan tilanteen.
+
+\begin{figure}
+    \begin{center}
+        \includegraphics[scale=0.5]{symmetria.png}
+    \end{center}
+    \caption{Kuva kolmisolmuisesta verkosta, jossa kaikki solmut ovat kesken‰‰n symmetrisessa tilanteessa, joten tilanne on porttinumerointimallissa ratkaisukelvoton. Kuvan kokonaisluvut kuvaavat solmujen naapureiden porttinumerointeja.}
+    \label{fig:symmetria}
+\end{figure}
+
+Kuvassa \ref{fig:symmetria} on verkon v‰ritysongelma, jossa kaikki verkon solmut ovat kesken‰‰n symmetrisessa tilanteessa. T‰llˆin kaikkien solmujen ajaessa samaa algoritmia, niiden pit‰isi p‰‰ty‰ samaan lopputulokseen. On selv‰‰, ett‰ verkon v‰ritysongelmassa ei ole kuitenkaan suotavaa, ett‰ kaikki verkon solmut valitsevat itselleen saman v‰rin, joten verkon v‰ritys ei ole ongelma, jonka voisi kaikissa tapauksissa ratkaista porttinumerointimallilla.
+
+Symmetrian voi rikkoa satunnaisuuden avulla, mutta on olemassa myˆs deterministinen vaihtoehto symmetrian rikkomiseen. Uniikkeja tunnistenumeroita k‰ytt‰m‰ll‰ ei voida p‰‰ty‰ symmetriseen tilanteeseen \cite{Lin92}.
+
+\subsection{Tunnistenumeromalli}
+Tunnistenumeromallissa jokaiselle prosessorille annetaan uniikki tunnistenumero, jonka avulla muuten symmetrisessa tilanteessa olevat prosessorit voidaan erottaa toisistaan. Kuten aiemmin mainittiin, nyt koko verkon koostumus voidaan siirt‰‰ jokaiselle verkon solmulle. Toisin sanoen, mik‰li k‰ytet‰‰n tarpeeksi aikaa, mik‰ tahansa ongelma, jolla on ratkaisu, voidaan ratkaista algoritmilla \ref{algo:universal}. T‰m‰n vuoksi on luontevaa keskitty‰ tutkimaan ongelmia, jotka ovat paikallisesti laskettavia. Myˆs approksimaatioalgoritmien lˆyt‰minen on kiinnostava tutkimuskohde, varsinkin jos ongelman tarkka ratkaisu ei ole paikallisesti laskettavissa.
+
+\begin{algorithm}[H]
+\caption{Algoritmi kaikkien ratkeavien ongelmien ratkaisemiseen tunnistenumeromallissa}
+\label{algo:universal}
+\begin{algorithmic}
+\FORALL{$v \in V$}
+    \STATE Ker‰‰ kaikki tieto verkosta $G$.
+    \STATE Ratkaise ongelma oman solmun n‰kˆkulmasta.
+    \STATE Valitse solmun lopputila ja lopeta algoritmin suoritus.
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+T‰ss‰ tutkielmassa keskityt‰‰n tunnistenumeromallin mahdollisuuksien analysoimiseen ja esitell‰‰n sek‰ positiivisia ett‰ negatiivisia tuloksia siit‰, mit‰ ongelmia voidaan ratkaista hajautetussa laskentamallissa vakioajassa. Lis‰ksi huomiota kiinnitet‰‰n paikallisesti laskettaviin ongelmiin, joihin on olemassa tehokkaita algoritmeja.
+
+\section{Tyypilliset ongelmat}
+Hajautetussa laskentamallissa ongelmien ratkaisumenetelm‰t ovat huomattavasti erilaisia kuin perinteisempien ongelmien ratkaisussa k‰ytett‰v‰t menetelm‰t. Tyypillinen ongelma hajautetussa laskentamallissa on verkon v‰ritys. Monet ensimm‰iset merkitt‰v‰t tulokset hajautetussa laskentamallissa liittyv‰tkin juuri verkon v‰ritt‰miseen. Verkon v‰ritt‰misess‰ onkin monia tutkimuskohteita, esimerkiksi verkon kolmiv‰ritt‰minen tai verkon ominaisuuksista, esimerkiksi solmujen maksimiasteesta, riippuvien nopeiden v‰ritysalgoritmien lˆyt‰minen.
+
+Yksi ensimm‰isist‰ tuloksista hajautetussa laskentamallissa on Colen-Vishkinin algoritmi v‰rien v‰hent‰miseen suunnatussa verkossa, jossa jokaisella solmulla on korkeintaan yksi j‰lkel‰inen. Colen-Vishkinin algoritmilla valmista verkon v‰rityst‰ voidaan v‰hent‰‰ siihen asti, kunnes verkossa on j‰ljell‰ en‰‰ kuusi v‰ri‰. Suunnatussa verkossa, jossa solmuilla on korkeintaan yksi j‰lkel‰inen, on mahdollista lˆyt‰‰ 3-v‰ritys. Colen-Vishkinin algoritmin lˆyt‰m‰st‰ 6-v‰rityksest‰ voidaan p‰‰st‰ 3-v‰ritykseen vakioajassa k‰ytt‰m‰ll‰ algoritmeja, jotka v‰hent‰v‰t verkosta yhden v‰rin kommunikaatiokierrosta kohti.
+
+Mik‰li ongelmaverkko on suuri, emme halua k‰ytt‰‰ algoritmeja, jotka v‰hent‰v‰t verkon v‰rej‰ lineaarisesti kommunikaatiokierrosten m‰‰r‰n suhteen, ellei verkon v‰rien m‰‰r‰ ole alussa hyvin v‰h‰inen. Tunnistenumeromallissa ainoa v‰ritys, mit‰ voimme alkutilanteessa k‰ytt‰‰, on juuri tunnistenumeroiden muodostama v‰ritys. Alussa siis v‰rien m‰‰r‰ on sama kuin verkon solmujen m‰‰r‰, joten on selv‰‰, ett‰ lineaarinen algoritmi olisi hyvin hidas, ja mik‰li se olisi optimaalinen, ei ongelma olisi edes paikallisesti ratkeava.
+
+Lineaariseen aikavaativuuteen ei kuitenkaan tarvitse tyyty‰, sill‰ Colen-Vishkinin algoritmi kuitenkin v‰hent‰‰ v‰rien m‰‰r‰‰ kierroksen $i$†v‰rien m‰‰r‰‰ $c_i$ logaritmisesti, eli $\log(c_i) = c_{i+1}$. Seuraavalla kierroksella $i+2$ v‰rien m‰‰r‰ on vastaavasti luokkaa $\log(\log(c_i))$, eli algoritmi vaatii iteroidun logaritmin verran kommunikaatiokierroksia kuuden v‰rin saavuttamiseen, eli algoritmin aikavaativuus on $O(\log^* k)$, jossa $k$ on v‰rien m‰‰r‰ alussa.
+
+\begin{algorithm}[H]
+\caption{Colen-Vishkinin algoritmi}
+\label{algo:CV}
+\begin{algorithmic}
+\FORALL{$v \in V$}
+    \IF{$v$:ll‰ on j‰lkel‰inen $u$}
+        \STATE Kysy j‰lkel‰isen $u$ v‰ri‰ $c(u)$.
+        \STATE Vertaa omaa v‰ri‰ $c(v)$†j‰lkel‰isen v‰riin $c(u)$.
+        \STATE Etsi oikeanpuolimmaisin bitti, indeksilt‰‰n $i$, jossa v‰rit poikkeavat.
+        \STATE Valitse uudeksi v‰riksi $2\cdot{}i+c(v)_i$, jossa $c(v)_i$ on nykyisen v‰rin $i$:nnen bitin arvo, eli $0$ tai $1$.
+    \ELSE
+        \STATE Aseta uudeksi v‰riksi 1.
+    \ENDIF
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+\newpage
+
+\begin{thebibliography}{3}
+\bibitem{Lin92} Nathan Linial. Locality in distributed graph algorithms. SIAM Journal on Computing,
+21(1):193-201, 1992;
+\bibitem{Suopdf} Jukka Suomela. Models of distributed computing: port numbering and local algorithms. \url{http://www.cs.helsinki.fi/u/josuomel/doc/fmt-presentation-2010-02-26.pdf}. Luettu 21.02.2011.
+\bibitem{SuoLec1} Jukka Suomela. \url{http://www.cs.helsinki.fi/u/josuomel/dda-2010/adobe/lecture-1.pdf}. Luettu 21.02.2011.
+
+
+\end{thebibliography}
+
+\end{document}
