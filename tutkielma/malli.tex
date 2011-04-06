@@ -1,0 +1,460 @@
+\documentclass{tktltiki}
+\usepackage[pdftex]{graphicx}
+\usepackage{subfigure}
+\usepackage{url}
+\begin{document}
+%\doublespacing
+%\singlespacing
+\onehalfspacing
+
+\title{Ohjeita opinnäytetyön rakenteesta ja ulkoasusta}
+\author{Hannu Erkiö, Jaakko Kurhila, Lea Kutvonen, Matti Mäkelä, Matti Nykänen, Inkeri Verkamo}
+\date{\today}
+
+\maketitle
+
+\numberofpagesinformation{\numberofpages\ sivua + \numberofappendixpages\ liitesivua}
+\classification{\protect{\ \\
+A.1 [Introductory and Survey],\\
+I.7.m [Document and text processing]}}
+
+\keywords{ulkoasu, tiivistelmä, lähdeluettelo}
+
+\begin{abstract}
+
+Tämä kirjoitus on tarkoitettu Helsingin yliopiston
+Tietojenkäsittelytieteen laitoksen alempien opinnäytetöiden ja
+harjoitusten ulkoasun ja rakenteen ohjeeksi. Ohje soveltuu siten tieteellisen
+kirjoittamisen kurssille eli LuK-tutkielmiin, ohjelmistotuotantoprojekteihin, seminaaritöihin ja pro gradu
+-tutkielmiin. 
+
+\end{abstract}
+
+\mytableofcontents
+
+
+
+
+\section{Johdanto}
+
+
+Kaikessa julkaistavaksi tarkoitetussa tekstissä kirjoittajan luomisen ja
+esitystavan vapautta rajoittavat monet ohjeet ja tarkatkin määräykset.
+
+Parhaimmillaan lukijalle ja kirjoittajalle yhteinen, tuttu säännöstö luo
+eräänlaisen tukiverkoston, joka tukee sanoman siirtymistä vääristymättä.
+Kirjoituksen lukija löytää kirjoituksesta helpommin olennaisen sisällön,
+jos kirjoituksen ulkoasu ja sisällön rakenne vastaavat hänen
+tottumuksiaan. Sama koskee myös kirjoittajaa. Noudattaessaan valmista
+esitystapamallia kirjoittajan ei tarvitse käyttää aikaansa itse työn
+kannalta toissijaisten seikkojen miettimiseen, vaan hän voi keskittyä
+hiomaan tekstin sisältöä. Siksi kannattaa harjoitella myös työn ulkoasua
+koskevien ohjeiden noudattamista, vaikka omasta mielestään osaisikin
+valita esitykselleen ohjetta paremman muodon.
+
+Tämä kirjoitus on tarkoitettu Helsingin yliopiston
+Tietojenkäsittelytieteen laitoksen alempien opinnäytteiden ja
+harjoitusten ulkoasun ja rakenteen ohjeeksi. Ohje soveltuu siten
+tieteellisen kirjoittamisen kurssille, ohjelmistotuotantoprojekteihin, seminaaritöihin ja
+pro gradu -tutkielmiin. (Kirjoitus on päivitetty uusintapainos aiemmista
+ohjeista, jotka kurssin luennoijat ovat laatineet \cite{erkio01,
+erkiomakela96, erkio94, verkamo92}.)
+
+%Tämän kirjoituksen tukena sopii käytettäväksi pian laitoksen
+%www-sivuilla julkaistava \LaTeX-ohje ja \LaTeX-tyyli.
+
+
+\section{Kirjoituksen rakenne}
+
+Tarkastellaan aluksi tieteelliseltä tekstiltä odotettuja
+kirjoituksen osia. Samoihin asioihin on luonnollisesti syytä
+kiinnittää huomiota myös muussa teknisessä kirjoittamisessa.
+
+
+\subsection{Kansilehti}
+
+Kansilehti sisältää opinnäytteen otsikon ja tekijän nimen. Kansilehdeltä on myös käytävä ilmi työn laji, esimerkiksi pro gradu -tutkielma tai LuK-tutkielma. 
+Muita kansilehden tietoja ovat paikka ja päiväys (muodossa ''Helsinki 24.10.2007'') sekä ns.~affiliaatio (muodossa ''HELSINGIN YLIOPISTO'' ja sen alla ''Tietojenkäsittelytieteen laitos''). Tietojen esitysjärjestys kansilehdellä on työn otsikko, tekijä, paikka ja päiväys, työn laji sekä affiliaatio.
+
+LuK-tutkielmassa on tapana varata kansilehden oikeaan yläreunaan tila tutkielman hyväksyjän allekirjoitukselle (muodossa ''arvostelija''), hyväksymispäivälle (muodossa ''hyväksymispäivä'') sekä arvosanalle
+ (muodossa ''arvosana'').
+ 
+ 
+\subsection{Tiivistelmä}
+%\enlargethispage{5mm}
+
+
+Tiivistelmäsivu sisältää seuraavat osat: työn bibliografiset tiedot,
+tiivistelmäteksti, aiheluokat ja avainsanat. Bibliografiset tiedot
+koostuvat työn otsikosta, tekijän nimestä, julkaisupaikan tiedoista,
+julkaisuajankohdasta ja sivumäärästä.
+
+Tiivistelmäteksti on lyhyt, yleensä yhden kappaleen mittainen
+(esimerkiksi maksimissaan 100 sanaa) selvitys
+kirjoituksen tärkeimmästä sisällöstä: mitä on tutkittu, miten on
+tutkittu ja mitä tuloksia on saatu. Opinnäytetöissä tiivistelmätekstin pituus ei kuitenkaan ole sanamäärältään rajoitettu, ellei ohjaaja tai tarkastaja sitä erikseen vaadi. 
+
+
+Aiheluokat kuvataan ACM Computing Classification System -luokituksen (CCS)
+luokituksen mukaisesti. Luokittelussa käytetään alimman tason
+(kolmannen) nimekkeitä. Kirjain- ja numerokoodin lisäksi on
+syytä ilmoittaa myös luokan nimi tekstimuodossa.
+Avainsanoiksi valitaan kirjoituksen sisältöä
+keskeisesti kuvaavia käsitteitä.
+
+\subsection{Johdanto}
+
+
+Johdannon tarkoituksena on kertoa yleiskielisesti
+työn tavoite. Kerrotaan (kuten tiivistelmässäkin, mutta laveammin),
+mitä on tutkittu, miten on tutkittu ja mitä tuloksia on saatu.
+
+Johdannon pituus määräytyy suhteessa koko kirjoitelman pituuteen.
+Parisivuinen kirjoitus ei erillistä johdantoa kaipaa, sillä
+se itsessään on laajennettu tiivistelmä. Kymmensivuisen
+kirjoituksen johdanto voi olla vaikkapa sivun tai puolentoista
+mittainen. Pro gradu -tutkielman 50-70-sivuiseen kokonaisuuteen
+tuntuu 2-4-sivuinen johdanto kohtuulliselta.
+
+Johdanto kertoo siis lyhyessä, yleistajuisessa muodossa
+koko kirjoitelman kysymyksenasettelun, juonen ja johtopäätelmät.
+Tämän luettuaan lukija voi päätellä, haluaako syventyä asiaan tarkemmin
+lukemalla koko kirjoituksen.
+
+
+\subsection{Käsittelyluvut}
+
+Käsittelylukujen työnjako määräytyy käsiteltävän asian luonteen
+mukaisesti.
+
+Lukijan ohjailemiseksi kukin pääluku kannattaa aloittaa lyhyellä
+kappaleella, joka paljastaa mikä kyseisen luvun keskeisin sisältö on ja
+kuinka aliluvuissa asiaa kehitellään eteenpäin.
+
+Jäsentelyongelmista kielivät tilanteet, joissa
+alilukuja on vain yksi, tai joissa käytetään useampaa kuin
+kahta tasoa (pääluku ja sen aliluvut). Kolmitasoisia
+otsikointeja saatetaan tarvita joissakin teknisissä
+dokumenteissa perustellusti, mutta nämä muodostavat poikkeuksen.
+
+
+\subsection{Lähdeviittausten käyttö}
+
+
+Lähdeviittauksiin käytetään ns. mnemonisia viitteitä, jotka rakennetaan
+kuten lähdeluettelon osalta on kerrottu. Lähdeviitteeseen liitetään
+tarketavat sivunumerot, mikäli lukijan olisi työlästä löytää
+asianomainen kohta viitatusta lähteestä. 
+
+Lähdeviitteet sijoitetaan aina virkkeen sisäpuolelle. Siten esimerkiksi
+kappaleen lopussa irrallaan oleva viite ei ole asiallinen.
+
+Tekstin jäsentelyn on tuotava selkeästi esiin, mihin asiaan viite
+liittyy. Samalla tulee ymmärrettäväksi se, kuinka pitkään
+tekstikatkelmaan ko. viite liitetään.
+
+
+\subsection{Yhteenveto}
+
+Yhteenveto voi olla vaatimattomimmillaan lyhyt kertaus kirjoituksen
+keskeisistä asioista. Arvokkaamman yhteenvedon saa aikaan kommentoimalla
+mm. työn tulosten arvoa, työn liittymistä ympäristöön tai
+tulevaisuudennäkymiä. Tällaiset arviot on kuitenkin syytä huolellisesti
+perustella, sillä muuten vaikutelma voi olla koominenkin.
+
+\subsection{Lähdeluettelon laatiminen}
+
+Tieteellisen kirjoittamisen kurssin töiden lähdeluetteloiden
+laatimisessa noudatetaan seuraavia ohjeita.
+
+Niiden taustalla on kaksi
+keskeistä pyrkimystä: tehdä viitatun lähteen hankkiminen luettavaksi
+mahdollisimman helpoksi ja ilmaista, millaisen arviointiprosessin
+läpi käyneeseen kirjoitukseen vedotaan.
+Näistä syistä
+\begin{itemize}
+\item lähdeviitteen tulee aina olla niin tarkka, että
+lähde on sen perusteella tunnistettavissa ja löydettävissä luetteloista
+ja kirjastoista,
+\item erityyppisten lähteiden (kirjat, konferenssit, lehdet) on erotuttava
+toisistaan
+ja
+\item luettelon eri osien tulee olla mahdollisimman
+yhdenmukaisia, erityisesti lähdetyypin sisällä.
+\end{itemize}
+
+
+
+Lähteet ovat luettelossa tekijän nimen mukaisessa aakkosjärjestyksessä,
+saman tekijän (tekijäryhmän) työt julkaisuajan mukaisessa
+järjestyksessä. Jos jollakin lähteellä ei ole henkilötekijää, se
+aakkostetaan julkaisun nimen mukaisesti. Lähteen tunnisteena käytetään
+mnemonista lyhennettä, joka koostuu kolmesta kirjaimesta ja kahdesta
+numerosta.  Kirjaimet ovat tekijän tai tekijöiden sukunimen
+alkukirjaimia ja numerot ovat vuosiluvun kaksi viimeistä numeroa. Jos
+samalta tekijältä on luettelossa useita samana vuonna julkaistuja töitä,
+nämä erotetaan toisistaan vuosiluvun jälkeen sijoitettavalla pienellä
+aakkosella.
+
+Kustakin lähteestä annetaan seuraavat tiedot:
+\begin{itemize}
+\item
+tekijän tai tekijöiden nimet (sukunimi, etunimien alkukirjaimet)
+alkuperäisessä järjestyksessään; jos tekijöitä on enemmän kuin kolme,
+voidaan toimia siten, että
+vain ensimmäinen tekijä nimetään ja muiden tilalle kirjoitetaan {\em et
+al.}
+\item
+julkaisun tai artikkelin nimi alkuperäisessä muodossaan
+\item
+julkaisupaikan tiedot:
+\begin{itemize}
+\item
+kirjasta: kustantaja, julkaisupaikka (voidaan jättää pois, jos kyseessä
+on tunnettu kustantaja), vuosi
+\item
+lehtiartikkelista: lehden nimi, volyymi, numero, vuosiluku ja kuukausi (suluissa)
+
+\item
+artikkelikokoelmassa (esim. konferenssijulkaisussa) ilmestyneestä
+artikkelista:
+\begin{itemize}
+\item kokoelman nimi, toimittaja, kustantaja, julkaisupaikka ja vuosi
+{\em tai}
+\item konferenssin nimi, järjestäjä, paikka ja aika,
+\end{itemize}
+\item
+raportista: julkaisusarja, raportin numero, julkaisupaikka, julkaisija ja vuosi
+
+\item
+www-lähteestä: verkko-osoite, voimassaoloajankohta, mahdollisesti
+viittausajankohta hakasuluissa
+\end{itemize}
+\item
+sivunumerot, mikäli lähteenä on artikkeli tai kokoomateoksen itsenäinen luku.
+\end{itemize}
+
+Julkaisun tai artikkelin nimen perään tulee piste, samoin kunkin lähteen
+bibliografisten tietojen perään. Muut tiedot erotetaan toisistaan
+pilkulla. Normaaliin suomalaiseen tapaan artikkelin nimessä ainoastaan
+ensimmäinen sana kirjoitetaan isolla alkukirjaimella, sen sijaan
+konferenssien ja kokoelmajulkaisujen nimissä käytetään isoa
+alkukirjainta jokaisen sanan alussa (artikkelisanoja ja prepositioita
+lukuunottamatta). Katso mallia oheisista esimerkeistä.
+Kokoelman nimen edessä on syytä selvyyden vuoksi käyttää sanaa {\em
+Teoksessa}, paitsi kun on kysymys konferenssijulkaisusta, jonka nimi
+alkaa lyhenteellä {\em Proc.} (sanasta Proceedings). Tällöin ei tarvita
+mitään täydennystä.
+Tämän eron näkee esimerkiksi vertaamalla
+lähdeviitteiden~''\cite{dantowsley90}''
+ja~''\cite{gannonetal89}'' ulkoasuja.
+
+WWW-lähteiden käytössä on syytä muistaa, että verkossa julkaisukynnys on
+olematon. Kannattaa siten keskittyä tunnettujen tieteellisten
+kustantajien julkaisuihin ja niihin teknisiin standardeihin, joille WWW
+on ainoa julkaisukanava. Mikäli sama julkaisu on saatavissa myös
+perinteisessä muodossa, viitataan ensisijaisesti siihen ja käytetään
+verkko-osoitetta lisätietona. Lähdeluettelossa on annettu esimerkit
+useita kanavia julkaistusta kirjoituksesta~\cite{abiteboul,dietinger} sekä pelkästään
+WWW-julkaisuna
+leviävästä standardista~\cite{bray}.
+
+WWW-lähteitä ja niihin viittaamista käsitellään tarkemmin erillisessä
+ohjeessa~\cite{kilpelainen00}.
+
+Kirjoituksen lähdeluettelossa luetellaan täsmälleen ne lähteet, joihin
+viitataan kirjoituksen tekstiosassa. Tämän kirjoituksen lähdeluettelo on
+tarkoitettu lähinnä esitystavan esimerkiksi, mistä syystä siinä on
+''ylimääräisiä'' lähteitä.
+
+
+\section{Ulkoasulliset seikat}
+
+Tässä luvussa käsitellään yleisimpiä tekstin tekniseen
+esittämiseen liittyviä seikkoja.
+
+
+\subsection{Työn osien järjestys}
+
+
+Kirjoituksen alussa on aina erillinen, mallin mukainen kansilehti.
+Toisena sivuna on tiivistelmäsivu, sen jälkeen sisällysluettelo (yksi
+tai useampia sivuja) ja sitten varsinainen teksti. Sivunumerointi
+aloitetaan vasta ensimmäiseltä tekstisivulta (arabialaisella ykkösellä).
+(Tarkat jättävät ykkössivun numeromerkittä.)
+Sisällysluetteloon merkitään kaikki (numeroidut) otsikot ja vastaavat
+sivunumerot. Monet tekstinkäsittelyjärjestelmät muodostavat itse
+sisällysluettelon, jolloin kirjoittajan ei tarvitse huolehtia luettelon
+sivunumeroiden päivittämisestä tekstin kehittyessä.
+Sisällysluettelosivu ja sitä edeltävät sivut voidaan haluttaessa
+numeroida erikseen (roomalaisin numeroin) esimerkiksi tämän mallin mukaisesti.
+
+Varsinaisen tekstin jäljessä, mutta itse työhön kuuluvana on
+ensimmäisenä lähdeluettelo, jonka otsikkoa ei numeroida. Lähdeluettelon
+jälkeen sijoitetaan mahdolliset liitteet, jotka otsikoidaan ja
+varustetaan sisäisillä sivunumeroilla.
+
+\enlargethispage{5mm}
+Mikäli kuvista, algoritmeista ja taulukoista halutaan tehdä
+yhtenäinen luettelo, sijoitetaan luettelot sisällysluettelon jälkeen.
+Luetteloiden käyttöarvosta on eriäviä mielipiteitä, joten
+niiden laatimiseen ei varsinkaan ilman tekstinkäsittelyjärjestelmän
+tukea kannata ryhtyä ilman tarkastajan erityistä toivetta.
+
+Mikäli kirjoitukseen erityissyistä halutaan liittää aakkosellinen hakemisto, sijoitetaan
+se lähdeluettelon jälkeen ennen liitteitä. Indeksi merkitään
+sisällysluetteloon samoin kuin lähdeluettelo (numeroimaton luku). Mikäli
+indeksin tekemiseen ryhdytään, on syytä käyttää
+tekstinkäsittelyjärjestelmän tarjoamaa automatiikkaa.
+
+\subsection{Tekstin yleinen sijoittelu}
+
+Kirjoita tekstiä vain yhdelle puolelle paperia.  Käytä väljähköä
+riviväliä (1.5--2), jotta tarkastaja voi kirjoittaa kommentteja
+tekstirivien väliin. Omissa väliversioissasi voi olla tarpeen käyttää
+vieläkin suurempaa riviväliä. Myös molempien marginaalien on hyvä olla
+melko leveät (noin 3~cm): vasen marginaali tarvitaan kirjoitelman
+nitomista varten ja oikealle puolelle tarkastaja voi kirjoittaa
+merkintöjään.  Jätä myös ylä- ja alareunaan riittävästi tilaa (2--3~cm).
+
+Kirjoituksen lukujen, kuvien ym.\ osien erottumisen kannalta tärkein
+keino on riittävän väljä tilan käyttö.  Erota kappaleet toisistaan
+yhdellä ja luvut muutamalla tyhjällä rivillä.  Jos uusi luku tulisi
+alkamaan aivan sivun alareunasta (vain yksi tai kaksi riviä varsinaista
+tekstiä), aloita mieluummin uusi sivu.  Jokaista uutta lukua ei
+kuitenkaan ole tarpeen --- etenkään lyhyessä kirjoituksessa --- aloittaa
+uudelta sivulta: jos kirjoituksessa on paljon melkein tyhjiä sivuja,
+lukija voi epäillä, että kirjoittaja on yrittänyt saada kirjoituksensa
+näyttämään pitemmältä kuin se onkaan.
+
+
+Tyhjää tilaa kannattaa käyttää hyödyksi myös kuvien ja taulukoiden
+yhteydessä.  Erityisesti jos kirjoituksessa käytetään kauttaaltaan samaa
+tekstityyppiä, tyhjät rivit ovat välttämättömiä erottamaan esimerkiksi
+tekstiä ja taulukkoa toisistaan.  Tyhjä tila on halpaa, mutta se lisää
+selkeyttä ja luettavuutta.
+
+\subsection{Kuvat ja taulukot}
+
+\enlargethispage{5mm}
+Kuva tai taulukko sijoitetaan mahdollisimman lähelle
+(ensimmäistä) tekstikohtaa, jossa siihen viitataan, ei kuitenkaan
+kyseistä viittausta aikaisemmaksi.
+Tekstissä on syytä myös kertoa, mitä kuvalla halutaan havainnollistaa.
+Kuvan voi lukea monella eri tavalla, joten lukijaa on ohjattava.
+
+Kuvaa ei pidä sijoittaa välittömästi luvun otsikon alle, vaan on
+aloitettava tekstillä. Kuvaa ei pidä sijoittaa keskelle tekstikappaletta
+(saati virkettä), paitsi jos kuva tulee sivun alkuun tai loppuun eikä
+kappaleen jatkumisesta tule epäselvyyttä.
+
+Kuvan ei aina tarvitse olla välittömästi viittaavan kappaleen
+perässä. Esimerkiksi viittauskohdan ja
+vasta seuraavalle sivulle mahtuvan kuvan väliin jäävää sivun loppuosaa
+ei jätetä tyhjäksi. Kuvaa ei kuitenkaan pidä viedä seuraavaa
+sivua kauemmas viittauskohdasta.
+
+
+Varsinaista kuvan esittämistä havainnollistaa kuva~\ref{kuvaesimerkki}.
+Huomiota on kiinnitettävä kuvan osien ja tekstimerkintöjen näkyvyyteen,
+kuvan numerointiin ja otsikointiin. 
+
+\begin{figure}[h]
+%\begin{figure}[tbh] t= top, b = bottom, h=here
+\ \newline
+\begin{center}
+\includegraphics[width=0.9\textwidth]{kuvaesimerkki.pdf}
+%\rotatebox{90}{\includegraphics[scale=.75]{kuvaesimerkki.pdf}}
+\caption{Kuvan elementit.}
+\label{kuvaesimerkki}
+\end{center}
+\end{figure}
+
+
+Kuvien kokoon on kiinnitettävä huomiota. Käytettyjen merkintöjen
+on oltava helposti luettavissa ja selkeät. Esimerkiksi
+suorituskykykäyriä esitettäessä akselit on nimettävä, asteikot
+merkittävä ja käytetyt yksiköt tuotava selkeästi esiin.
+Samankaltaisia asioita esitettäessä useammalla kuvalla on
+syytä käyttää samaa mittakaavaa vertailun helpottamiseksi.
+
+Kuvan otsikko kirjoitetaan kuvan alle ja sen tulee olla mieluummin lyhyt
+ja ytimekäs kuin liian selittelevä.
+Samoin toimitaan taulukoiden otsikoinnissa.
+
+Kuvat ja taulukot numeroidaan juoksevasti. Pitkissä teksteissä käytetään
+kaksitasoista numerointia (esimerkiksi Kuva 3.1) pääluvuittain, lyhyissä
+riittää yksitasoinen numerointi.
+
+
+Kuva- ja taulukko-otsikoiden yhdenmukaiseen esitystyyliin on syytä kiinnittää
+huomiota, samoin mm. välimerkkeihin. Luontevaa on käyttää
+kuvatekstin lopussa pistettä, ovathan useimmat kuvateksteistä virkkeitä. 
+
+(Kuvien ja taulukoiden otsikointityyli vaihtelee
+kustantajittain ja julkaisuittain. Samoin tuntuu suositeltava käytäntö
+Tietojenkäsittelytieteen laitoksen sisällä vaihtelevan taulukon
+otsikon sijainnin suhteen.)
+
+
+\subsection{Otsikot}
+
+Otsikoissa voi käyttää muusta tekstistä poikkeavaa kirjasintyyppiä,
+alleviivausta, suurempaa kirjasinkokoa tms.\ erotuskeinoa, yleensä
+kuitenkin vain yhtä näistä, koska kovin monta erilaista kirjasintyyppiä
+ja -kokoa tekee ulkoasusta helposti sekavan.  Otsikoiden esitystavan on
+oltava johdonmukainen läpi koko kirjoituksen. Numeroimattomia
+''ylimääräisiä'' otsikoita ei tule yleensä käyttää.
+
+
+\subsection{Mallin käyttö}
+
+Voit käyttää tätä kirjoitusta mallina oman opinnäytteesi ulkoasua
+varten. Eri tekstinkäsittelyjärjestelmissä käytössä olevat
+kirjasintyypit ja -koot, rivivälit ym.\ poikkeavat toisistaan, joten
+pienet poikkeamat ovat toki hyväksyttäviä.
+
+Tieteellisen kirjoittamisen kurssin luennoilla ja
+liitteenä olevassa ohjeessa annetut töiden ohjeelliset sivumäärät
+koskevat työtä, joka vastaa ulkoasultaan tätä ohjetta (kirjasinkoko
+12~pistettä). Tässä tekstissä keskimääräinen rivin pituus lienee noin
+80~merkkiä ja sivun pituus 30~riviä.
+Sivumääriin lasketaan varsinaisen tekstiosuuden pituus ja lähdeluettelo
+(arabialaisin numeroin numeroitu osuus), ei kansilehteä, tiivistelmää
+eikä sisällysluetteloa.
+
+\section{Yhteenveto}
+
+Tämän kirjoituksen tarkoituksena on toimia muistilistana eräistä
+esitystavallisista säännöistä, joihin harjoitusten ja tutkielmien
+kohdalla on syytä kiinnittää huomiota.
+
+
+
+%
+% Sitten alkaa lähdeluettelo
+%
+
+
+\nocite{*}
+\bibliographystyle{tktl}
+\bibliography{lahteet}
+
+\lastpage
+
+\appendices
+
+\pagestyle{empty}
+
+\internalappendix{1}{Malli ABC}
+
+Liitteet ovat tässä vain sisällysluettelon ja esitystavan mallina.
+Jokainen liite aloitetaan yleensä uudelta sivulta, jonka alkuun tulee
+liitteen numero ja nimi. Kunkin liitteen sivut numeroidaan erikseen.
+
+Liite on paitsi dokumenttia täydentävä osuus myös itsenäinen
+kokonaisuus. Liite ei siten voi olla pelkästään kuva tai ohjelmanpätkä,
+vaan liitteessä on ilmaistava sen sisällön laatu ja tarkoitus.
+
+
+\end{document}

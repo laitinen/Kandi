@@ -1,0 +1,541 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.3.22)  6 APR 2011 09:10
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**tutkielma.tex
+(./tutkielma.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, farsi, arabic, croatian, bulgarian, ukrainian, russian, czech, slov
+ak, danish, dutch, finnish, french, basque, ngerman, german, german-x-2009-06-1
+9, ngerman-x-2009-06-19, ibycus, monogreek, greek, ancientgreek, hungarian, san
+skrit, italian, latin, latvian, lithuanian, mongolian2a, mongolian, bokmal, nyn
+orsk, romanian, irish, coptic, serbian, turkish, welsh, esperanto, uppersorbian
+, estonian, indonesian, interlingua, icelandic, kurmanji, slovenian, polish, po
+rtuguese, spanish, galician, catalan, swedish, ukenglish, pinyin, loaded.
+(./tktltiki.cls
+Document Class: tktltiki 2007/09/12 v1.1 Dokumenttiluokka TiKi-kurssia varten
+(/usr/share/texmf-texlive/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texmf-texlive/tex/latex/base/size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf-texlive/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+)
+(/usr/share/texmf-texlive/tex/latex/base/inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+(/usr/share/texmf-texlive/tex/latex/base/latin9.def
+File: latin9.def 2008/03/30 v1.1d Input encoding file
+))
+(/usr/share/texmf-texlive/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texmf-texlive/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+(/var/lib/texmf/tex/generic/babel/babel.sty
+Package: babel 2008/07/06 v3.8l The Babel package
+
+(/usr/share/texmf-texlive/tex/generic/babel/finnish.ldf
+Language: finnish 2007/10/20 v1.3q Finnish support from the babel system
+
+(/usr/share/texmf-texlive/tex/generic/babel/babel.def
+File: babel.def 2008/07/06 v3.8l Babel common definitions
+\babel@savecnt=\count87
+\U@D=\dimen103
+)
+Package babel Info: Making " an active character on input line 89.
+))
+(/usr/share/texmf-texlive/tex/latex/geometry/geometry.sty
+Package: geometry 2008/12/21 v4.2 Page Geometry
+
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in pdf mode detected.
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
+Package ifvtex Info: VTeX not detected.
+)
+\Gm@cnth=\count88
+\Gm@cntv=\count89
+\c@Gm@tempcnt=\count90
+\Gm@bindingoffset=\dimen104
+\Gm@wd@mp=\dimen105
+\Gm@odd@mp=\dimen106
+\Gm@even@mp=\dimen107
+\Gm@dimlist=\toks17
+
+(/usr/share/texmf-texlive/tex/xelatex/xetexconfig/geometry.cfg))
+
+Package geometry Warning: Over-specification in `h'-direction.
+    `width' (426.79134pt) is ignored.
+
+\c@appendix=\count91
+\c@appendixpage=\count92
+(/usr/share/texmf-texlive/tex/latex/base/openbib.sty)
+\@abstract=\box26
+)
+(/usr/share/texmf-texlive/tex/latex/algorithms/algorithmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+
+(/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@ALC@unique=\count93
+\c@ALC@line=\count94
+\c@ALC@rem=\count95
+\c@ALC@depth=\count96
+\ALC@tlm=\skip43
+\algorithmicindent=\skip44
+)
+(/usr/share/texmf-texlive/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(/usr/share/texmf-texlive/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count97
+\float@exts=\toks18
+\float@box=\box27
+\@float@everytoks=\toks19
+\@floatcapt=\box28
+)
+\@float@every@algorithm=\toks20
+\c@algorithm=\count98
+)
+(/usr/share/texmf-texlive/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texmf-texlive/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/etc/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
+\Gread@gobject=\count99
+))
+\Gin@req@height=\dimen108
+\Gin@req@width=\dimen109
+)
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip45
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks21
+\ex@=\dimen110
+))
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen111
+)
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count100
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count101
+\leftroot@=\count102
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count103
+\DOTSCASE@=\count104
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box29
+\strutbox@=\box30
+\big@size=\dimen112
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count105
+\c@MaxMatrixCols=\count106
+\dotsspace@=\muskip10
+\c@parentequation=\count107
+\dspbrk@lvl=\count108
+\tag@help=\toks22
+\row@=\count109
+\column@=\count110
+\maxfields@=\count111
+\andhelp@=\toks23
+\eqnshift@=\dimen113
+\alignsep@=\dimen114
+\tagshift@=\dimen115
+\tagwidth@=\dimen116
+\totwidth@=\dimen117
+\lineht@=\dimen118
+\@envbody=\toks24
+\multlinegap=\skip46
+\multlinetaggap=\skip47
+\mathdisplay@stack=\toks25
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(/usr/share/texmf-texlive/tex/latex/amscls/amsthm.sty
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks26
+\thm@bodyfont=\toks27
+\thm@headfont=\toks28
+\thm@notefont=\toks29
+\thm@headpunct=\toks30
+\thm@preskip=\skip48
+\thm@postskip=\skip49
+\thm@headsep=\skip50
+\dth@everypar=\toks31
+)
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+(/usr/share/texmf-texlive/tex/latex/oberdiek/epstopdf.sty
+Package: epstopdf 2009/10/17 v2.4 Conversion with epstopdf on the fly (HO)
+
+(/usr/share/texmf-texlive/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2009/10/17 v2.4 Base part for package epstopdf
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2007/09/09 v1.2 Providing info/warning/message (HO)
+)
+(/usr/share/texmf-texlive/tex/latex/oberdiek/grfext.sty
+Package: grfext 2007/09/30 v1.0 Managing graphics extensions (HO)
+)
+(/usr/share/texmf-texlive/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2009/08/13 v3.4 Keyval support for LaTeX options (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2009/07/30 v1.5 Key value parser with default handler suppor
+t (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2007/12/12 v1.2 Prefix for e-TeX command names (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/share/texmf-texlive/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2009/09/23 v0.6 LuaTeX support for pdfTeX utility functions
+ (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2009/04/17 v1.2 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2009/08/05 v1.0 Some LaTeX kernel commands for general use (HO
+)
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 433.
+
+(/usr/share/texmf-texlive/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2009/10/26 v1.1 Configuration of epstopdf for TeX Live
+)))
+(./tutkielma.aux)
+\openout1 = `tutkielma.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+
+*geometry auto-detecting driver*
+*geometry detected driver: pdftex*
+-------------------- Geometry parameters
+paper: class default
+landscape: --
+twocolumn: --
+twoside: --
+asymmetric: --
+h-parts: 99.58464pt, 426.79135pt, 71.13188pt
+v-parts: 71.13188pt, 654.41338pt, 119.50159pt
+hmarginratio: --
+vmarginratio: --
+lines: --
+heightrounded: --
+bindingoffset: 0.0pt
+truedimen: --
+includehead: --
+includefoot: --
+includemp: --
+driver: pdftex
+-------------------- Page layout dimensions and switches
+\paperwidth  597.50787pt
+\paperheight 845.04684pt
+\textwidth  426.79135pt
+\textheight 654.41338pt
+\oddsidemargin  27.31465pt
+\evensidemargin 27.31465pt
+\topmargin  -29.59084pt
+\headheight 14.22636pt
+\headsep    14.22636pt
+\footskip   30.0pt
+\marginparwidth 35.0pt
+\marginparsep   10.0pt
+\columnsep  10.0pt
+\skip\footins  10.8pt plus 4.0pt minus 2.0pt
+\hoffset 0.0pt
+\voffset 0.0pt
+\mag 1000
+
+(1in=72.27pt, 1cm=28.45pt)
+-----------------------
+(/usr/share/texmf/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count112
+\scratchdimen=\dimen119
+\scratchbox=\box31
+\nofMPsegments=\count113
+\nofMParguments=\count114
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count115
+\MPscratchDim=\dimen120
+\MPnumerator=\count116
+\everyMPtoPDFconversion=\toks33
+) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (153.20865pt too wide) in paragraph at lines 29--29
+[][] 
+ []
+
+
+Overfull \vbox (190.58662pt too high) has occurred while \output is active []
+
+
+[1] (./tutkielma.toc
+LaTeX Font Info:    Try loading font information for U+lasy on input line 4.
+ (/usr/share/texmf-texlive/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+))
+\tf@toc=\write3
+\openout3 = `tutkielma.toc'.
+
+
+[2] [1]
+Overfull \hbox (9.66945pt too wide) in paragraph at lines 62--63
+\T1/cmr/m/n/12 Hajautettu las-ken-ta-mal-li toi-mii suun-taa-mat-to-mis-sa yh-d
+is-te-tyis-sä ver-kos-sa $\OML/cmm/m/it/12 G \OT1/cmr/m/n/12 = (\OML/cmm/m/it/1
+2 V; E\OT1/cmr/m/n/12 )$\T1/cmr/m/n/12 ,
+ []
+
+[2]
+Package epstopdf Info: Source file: <ajatusmaailma.eps>
+(epstopdf)                    date: 2011-04-06 07:39:31
+(epstopdf)                    size: 39480 bytes
+(epstopdf)             Output file: <ajatusmaailma-eps-converted-to.pdf>
+(epstopdf)                    date: 2011-04-06 07:39:35
+(epstopdf)                    size: 18322 bytes
+(epstopdf)             Command: <epstopdf --outfile=ajatusmaailma-eps-converted
+-to.pdf ajatusmaailma.eps>
+(epstopdf)             \includegraphics on input line 70.
+Package epstopdf Info: Output file is already uptodate.
+ <ajatusmaailma-eps-converted-to.pdf, id=27, 938.50626pt x 515.9275pt>
+File: ajatusmaailma-eps-converted-to.pdf Graphic file (type pdf)
+
+<use ajatusmaailma-eps-converted-to.pdf> [3 <./ajatusmaailma-eps-converted-to.p
+df>]
+Overfull \hbox (1.69069pt too wide) in paragraph at lines 80--81
+\T1/cmr/m/n/12 epät-ri-vi-aa-le-ja verkko-ongelmia. Esi-mer-kik-si voi-daan luo
+-da 3-approksimointialgoritmi
+ []
+
+Package epstopdf Info: Source file: <symmetria1.eps>
+(epstopdf)                    date: 2011-04-06 07:05:00
+(epstopdf)                    size: 7770 bytes
+(epstopdf)             Output file: <symmetria1-eps-converted-to.pdf>
+(epstopdf)                    date: 2011-04-06 07:05:33
+(epstopdf)                    size: 4320 bytes
+(epstopdf)             Command: <epstopdf --outfile=symmetria1-eps-converted-to
+.pdf symmetria1.eps>
+(epstopdf)             \includegraphics on input line 84.
+Package epstopdf Info: Output file is already uptodate.
+<symmetria1-eps-converted-to.pdf, id=33, 444.66125pt x 379.4175pt>
+File: symmetria1-eps-converted-to.pdf Graphic file (type pdf)
+
+<use symmetria1-eps-converted-to.pdf>
+Package epstopdf Info: Source file: <symmetria2.eps>
+(epstopdf)                    date: 2011-04-06 07:04:44
+(epstopdf)                    size: 7613 bytes
+(epstopdf)             Output file: <symmetria2-eps-converted-to.pdf>
+(epstopdf)                    date: 2011-04-06 07:05:33
+(epstopdf)                    size: 4578 bytes
+(epstopdf)             Command: <epstopdf --outfile=symmetria2-eps-converted-to
+.pdf symmetria2.eps>
+(epstopdf)             \includegraphics on input line 86.
+Package epstopdf Info: Output file is already uptodate.
+
+<symmetria2-eps-converted-to.pdf, id=34, 444.66125pt x 379.4175pt>
+File: symmetria2-eps-converted-to.pdf Graphic file (type pdf)
+
+<use symmetria2-eps-converted-to.pdf> [4] [5 <./symmetria1-eps-converted-to.pdf
+> <./symmetria2-eps-converted-to.pdf>] [6]
+\c@theocounter=\count117
+ [7]
+Package epstopdf Info: Source file: <cv1.eps>
+(epstopdf)                    date: 2011-04-06 05:41:37
+(epstopdf)                    size: 7296 bytes
+(epstopdf)             Output file: <cv1-eps-converted-to.pdf>
+(epstopdf)                    date: 2011-04-06 07:25:13
+(epstopdf)                    size: 3428 bytes
+(epstopdf)             Command: <epstopdf --outfile=cv1-eps-converted-to.pdf cv
+1.eps>
+(epstopdf)             \includegraphics on input line 172.
+Package epstopdf Info: Output file is already uptodate.
+
+<cv1-eps-converted-to.pdf, id=55, 767.86874pt x 652.4375pt>
+File: cv1-eps-converted-to.pdf Graphic file (type pdf)
+
+<use cv1-eps-converted-to.pdf>
+Package epstopdf Info: Source file: <cv2.eps>
+(epstopdf)                    date: 2011-04-06 07:24:23
+(epstopdf)                    size: 17968 bytes
+(epstopdf)             Output file: <cv2-eps-converted-to.pdf>
+(epstopdf)                    date: 2011-04-06 07:25:13
+(epstopdf)                    size: 9479 bytes
+(epstopdf)             Command: <epstopdf --outfile=cv2-eps-converted-to.pdf cv
+2.eps>
+(epstopdf)             \includegraphics on input line 173.
+Package epstopdf Info: Output file is already uptodate.
+
+<cv2-eps-converted-to.pdf, id=56, 767.86874pt x 652.4375pt>
+File: cv2-eps-converted-to.pdf Graphic file (type pdf)
+
+<use cv2-eps-converted-to.pdf>
+Package epstopdf Info: Source file: <cv3.eps>
+(epstopdf)                    date: 2011-04-06 07:24:34
+(epstopdf)                    size: 18182 bytes
+(epstopdf)             Output file: <cv3-eps-converted-to.pdf>
+(epstopdf)                    date: 2011-04-06 07:25:13
+(epstopdf)                    size: 9565 bytes
+(epstopdf)             Command: <epstopdf --outfile=cv3-eps-converted-to.pdf cv
+3.eps>
+(epstopdf)             \includegraphics on input line 174.
+Package epstopdf Info: Output file is already uptodate.
+
+<cv3-eps-converted-to.pdf, id=57, 767.86874pt x 652.4375pt>
+File: cv3-eps-converted-to.pdf Graphic file (type pdf)
+
+<use cv3-eps-converted-to.pdf>
+Package epstopdf Info: Source file: <cv4.eps>
+(epstopdf)                    date: 2011-04-06 07:24:44
+(epstopdf)                    size: 13086 bytes
+(epstopdf)             Output file: <cv4-eps-converted-to.pdf>
+(epstopdf)                    date: 2011-04-06 07:25:48
+(epstopdf)                    size: 6813 bytes
+(epstopdf)             Command: <epstopdf --outfile=cv4-eps-converted-to.pdf cv
+4.eps>
+(epstopdf)             \includegraphics on input line 175.
+Package epstopdf Info: Output file is already uptodate.
+
+<cv4-eps-converted-to.pdf, id=58, 767.86874pt x 652.4375pt>
+File: cv4-eps-converted-to.pdf Graphic file (type pdf)
+
+<use cv4-eps-converted-to.pdf>
+Package epstopdf Info: Source file: <cv5.eps>
+(epstopdf)                    date: 2011-04-06 07:24:53
+(epstopdf)                    size: 11924 bytes
+(epstopdf)             Output file: <cv5-eps-converted-to.pdf>
+(epstopdf)                    date: 2011-04-06 07:26:25
+(epstopdf)                    size: 6207 bytes
+(epstopdf)             Command: <epstopdf --outfile=cv5-eps-converted-to.pdf cv
+5.eps>
+(epstopdf)             \includegraphics on input line 176.
+Package epstopdf Info: Output file is already uptodate.
+
+<cv5-eps-converted-to.pdf, id=59, 767.86874pt x 652.4375pt>
+File: cv5-eps-converted-to.pdf Graphic file (type pdf)
+
+<use cv5-eps-converted-to.pdf> [8] [9 <./cv1-eps-converted-to.pdf> <./cv2-eps-c
+onverted-to.pdf> <./cv3-eps-converted-to.pdf> <./cv4-eps-converted-to.pdf> <./c
+v5-eps-converted-to.pdf>] (./tutkielma.bbl [10] (./babelbst.tex (./finnbst.tex)
+)
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 42.
+ (/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)) [11] (./tutkielma.aux) ) 
+Here is how much of TeX's memory you used:
+ 3489 strings out of 493848
+ 45410 string characters out of 1152823
+ 112368 words of memory out of 3000000
+ 6654 multiletter control sequences out of 15000+50000
+ 15343 words of font info for 40 fonts, out of 3000000 for 9000
+ 714 hyphenation exceptions out of 8191
+ 41i,7n,26p,866b,505s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-
+t1.enc}</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi12.pfb></us
+r/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texm
+f-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fo
+nts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/pu
+blic/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.p
+fb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf
+/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/
+cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pf
+b></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/
+fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/c
+m-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb
+>
+Output written on tutkielma.pdf (14 pages, 329766 bytes).
+PDF statistics:
+ 133 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+

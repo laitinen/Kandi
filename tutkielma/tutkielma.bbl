@@ -1,0 +1,61 @@
+\begin{thebibliography}{KMW06}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{{\tt #1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\input babelbst.tex
+\newcommand{\Capitalize}[1]{\uppercase{#1}}
+\newcommand{\capitalize}[1]{\expandafter\Capitalize#1}
+
+\bibitem[CV86]{colevishkin}
+Cole, R. \bbland{} Vishkin, U., Deterministic coin tossing with applications to
+  optimal parallel list ranking.
+\newblock {\em Information and Control}, 70,1(1986), \bblpages{} 32--53.
+
+\bibitem[GHS83]{mst}
+Gallager, R., Humblet, P. \bbland{} Spira, P., A distributed algorithm for
+  minimum weight spanning trees.
+\newblock {\em ACM Transactions on Programming Languages and Systems (TOPLAS)},
+  5,1(1983).
+
+\bibitem[KMW06]{pricenear}
+Kuhn, F., Moscibroda, T. \bbland{} Wattenhofer, R., The price of being
+  near-sighted.
+\newblock  {\em Proc. 17th Annual ACM-SIAM Symposium on Discrete Algorithms}.
+  ACM Press, 2006, \bblpages{} 980--989.
+
+\bibitem[Lin92]{Lin92}
+Linial, N., Locality in distributed graph algorithms.
+\newblock {\em SIAM Journal on Computing}, 21,1(1992), \bblpages{} 193--201.
+
+\bibitem[NS95]{loccomp}
+Naor, M. \bbland{} Stockmeyer, L., What can be computed locally?
+\newblock {\em SIAM Journal on Computing}, 24,6(1995), \bblpages{} 1259--1277.
+
+\bibitem[PS09]{3appr}
+Polishchuk, V. \bbland{} Suomela, J., A simple local 3-approximation algorithm
+  for vertex cover.
+\newblock {\em Information Processing Letters}, 109,12(2009).
+
+\bibitem[Suo10a]{lecture1}
+Suomela, J., Lecture notes, 2010.
+\newblock
+  \url{http://www.cs.helsinki.fi/u/josuomel/dda-2010/adobe/lecture-1.pdf}.
+\newblock [6.3.2011]
+
+\bibitem[Suo10b]{lecture2}
+Suomela, J., Lecture notes, 2010.
+\newblock
+  \url{http://www.cs.helsinki.fi/u/josuomel/dda-2010/adobe/lecture-2.pdf}.
+\newblock [6.3.2011]
+
+\bibitem[Suo11]{survey}
+Suomela, J., Survey of local algorithms, 2011.
+\newblock \url{http://www.cs.helsinki.fi/u/josuomel/doc/local-survey.pdf}.
+\newblock [6.3.2011]
+
+\bibitem[Urr07]{wireless}
+Urrutia, J., Local solutions for global problems in wireless networks.
+\newblock {\em Journal of Discrete Algorithms}, 5,3(2007), \bblpages{}
+  395--407.
+
+\end{thebibliography}
