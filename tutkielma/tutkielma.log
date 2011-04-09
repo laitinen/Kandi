@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.3.22)  9 APR 2011 20:22
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.3.22)  10 APR 2011 01:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -369,14 +369,7 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 \openout3 = `tutkielma.toc'.
 
 
-[2] [1]
-Overfull \hbox (9.66945pt too wide) in paragraph at lines 62--63
-\T1/cmr/m/n/12 Hajautettu las-ken-ta-mal-li toi-mii suun-taa-mat-to-mis-sa yh-d
-is-te-tyis-sä ver-kos-sa $\OML/cmm/m/it/12 G \OT1/cmr/m/n/12 = (\OML/cmm/m/it/1
-2 V; E\OT1/cmr/m/n/12 )$\T1/cmr/m/n/12 ,
- []
-
-[2]
+[2] [1] [2]
 Package epstopdf Info: Source file: <ajatusmaailma.eps>
 (epstopdf)                    date: 2011-04-06 07:39:31
 (epstopdf)                    size: 39480 bytes
@@ -385,18 +378,19 @@ Package epstopdf Info: Source file: <ajatusmaailma.eps>
 (epstopdf)                    size: 18322 bytes
 (epstopdf)             Command: <epstopdf --outfile=ajatusmaailma-eps-converted
 -to.pdf ajatusmaailma.eps>
-(epstopdf)             \includegraphics on input line 70.
+(epstopdf)             \includegraphics on input line 77.
 Package epstopdf Info: Output file is already uptodate.
- <ajatusmaailma-eps-converted-to.pdf, id=27, 938.50626pt x 515.9275pt>
+
+<ajatusmaailma-eps-converted-to.pdf, id=23, 938.50626pt x 515.9275pt>
 File: ajatusmaailma-eps-converted-to.pdf Graphic file (type pdf)
 
-<use ajatusmaailma-eps-converted-to.pdf> [3 <./ajatusmaailma-eps-converted-to.p
-df>]
-Overfull \hbox (1.69069pt too wide) in paragraph at lines 80--81
+<use ajatusmaailma-eps-converted-to.pdf> [3]
+Overfull \hbox (1.69069pt too wide) in paragraph at lines 87--88
 \T1/cmr/m/n/12 epät-ri-vi-aa-le-ja verkko-ongelmia. Esi-mer-kik-si voi-daan luo
 -da 3-approksimointialgoritmi
  []
 
+[4 <./ajatusmaailma-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <symmetria1.eps>
 (epstopdf)                    date: 2011-04-06 07:05:00
 (epstopdf)                    size: 7770 bytes
@@ -405,9 +399,10 @@ Package epstopdf Info: Source file: <symmetria1.eps>
 (epstopdf)                    size: 4320 bytes
 (epstopdf)             Command: <epstopdf --outfile=symmetria1-eps-converted-to
 .pdf symmetria1.eps>
-(epstopdf)             \includegraphics on input line 84.
+(epstopdf)             \includegraphics on input line 91.
 Package epstopdf Info: Output file is already uptodate.
-<symmetria1-eps-converted-to.pdf, id=33, 444.66125pt x 379.4175pt>
+
+<symmetria1-eps-converted-to.pdf, id=40, 444.66125pt x 379.4175pt>
 File: symmetria1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use symmetria1-eps-converted-to.pdf>
@@ -419,16 +414,16 @@ Package epstopdf Info: Source file: <symmetria2.eps>
 (epstopdf)                    size: 4578 bytes
 (epstopdf)             Command: <epstopdf --outfile=symmetria2-eps-converted-to
 .pdf symmetria2.eps>
-(epstopdf)             \includegraphics on input line 86.
+(epstopdf)             \includegraphics on input line 93.
 Package epstopdf Info: Output file is already uptodate.
 
-<symmetria2-eps-converted-to.pdf, id=34, 444.66125pt x 379.4175pt>
+<symmetria2-eps-converted-to.pdf, id=41, 444.66125pt x 379.4175pt>
 File: symmetria2-eps-converted-to.pdf Graphic file (type pdf)
 
-<use symmetria2-eps-converted-to.pdf> [4] [5 <./symmetria1-eps-converted-to.pdf
-> <./symmetria2-eps-converted-to.pdf>] [6]
+<use symmetria2-eps-converted-to.pdf> [5 <./symmetria1-eps-converted-to.pdf> <.
+/symmetria2-eps-converted-to.pdf>] [6] [7]
 \c@theocounter=\count117
- [7]
+ [8]
 Package epstopdf Info: Source file: <cv1.eps>
 (epstopdf)                    date: 2011-04-06 05:41:37
 (epstopdf)                    size: 7296 bytes
@@ -437,10 +432,10 @@ Package epstopdf Info: Source file: <cv1.eps>
 (epstopdf)                    size: 3428 bytes
 (epstopdf)             Command: <epstopdf --outfile=cv1-eps-converted-to.pdf cv
 1.eps>
-(epstopdf)             \includegraphics on input line 172.
+(epstopdf)             \includegraphics on input line 181.
 Package epstopdf Info: Output file is already uptodate.
 
-<cv1-eps-converted-to.pdf, id=55, 767.86874pt x 652.4375pt>
+<cv1-eps-converted-to.pdf, id=60, 767.86874pt x 652.4375pt>
 File: cv1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use cv1-eps-converted-to.pdf>
@@ -452,10 +447,10 @@ Package epstopdf Info: Source file: <cv2.eps>
 (epstopdf)                    size: 9479 bytes
 (epstopdf)             Command: <epstopdf --outfile=cv2-eps-converted-to.pdf cv
 2.eps>
-(epstopdf)             \includegraphics on input line 173.
+(epstopdf)             \includegraphics on input line 182.
 Package epstopdf Info: Output file is already uptodate.
 
-<cv2-eps-converted-to.pdf, id=56, 767.86874pt x 652.4375pt>
+<cv2-eps-converted-to.pdf, id=61, 767.86874pt x 652.4375pt>
 File: cv2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use cv2-eps-converted-to.pdf>
@@ -467,10 +462,10 @@ Package epstopdf Info: Source file: <cv3.eps>
 (epstopdf)                    size: 9565 bytes
 (epstopdf)             Command: <epstopdf --outfile=cv3-eps-converted-to.pdf cv
 3.eps>
-(epstopdf)             \includegraphics on input line 174.
+(epstopdf)             \includegraphics on input line 183.
 Package epstopdf Info: Output file is already uptodate.
 
-<cv3-eps-converted-to.pdf, id=57, 767.86874pt x 652.4375pt>
+<cv3-eps-converted-to.pdf, id=62, 767.86874pt x 652.4375pt>
 File: cv3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use cv3-eps-converted-to.pdf>
@@ -482,10 +477,10 @@ Package epstopdf Info: Source file: <cv4.eps>
 (epstopdf)                    size: 6813 bytes
 (epstopdf)             Command: <epstopdf --outfile=cv4-eps-converted-to.pdf cv
 4.eps>
-(epstopdf)             \includegraphics on input line 175.
+(epstopdf)             \includegraphics on input line 184.
 Package epstopdf Info: Output file is already uptodate.
 
-<cv4-eps-converted-to.pdf, id=58, 767.86874pt x 652.4375pt>
+<cv4-eps-converted-to.pdf, id=63, 767.86874pt x 652.4375pt>
 File: cv4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use cv4-eps-converted-to.pdf>
@@ -497,28 +492,28 @@ Package epstopdf Info: Source file: <cv5.eps>
 (epstopdf)                    size: 6207 bytes
 (epstopdf)             Command: <epstopdf --outfile=cv5-eps-converted-to.pdf cv
 5.eps>
-(epstopdf)             \includegraphics on input line 176.
+(epstopdf)             \includegraphics on input line 185.
 Package epstopdf Info: Output file is already uptodate.
 
-<cv5-eps-converted-to.pdf, id=59, 767.86874pt x 652.4375pt>
+<cv5-eps-converted-to.pdf, id=64, 767.86874pt x 652.4375pt>
 File: cv5-eps-converted-to.pdf Graphic file (type pdf)
 
-<use cv5-eps-converted-to.pdf> [8] [9 <./cv1-eps-converted-to.pdf> <./cv2-eps-c
-onverted-to.pdf> <./cv3-eps-converted-to.pdf> <./cv4-eps-converted-to.pdf> <./c
-v5-eps-converted-to.pdf>] (./tutkielma.bbl [10] (./babelbst.tex (./finnbst.tex)
-)
+<use cv5-eps-converted-to.pdf> [9] [10 <./cv1-eps-converted-to.pdf> <./cv2-eps-
+converted-to.pdf> <./cv3-eps-converted-to.pdf> <./cv4-eps-converted-to.pdf> <./
+cv5-eps-converted-to.pdf>] (./tutkielma.bbl (./babelbst.tex (./finnbst.tex))
+[11]
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 42.
  (/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)) [11] (./tutkielma.aux) ) 
+)) [12] (./tutkielma.aux) ) 
 Here is how much of TeX's memory you used:
- 3489 strings out of 493848
- 45410 string characters out of 1152823
- 112368 words of memory out of 3000000
- 6654 multiletter control sequences out of 15000+50000
- 15343 words of font info for 40 fonts, out of 3000000 for 9000
+ 3500 strings out of 493848
+ 45525 string characters out of 1152823
+ 112369 words of memory out of 3000000
+ 6661 multiletter control sequences out of 15000+50000
+ 17647 words of font info for 47 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 41i,7n,26p,866b,505s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,8n,26p,866b,505s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-
 t1.enc}</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi12.pfb></us
 r/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texm
@@ -529,13 +524,14 @@ blic/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
 fb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf
 /fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/
 cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pf
-b></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/
-fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/c
-m-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb
->
-Output written on tutkielma.pdf (14 pages, 329752 bytes).
+b></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf/
+fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/c
+m-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb
+></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/f
+onts/type1/public/cm-super/sftt1200.pfb>
+Output written on tutkielma.pdf (15 pages, 337311 bytes).
 PDF statistics:
- 133 PDF objects out of 1000 (max. 8388607)
+ 144 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

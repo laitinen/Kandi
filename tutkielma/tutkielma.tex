@@ -36,7 +36,7 @@
 
 Monet tietojenkäsittelytieteessä vastaan tulevat ongelmat ovat luonteeltaan sellaisia, että yksi laskentayksikkö, jolle on annettu kaikki tieto ongelmasta, voi luontevasti löytää ratkaisun sopivalla algoritmilla. Kaikki ongelmat eivät kuitenkaan ole helppoja yksittäisten laskentayksiköiden ratkaistaviksi. Varsinkin suurikokoisia ja monimutkaisia verkkoja, kuten Internetiä tai suuria sensoriverkkoja, on vaikeaa tai mahdotonta hallita yhdellä kaikkitietävällä laskentayksiköllä \cite{pricenear}. Mikäli verkon tietomäärää ei voida käsitellä keskitetysti, voidaan käyttää paikallisia hajautettuja verkkoalgoritmeja, joissa verkon osat ratkaisevat itseään koskevia osaongelmia vain paikallista tietoa hyödyntämällä.
 
-Paikalliset algoritmit ovat algoritmeja, joissa jokaisella verkon alueella on käytössään vain rajallinen määrä tietoa ympäristöstään. Paikalliset algoritmit toimivat suuntaamattomissa verkoissa, joiden jokainen solmu esittää prosessoria. Näiden verkkojen kaaret kuvaavat prosessorien välisiä välittömiä kommunikointiyhteyksiä. Verkon solmujen asteluvut ovat rajoitettuja, eli jokaisella prosessorilla saa olla vain äärellinen määrä yhteyksiä muihin prosessoreihin \cite{loccomp}.
+Paikalliset algoritmit ovat algoritmeja, joissa jokaisella verkon alueella on käytössään vain rajallinen määrä tietoa ympäristöstään. Paikalliset algoritmit toimivat verkoissa, joiden jokainen solmu esittää prosessoria. Näiden verkkojen kaaret kuvaavat prosessorien välisiä välittömiä kommunikointiyhteyksiä. Verkon solmujen asteluvut ovat rajoitettuja, eli jokaisella prosessorilla saa olla vain äärellinen määrä yhteyksiä muihin prosessoreihin \cite{loccomp}.
 
 %on algoritmi, joka ajetaan jokaisessa verkon solmussa. Jokainen verkon solmu sisältää prosessorin. Prosessorit voivat välittää muille prosessoreille lisätietoa, mikäli niiden välinen keskustelu on etukäteen mahdollistettu. Verkossa tämä tarkoittaa sitä, että prosessorisolmut voivat keskustella keskenään, jos ja vain jos näiden kahden prosessorisolmun välillä on kaari.
 
@@ -51,7 +51,7 @@ Usein suurissa verkoissa kommunikaatio solmujen välillä on huomattavasti hitaamp
 
 Verkkojen ohjelmointi ajamalla samaa algoritmia jokaisessa verkon solmussa on mielenkiintoinen lähestymistapa myös siksi, että tällaista laskentamallia ei tunneta vielä kovin hyvin. On kuitenkin olemassa viitteitä, että joihinkin tiettyihin ongelmiin hajautettu laskentamalli voisi soveltua paremmin kuin aiemmat olemassaolevat mallit. Esimerkiksi ihmisten aivosolut näyttävät pystyvän tekemään päätöksiä oman tilansa suhteen vain paikallisen tiedon perusteella \cite{pricenear}. Analogia paikallisiin algoritmeihin on huomattava, sillä neuronit voivat olla yhteydessä vain rajalliseen määrään lähistöllä sijaitsevia muita neuroneita. Näiden neuroneiden täytyy keskenäisen kommunikointinsa perusteella päätyä yhteiseen lopputulokseen, joka vaikuttaa ihmisen toimintaan.
 
-Paikallisten algoritmien tutkimus on vielä nuorta, eikä tutkimuksessa ole jumiuduttu tietyille urille, vaan alalla on vielä useita avoimia tutkimusongelmia, jotka poikkeavat parhaimmillaan hyvin paljon toisistaan. Tässä esseessä annetaan yleiskuva paikallisilla algoritmeilla ratkeavista ongelmista sekä hankalista ongelmista. Lisäksi pyritään havainnollistamaan paikallisten algoritmien toimintaa esittelemällä paikallisia algoritmeja yksinkertaisiin ongelmiin.
+Paikallisten algoritmien tutkimus on vielä nuorta, eikä tutkimuksessa ole jumiuduttu tietyille urille, vaan alalla on vielä useita avoimia tutkimusongelmia, jotka poikkeavat parhaimmillaan hyvin paljon toisistaan. Tässä tutkielmassa annetaan yleiskuva paikallisilla algoritmeilla ratkeavista ongelmista sekä hankalista ongelmista. Lisäksi pyritään havainnollistamaan paikallisten algoritmien toimintaa esittelemällä paikallisia algoritmeja yksinkertaisiin ongelmiin.
 
 
 %Tässä aineessa tutustutaan siihen, minkälaisia ongelmia paikallisilla hajautetuilla algoritmeilla voidaan ratkaista.
@@ -59,7 +59,14 @@ Paikallisten algoritmien tutkimus on vielä nuorta, eikä tutkimuksessa ole jumiud
 %Tutkielmassa katetaan sekä positiivisia että negatiivisia tuloksia eri ongelmiin, ja pyritään muodostamaan kokonaiskuva PHV:eiden mahdollisista käyttötarkoituksista.
 
 \section{Hajautettu laskentamalli}
-Hajautettu laskentamalli toimii suuntaamattomissa yhdistetyissä verkossa $G = (V,E)$, jonka jokaisessa solmussa $v \in V$ on prosessori. Solmussa $x$ sijaitseva prosessori $v_x$ voi kommunikoida solmussa $y$ sijaitsevan prosessorin $v_y$ kanssa jos, ja vain jos on olemassa $e \in E$ siten, että $e = \{x,y\}$, jossa $\{x,y\}$ on järjestämätön pari. Prosessorit eivät jaa muistia keskenään, vaan ovat täysin itsenäisiä, ja saavat ajon alussa tietää vain niistä prosessoreista, joiden kanssa ne voivat kommunikoida. 
+Hajautettua laskentamallia voidaan käyttää sellaisissa verkoissa, joiden solmuissa voidaan tehdä laskentaa. Mikäli verkon jokaiseen solmuun sijoitetaan prosessori, voi jokainen solmu yrittää ratkaista paikallista informaatiota hyödyntämällä solmun itsensä kannalta relevantteja kysymyksiä.
+
+Hajautetussa laskentamallissa jokaista solmua edustaa prosessori, joka voi kommunikoida naapurisolmujensa prosessorien kanssa. Prosessorien toiminta on jaoteltu laskentaan ja kommunikaatiokierroksiin. Prosessorit vaihtelevat laskentatilan ja kommunikointitilan väleillä. Kun prosessori on päättänyt, että se on laskenut tarpeeksi, se pyrkii saamaan lisää tietoa kommunikoimalla muiden prosessorien kanssa. 
+
+Solmut pyrkivät laskemaan omaa osaansa koko verkkoa koskevasta ongelmasta. Kun kaikki solmut ovat ratkaisseet oman osaongelmansa, voidaan muodostaa koko verkkoa koskevan ongelman ratkaisu. Esimerkiksi maksimaalista itsenäistä joukkoa\footnote{Itsenäinen joukko on verkon solmujen osajoukko, jossa yksikään joukkoon kuuluva solmu ei ole toisen joukkoon kuuluvan solmun naapuri. Maksimaalinen itsenäinen joukko ei ole minkään itsenäisen joukon aito osajoukko.} haettaessa jokaisen solmun osaongelma on ratkaista, kuuluuko solmu maksimaaliseen itsenäiseen joukkoon vai ei.
+%Hajautetussa laskentamallissa verkko on sekä ongelma itse, että sen ratkaisija. Tämä tarkoittaa sitä, että 
+
+Hajautettu laskentamalli toimii verkoissa $G = (V,E)$, joiden jokaisessa solmussa $v \in V$ on prosessori. Solmussa $x$ sijaitseva prosessori $v_x$ voi kommunikoida solmussa $y$ sijaitsevan prosessorin $v_y$ kanssa jos, ja vain jos on olemassa $e \in E$ siten, että $e = (x,y)$. Prosessorit eivät jaa muistia keskenään, vaan ovat täysin itsenäisiä, ja saavat ajon alussa tietää vain niistä prosessoreista, joiden kanssa ne voivat kommunikoida. 
 
 Itse ongelmanratkaisu hajautetussa laskentamallissa toimii siten, että jokaiselle prosessorille annetaan sama paikallinen algoritmi, jota prosessorit ajavat, kunnes ovat ratkaisseet oman paikallisen ongelmansa ja pysähtyneet. Paikallinen ongelma, jota prosessorit ratkaisevat, on prosessorin oma lopputila. Prosessorin lopputila tarkoittaa verkon kannalta sitä tilaa, mitä ratkaisemaan prosessori on osoitettu. Tämä tila on tyypillisesti esimerkiksi sen solmun tila, johon prosessori on sijoitettu. Esimerkiksi verkon väritysongelmissa prosessorin lopputila on prosessorin omalle solmulleen valitsema väri.
 
@@ -97,7 +104,7 @@ Symmetrian voi rikkoa satunnaisuuden avulla, mutta on olemassa myös deterministi
 Tunnistenumeromallissa jokaiselle prosessorille annetaan uniikki tunnistenumero, jonka avulla muuten symmetrisessa tilanteessa olevat prosessorit voidaan erottaa toisistaan. Kuten aiemmin mainittiin, nyt koko verkon koostumus voidaan siirtää jokaiselle verkon solmulle. Toisin sanoen, mikäli käytetään tarpeeksi aikaa, mikä tahansa ongelma, jolla on ratkaisu, voidaan ratkaista algoritmilla \ref{algo:universal}. Tämän vuoksi on luontevaa keskittyä tutkimaan ongelmia, jotka ovat paikallisesti laskettavia. Myös approksimaatioalgoritmien löytäminen on kiinnostava tutkimuskohde, varsinkin jos ongelman tarkka ratkaisu ei ole paikallisesti laskettavissa.
 
 \begin{algorithm}[H]
-\caption{Algoritmi kaikkien ratkeavien ongelmien ratkaisemiseen tunnistenumeromallissa}
+\caption{Algoritmi kaikkien yhdistetyissä verkoissa ratkeavien ongelmien ratkaisemiseen tunnistenumeromallissa}
 \label{algo:universal}
 \begin{algorithmic}
 \REPEAT
@@ -110,7 +117,7 @@ Tunnistenumeromallissa jokaiselle prosessorille annetaan uniikki tunnistenumero,
 
 %Seuraavassa kappaleessa esitellään ongelmatyyppejä, joiden lähestyminen on luontevaa tunnistenumeromallissa. Seuraavassa kappaleessa pyritään havainnollistamaan paikallisten algoritmien käyttäytymistä ongelmanratkaisussa, ja analysoidaan tehokasta algoritmia väritysongelmaan.
 
-\section{Colen-Vishkinin algoritmi}
+\section{Verkon kolmiväritys}
 Hajautetussa laskentamallissa ongelmien ratkaisumenetelmät poikkeavat huomattavasti perinteisempien ongelmien ratkaisussa käytettävistä menetelmistä. Paikallisesti tarkastettavissa olevat ominaisuudet (engl. \textit{locally checkable labelings}), eli esimerkiksi solmu- ja kaariväritykset sekä maksimaaliset itsenäiset joukot ovat ongelmia, joita on helppo lähestyä paikallisilla algoritmeilla. Näissä ongelmissa ratkaisun laillisuus on helppo tarkastaa nopeasti jokaisessa algoritmin vaiheessa \cite{loccomp}. Tällöin algoritmin ei tarvitse käyttää suurta määrää kommunikaatiokierroksia yksinkertaisiin ongelmiin, kuten siihen, voiko algoritmin suorituksen jo lopettaa.
 
 Tyypillinen ongelma hajautetussa laskentamallissa on verkon solmuväritys. Solmuvärityksessä ratkaisun laillisuus on paikallisesti tarkastettavissa oleva ominaisuus, sillä on yksinkertaista ja nopeaa varmistaa, että solmun naapurit valitsevat askeleen lopuksi eri värin kuin solmu itse.
@@ -118,6 +125,8 @@ Tyypillinen ongelma hajautetussa laskentamallissa on verkon solmuväritys. Solmuv
 Solmuvärityksen soveltuvuudesta paikallisten algoritmien maailmaan kertoo myös se, että monet merkittävät tulokset hajautetussa laskentamallissa liittyvät juuri solmuvärittämiseen. Solmuvärittämisessä onkin monia tutkimuskohteita, esimerkiksi rajoitettujen verkkojen kolmivärittäminen tai verkon ominaisuuksista, kuten solmujen maksimiasteesta riippuvien nopeiden väritysalgoritmien löytäminen.
 
 Yksi ensimmäisistä tuloksista hajautetussa laskentamallissa on Colen-Vishkinin värien vähennysalgoritmi. Alun perin Colen-Vishkinin algoritmi oli tarkoitettu värien vähentämiseen linkitetyissä listoissa hajautetusti \cite{colevishkin}. Algoritmi toimii kuitenkin myös paikallisena algoritmina. Algoritmi kuitenkin toimii vain suunnatussa verkossa, jossa jokaisella solmulla on korkeintaan yksi jälkeläinen. Aiemmasta määritelmästä poiketen prosessori $a$ voi siis keskustella prosessorin $b$ kanssa vain, jos on olemassa $e \in E$ siten, että $e = (a,b)$, jossa $(a,b)$ on suunnattu pari. Kuitenkin solmut $a$ ja $b$ ovat \textit{naapureita}, mikäli on olemassa $(a,b) \in E$ tai $(b,a) \in E$.
+
+Solmuvärityksen hyödyllisyys riippuu yleensä käytettyjen värien määrästä. Värien määrän minimointi on useimmiten hyödyllistä, ja verkon väritystä voidaan käyttää muiden ongelmien ratkaisemiseen. Verkon rakenteesta riippuu, kuinka montaa väriä täytyy käyttää, jotta verkko saadaan väritettyä. 
 
 Colen-Vishkinin algoritmilla valmista verkon väritystä voidaan askel askeleelta vähentää siihen asti, kunnes verkossa on jäljellä enää kuusi väriä. Suunnatussa verkossa, jossa solmuilla on korkeintaan yksi jälkeläinen, on mahdollista löytää kolmiväritys. Colen-Vishkinin algoritmin löytämästä kuusivärityksestä voidaan päästä kolmiväritykseen vakioajassa käyttämällä algoritmeja, jotka vähentävät verkosta yhden värin kommunikaatiokierrosta kohti \cite{colevishkin, lecture2}.
 
@@ -188,9 +197,9 @@ Colen-Vishkinin algoritmilla ei kuitenkaan voida aina päästä alle kuuden värin, 
 %\end{figure}
 
 \section{Tutkimuskohteita ja päätelmiä}
-Tässä esseessä kuvattu osuus hajautettujen paikallisten hajautettujen verkkoalgoritmien tutkimuksesta on suppea. Vaikka tässä esseessä on esitelty paikallisia hajautettuja verkkoalgoritmeja teoreettisesta näkökulmasta, ei tutkimusalalla ole varsinaista konsensusta algoritmitutkimuksen teoreettisuusasteesta.
+Tässä tutkielmassa kuvattu osuus hajautettujen paikallisten hajautettujen verkkoalgoritmien tutkimuksesta on suppea. Vaikka tässä tutkielmassa on esitelty paikallisia hajautettuja verkkoalgoritmeja teoreettisesta näkökulmasta, ei tutkimusalalla ole varsinaista konsensusta algoritmitutkimuksen teoreettisuusasteesta.
 
-Tässä esseessä on annettu esimerkkejä vain tilanteista, joissa prosessorit saavat tehdä kommunikaatiokierrosten väleillä suuren määrän työtä, eikä prosessorien toisilleen lähettämien viestien kokoja ole rajoitettu. Käytännön sovellutuksissa tällaisia myönnytyksiä algoritmeille ei kuitenkaan voi antaa. Käytännössä toimivan algoritmin olisi syytä tehdä myös kommunikaatiokierrosten väliset laskutoimitukset ripeästi, eikä tietoa voi lähettää suunnattomia määriä. Esimerkiksi algoritmissa \ref{algo:universal} jokainen solmu kerää koko verkon rakenteen. Verkon koon kasvaessa tietomäärä voi kasvaa kuitenkin mielettömän suureksi, eikä tiedonsiirto tarvittavalla nopeudella välttämättä ole mahdollista.
+Tässä tutkielmassa on annettu esimerkkejä vain tilanteista, joissa prosessorit saavat tehdä kommunikaatiokierrosten väleillä suuren määrän työtä, eikä prosessorien toisilleen lähettämien viestien kokoja ole rajoitettu. Käytännön sovellutuksissa tällaisia myönnytyksiä algoritmeille ei kuitenkaan voi antaa. Käytännössä toimivan algoritmin olisi syytä tehdä myös kommunikaatiokierrosten väliset laskutoimitukset ripeästi, eikä tietoa voi lähettää suunnattomia määriä. Esimerkiksi algoritmissa \ref{algo:universal} jokainen solmu kerää koko verkon rakenteen. Verkon koon kasvaessa tietomäärä voi kasvaa kuitenkin mielettömän suureksi, eikä tiedonsiirto tarvittavalla nopeudella välttämättä ole mahdollista.
 
 Monet julkaisut paikallisten hajautettujen verkkoalgoritmien tutkimusalalla ovat esittäneet algoritmeja, joissa käytännön rajoitukset on otettu huomioon. Näissä algoritmeissa on tyypillisesti osoitettu, että lähetettävät viestit ovat kooltaan maltillisia. Lisäksi approksimaatioalgoritmeissa kasvattamalla alussa annetun tiedon määrää voi usein parantaa saavutetun tuloksen approksimaatiotarkkuutta.
 
