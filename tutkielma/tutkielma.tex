@@ -124,23 +124,35 @@ Tyypillinen ongelma hajautetussa laskentamallissa on verkon solmuväritys. Solmuv
 
 Solmuvärityksen soveltuvuudesta paikallisten algoritmien maailmaan kertoo myös se, että monet merkittävät tulokset hajautetussa laskentamallissa liittyvät juuri solmuvärittämiseen. Solmuvärittämisessä onkin monia tutkimuskohteita, esimerkiksi rajoitettujen verkkojen kolmivärittäminen tai verkon ominaisuuksista, kuten solmujen maksimiasteesta riippuvien nopeiden väritysalgoritmien löytäminen.
 
-Yksi ensimmäisistä tuloksista hajautetussa laskentamallissa on Colen-Vishkinin värien vähennysalgoritmi. Alun perin Colen-Vishkinin algoritmi oli tarkoitettu värien vähentämiseen linkitetyissä listoissa hajautetusti \cite{colevishkin}. Algoritmi toimii kuitenkin myös paikallisena algoritmina. Algoritmi kuitenkin toimii vain suunnatussa verkossa, jossa jokaisella solmulla on korkeintaan yksi jälkeläinen. Aiemmasta määritelmästä poiketen prosessori $a$ voi siis keskustella prosessorin $b$ kanssa vain, jos on olemassa $e \in E$ siten, että $e = (a,b)$, jossa $(a,b)$ on suunnattu pari. Kuitenkin solmut $a$ ja $b$ ovat \textit{naapureita}, mikäli on olemassa $(a,b) \in E$ tai $(b,a) \in E$.
+\begin{figure}
+    \begin{center}
+        \includegraphics[scale=0.25]{cv1.eps}
+    \end{center}
+    \caption{\label{fig:suunnattu} Suunnattu verkko, jonka jokaisella solmulla on korkeintaan yksi jälkeläinen. Verkon nuolet kuvaavat jälkeläissuhteita siten, että nuolen päässä oleva solmu on lähtöpisteessä olevan solmun jälkeläinen. Jälkeläissolmu voi kommunikaatiokierroksen aikana siirtää tietoa isäntäsolmulleen. Solmut ovat keskenään naapureita, mikäli toinen solmuista on toisen jälkeläinen.}
+    
+\end{figure}
+Yksi ensimmäisistä tuloksista hajautetussa laskentamallissa on Colen-Vishkinin värien vähennysalgoritmi. Alun perin Colen-Vishkinin algoritmi oli tarkoitettu värien vähentämiseen linkitetyissä listoissa hajautetusti \cite{colevishkin}. Algoritmi toimii kuitenkin myös paikallisena algoritmina. Algoritmi kuitenkin toimii vain suunnatussa verkossa, jossa jokaisella solmulla on korkeintaan yksi jälkeläinen, ks. kuva \ref{fig:suunnattu}. Aiemmasta määritelmästä poiketen prosessori $a$ voi siis keskustella prosessorin $b$ kanssa vain, jos on olemassa $e \in E$ siten, että $e = (a,b)$, jossa $(a,b)$ on suunnattu pari. Kuitenkin solmut $a$ ja $b$ ovat \textit{naapureita}, mikäli on olemassa $(a,b) \in E$ tai $(b,a) \in E$.
 
-Solmuvärityksen hyödyllisyys riippuu yleensä käytettyjen värien määrästä. Värien määrän minimointi on useimmiten hyödyllistä, ja verkon väritystä voidaan käyttää muiden ongelmien ratkaisemiseen. Verkon rakenteesta riippuu, kuinka montaa väriä täytyy käyttää, jotta verkko saadaan väritettyä. 
+Solmuvärityksen hyödyllisyys riippuu yleensä käytettyjen värien määrästä. Värien määrän minimointi on useimmiten hyödyllistä, ja verkon väritystä voidaan käyttää muiden ongelmien ratkaisemiseen. Verkon rakenteesta riippuu, kuinka montaa väriä täytyy käyttää, jotta verkko saadaan väritettyä.
+
+%Käytettävillä väreillä on järjestys
 
 Colen-Vishkinin algoritmilla valmista verkon väritystä voidaan askel askeleelta vähentää siihen asti, kunnes verkossa on jäljellä enää kuusi väriä. Suunnatussa verkossa, jossa solmuilla on korkeintaan yksi jälkeläinen, on mahdollista löytää kolmiväritys. Colen-Vishkinin algoritmin löytämästä kuusivärityksestä voidaan päästä kolmiväritykseen vakioajassa käyttämällä algoritmeja, jotka vähentävät verkosta yhden värin kommunikaatiokierrosta kohti \cite{colevishkin, lecture2}.
 
 Mikäli ongelmaverkko on suuri, emme halua käyttää algoritmeja, jotka vähentävät verkon värejä lineaarisesti kommunikaatiokierrosten määrän suhteen, ellei verkon värien määrä ole alussa hyvin vähäinen. Tunnistenumeromallissa ainoa väritys, mitä voimme alkutilanteessa käyttää, on juuri tunnistenumeroiden muodostama väritys. Alussa siis värien määrä on sama kuin verkon solmujen määrä, joten on selvää, että lineaarinen algoritmi olisi hyvin hidas, ja mikäli se olisi optimaalinen, olisi se aikavaativuudeltaan samaa luokkaa kuin algoritmi \ref{algo:universal}.
 
-Lineaariseen aikavaativuuteen ei kuitenkaan tarvitse tyytyä, sillä Colen-Vishkinin algoritmi kuitenkin vähentää värien määrää kierroksen $i$ värien määrää $c_i$ logaritmisesti, eli $\log(c_i) = c_{i+1}$. Kierroksella $i+2$ värien määrä on vastaavasti luokkaa $\log(\log(c_i))$, eli algoritmi vaatii iteroidun logaritmin verran kommunikaatiokierroksia kuuden värin saavuttamiseen. Täten algoritmin aikavaativuus on $O(\log^* k)$, jossa $k$ on värien määrä alussa.
+Lineaariseen aikavaativuuteen ei kuitenkaan tarvitse tyytyä. Colen-Vishkinin algoritmi toimii siten, että jokaisella kierroksella verkon suurin väri pienenee logaritmisesti. Vaikka Colen-Vishkinin algoritmissa kaikkien solmujen väri ei välttämättä pienene, niin verkon suurin väri $x$ pienenee varmasti, jos $x > 5$. Määritelmän \ref{def:nc} mukaisesti solmu, jonka väri $x$ on verkon suurin, voi valita uudeksi värikseen korkeintaan arvon $2b+1$, jossa $b = \lfloor{\log_2 x}\rfloor + 1$, eli $x$:n bittien määrä binääriesityksessä.
+
+%sillä Colen-Vishkinin algoritmi kuitenkin vähentää värien määrää kierroksen $i$ värien määrää $c_i$ logaritmisesti, eli $\log(c_i) = c_{i+1}$. Kierroksella $i+2$ värien määrä on vastaavasti luokkaa $\log(\log(c_i))$, eli algoritmi vaatii iteroidun logaritmin verran kommunikaatiokierroksia kuuden värin saavuttamiseen. Täten algoritmin aikavaativuus on $O(\log^* k)$, jossa $k$ on värien määrä alussa.
 
 \begin{algorithm}[H]
 \caption{Colen-Vishkinin algoritmi}
 \label{algo:CV}
 \begin{algorithmic}
-\WHILE{$c(v) > 5$}
+%\WHILE{$c(v) > 5$}
+\WHILE{Algoritmia ei ole ajettu tarpeeksi kauan}
     \IF{$v$:llä on jälkeläinen $u$}
-        \STATE Kysy jälkeläisen $u$ väriä $C(u)$.
+        \STATE Odota, että jälkeläinen $u$ kertoo värinsä $C(u)$. 
         \STATE Vertaa omaa väriä $C(v)$ jälkeläisen väriin $C(u)$.
         \STATE Etsi binäärimuodossa oikeanpuolimmaisin bitti, indeksiltään $i$, jossa värit poikkeavat.
         \STATE Valitse uudeksi väriksi $2\cdot{}i+C(v)_i$, jossa $C(v)_i$ on nykyisen värin $i$:nnen bitin arvo, eli $0$ tai $1$.
@@ -156,12 +168,13 @@ Lineaariseen aikavaativuuteen ei kuitenkaan tarvitse tyytyä, sillä Colen-Vishkin
 \newtheorem{definition}[theocounter]{Määritelmä}
 \begin{definition}
 Solmu $x$, jonka jälkeläinen on solmu $y$, valitsee uudeksi värikseen $nc(x,y)$:n. Funktion $nc$ arvo määräytyy vertaamalla solmujen $x$ ja $y$ värien binäärimuotoja $x_{n}\cdot{}2^n+x_{n-1}\cdot{}2^{n-1}+\dots{}+x_0\cdot{}2^0$ ja $y_{n}\cdot{}2^n+y_{n-1}\cdot{}2^{n-1}+\dots{}+y_0\cdot{}2^0$, $x_i, y_i \in \{0,1\}$. Tällöin $nc(x,y) = fi(x,y)\cdot{}2+x_{fi(x,y)}$, jossa $fi(x,y) = i$ siten, että $x_i \ne y_i$ ja $i$ on mahdollisimman pieni. Mikäli solmulla $x$ ei ole jälkeläistä, oletetaan jälkeläiseksi solmu $p$ siten, että $fi(x,p) = 0$. Tällöin solmu $x$ valitsee sen uudeksi värikseen $x_0$:n.
+\label{def:nc}
 \end{definition}
 
 \newtheorem{claim}[theocounter]{Väite}
 
 \begin{claim}
-Jos verkko on laillisesti väritetty, solmu $a$ ei voi valita uudeksi värikseen väriä, jonka sen naapurisolmu $b$ valitsee. Näin verkko säilyttää laillisen värityksen jokaisella algoritmin askeleella.
+Jos verkko on laillisesti väritetty ja yksikään solmu ei ole lopettanut algoritmin ajoa, solmu $a$ ei voi valita uudeksi värikseen väriä, jonka sen naapurisolmu $b$ valitsee. Näin verkko säilyttää laillisen värityksen jokaisella algoritmin askeleella.
 \end{claim}
 
 %\newtheorem{proof}{Todistus}
@@ -172,17 +185,18 @@ Oletetaan, että solmut $a$ ja $b$ valitsevat värikseen saman värin algoritmin as
 
 Jokaisella kierroksella Colen-Vishkinin algoritmissa jokainen solmu, jolla on jälkeläinen, kysyy jälkeläisensä väriä. Tämän jälkeen solmu vertaa omaa väriään jälkeläisensä väriin binäärimuodossa, ja etsii sen bitin indeksin, joka kahdessa värissä poikkeaa ensimmäisenä oikealta laskettuna. Tällainen bitti löytyy, sillä naapurisolmujen värit poikkeavat varmasti toisistaan laillisessa värityksessä. Kun bitin indeksi $i$ löytyy, indeksoinnin alkaessa nollasta, valitsee solmu uudeksi värikseen $2\cdot{}i + c_i$:n, jossa $c_i$ on edellisen oman värin bitin $i$ arvo, eli $0$ tai $1$. Mikäli solmulla ei ole jälkeläistä, se valitsee uudeksi värikseen edellisen värinsä viimeisen bitin, aivan kuin se poikkeaisi olemattoman jälkeläisensä väristä jo bitissä 0.
 
-Jotta algoritmi toimisi oikein, täytyy osoittaa, että se säilyttää laillisen värityksen jokaisella kierroksella. Jotta kaksi naapurisolmua $a$ ja $b$ voisivat valita saman värin, täytyy olla $2\cdot{}i_a + C(a)_{i_a} = 2\cdot{}i_b + C(b)_{i_b} \Leftrightarrow 2(i_a - i_b) = C(b)_{i_b} - C(a)_{i_a}$, jossa $i_a$ ja $i_b$ ovat indeksit, joissa solmujen $a$ ja $b$ värit poikkeavat jälkeläistensä väreistä. Koska yhtälön oikea puoli voi saada arvoja vain joukosta $\{-1,0,1\}$, täytyy olla $i = i_a = i_b$, eli $0 = C(b)_i - C(a)_i \Leftrightarrow C(a)_i = C(b)_i$. Näin ei kuitenkaan voi olla, sillä jos $a$ ja $b$ ovat toistensa naapureita, täytyy toisen olla toisen jälkeläinen. Tällöin $C(a)_i \neq C(b)_i$, eli $a$ ja $b$ valitsevat eri värit, ja algoritmi tuottaa jokaisella kierroksella laillisen värityksen.
+%Jotta algoritmi toimisi oikein, täytyy osoittaa, että se säilyttää laillisen värityksen jokaisella kierroksella. Jotta kaksi naapurisolmua $a$ ja $b$ voisivat valita saman värin, täytyy olla $2\cdot{}i_a + C(a)_{i_a} = 2\cdot{}i_b + C(b)_{i_b} \Leftrightarrow 2(i_a - i_b) = C(b)_{i_b} - C(a)_{i_a}$, jossa $i_a$ ja $i_b$ ovat indeksit, joissa solmujen $a$ ja $b$ värit poikkeavat jälkeläistensä väreistä. Koska yhtälön oikea puoli voi saada arvoja vain joukosta $\{-1,0,1\}$, täytyy olla $i = i_a = i_b$, eli $0 = C(b)_i - C(a)_i \Leftrightarrow C(a)_i = C(b)_i$. Näin ei kuitenkaan voi olla, sillä jos $a$ ja $b$ ovat toistensa naapureita, täytyy toisen olla toisen jälkeläinen. Tällöin $C(a)_i \neq C(b)_i$, eli $a$ ja $b$ valitsevat eri värit, ja algoritmi tuottaa jokaisella kierroksella laillisen värityksen.
 
-Colen-Vishkinin algoritmilla ei kuitenkaan voida aina päästä alle kuuden värin, ja algoritmin suorituksen voikin solmussa lopettaa, mikäli valittu väri on välillä $0-5$. Esimerkiksi jos solmun jälkeläisen väri on $1$, ja oma väri on $5$, valitaan uudeksi väriksi jälleen $5$.
+%Colen-Vishkinin algoritmilla ei kuitenkaan voida aina päästä alle kuuden värin, ja algoritmin suorituksen voikin solmussa lopettaa, mikäli valittu väri on välillä $0-5$. Esimerkiksi jos solmun jälkeläisen väri on $1$, ja oma väri on $5$, valitaan uudeksi väriksi jälleen $5$.
 
 \begin{figure}
     \begin{center}
-        \includegraphics[scale=0.2]{cv1.eps}
-        \includegraphics[scale=0.2]{cv2.eps}
-        \includegraphics[scale=0.2]{cv3.eps}
-        \includegraphics[scale=0.2]{cv4.eps}
-        \includegraphics[scale=0.2]{cv5.eps}
+        \includegraphics[scale=0.25]{cv2.eps}
+        \includegraphics[scale=0.25]{cv3.eps}
+        \hspace{20 mm}
+        \vspace{10 mm}
+        \includegraphics[scale=0.25]{cv4.eps}
+        \includegraphics[scale=0.25]{cv5.eps}
     \end{center}
     \caption{\label{fig:cvalgo} a) Suunnattu verkko. b) Suunnattu verkko, jossa jokaisella solmulla on väri. c) Algoritmin suoritus kaikissa solmuissa samanaikaisesti. Solmu, jonka väri on 100, vertaa omaa väriään jälkeläisensä väriin. d) Solmut, joilla on jälkeläinen, ovat vaihtaneet väriä. e) Solmu, jolla ei ole jälkeläistä, on vaihtanut väriä.}
     
