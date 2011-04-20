@@ -10,6 +10,7 @@
 \usepackage{amsthm}
 \usepackage{url}
 \usepackage{epstopdf}
+\usepackage{epsfig}
 \begin{document}
 \onehalfspacing
 
@@ -51,7 +52,9 @@ Usein suurissa verkoissa kommunikaatio solmujen v‰lill‰ on huomattavasti hitaamp
 
 Verkkojen ohjelmointi ajamalla samaa algoritmia jokaisessa verkon solmussa on mielenkiintoinen l‰hestymistapa myˆs siksi, ett‰ t‰llaista laskentamallia ei tunneta viel‰ kovin hyvin. On kuitenkin olemassa viitteit‰, ett‰ joihinkin tiettyihin ongelmiin hajautettu laskentamalli voisi soveltua paremmin kuin aiemmat olemassaolevat mallit. Esimerkiksi ihmisten aivosolut n‰ytt‰v‰t pystyv‰n tekem‰‰n p‰‰tˆksi‰ oman tilansa suhteen vain paikallisen tiedon perusteella \cite{pricenear}. Analogia paikallisiin algoritmeihin on huomattava, sill‰ neuronit voivat olla yhteydess‰ vain rajalliseen m‰‰r‰‰n l‰histˆll‰ sijaitsevia muita neuroneita. N‰iden neuroneiden t‰ytyy kesken‰isen kommunikointinsa perusteella p‰‰ty‰ yhteiseen lopputulokseen, joka vaikuttaa ihmisen toimintaan.
 
-Paikallisten algoritmien tutkimus on viel‰ nuorta, eik‰ tutkimuksessa ole jumiuduttu tietyille urille, vaan alalla on viel‰ useita avoimia tutkimusongelmia, jotka poikkeavat parhaimmillaan hyvin paljon toisistaan. T‰ss‰ tutkielmassa annetaan yleiskuva paikallisilla algoritmeilla ratkeavista ongelmista sek‰ hankalista ongelmista. Lis‰ksi pyrit‰‰n havainnollistamaan paikallisten algoritmien toimintaa esittelem‰ll‰ paikallisia algoritmeja yksinkertaisiin ongelmiin.
+Paikallisten algoritmien tutkimus on viel‰ nuorta, eik‰ tutkimuksessa ole jumiuduttu tietyille urille, vaan alalla on viel‰ useita avoimia tutkimusongelmia, jotka poikkeavat parhaimmillaan hyvin paljon toisistaan. T‰ss‰ tutkielmassa esitell‰‰n hajautettu laskentamalli, jossa ratkeavista ongelmista erityisesti keskityt‰‰n verkon v‰ritysongelmaan. Havainnollistamistarkoituksessa esitet‰‰n verkon v‰ritysongelmaan yksi ensimm‰isist‰ paikallisista algoritmeista. Lopuksi k‰yd‰‰n l‰pi verkon v‰rityksen sovellutusmahdollisuuksia, sek‰ analysoidaan hajautetun laskentamallin tulevaisuutta ja k‰yt‰nnˆn sovellutuksia.
+
+%T‰ss‰ tutkielmassa annetaan yleiskuva paikallisilla algoritmeilla ratkeavista ongelmista sek‰ hankalista ongelmista. Lis‰ksi pyrit‰‰n havainnollistamaan paikallisten algoritmien toimintaa esittelem‰ll‰ paikallisia algoritmeja yksinkertaisiin ongelmiin.
 
 
 %T‰ss‰ aineessa tutustutaan siihen, mink‰laisia ongelmia paikallisilla hajautetuilla algoritmeilla voidaan ratkaista.
@@ -79,7 +82,7 @@ Paikalliset algoritmit laskevat saadun tiedon perusteella, onko oma tila ratkais
     \caption{\label{fig:ajatusmaailma} Havainnollistus paikallisten algoritmien toiminnasta. Jokaisen kommunikaatiokierroksen v‰liss‰ algoritmi selvitt‰‰, onko se saanut tarpeeksi tietoa, jotta se voisi ratkaista oman paikallisen ongelmansa. Mik‰li tietoa ei ole viel‰ tarpeeksi, pyrit‰‰n seuraavalla kommunikaatiokierroksella ker‰‰m‰‰n lis‰‰ tietoa ongelmanratkaisua varten.}
 \end{figure}
 
-Mik‰li prosessorit voidaan erottaa toisistaan esimerkiksi tunnistenumeroilla, voidaan kaikki ongelmat ratkaista ajassa $O$(diam($G$)), jossa diam($G$) on verkon halkaisija. T‰ss‰ ajassa kaikille prosessoreille saadaan kommunikoitua koko verkon rakenne. Koska prosessorien k‰ytt‰m‰‰ laskenta-aikaa ei ole rajoitettu, voi jokainen prosessori k‰ytt‰‰ tarvittavan ajan ratkaisun lˆyt‰miseen, valita oman tilansa, ja lopettaa algoritmin suorituksen. T‰st‰ syyst‰ yleens‰ ollaan kiinnostuneita huomattavasti nopeammista algoritmeista, esimerkiksi polylogaritmisen tai vakioajan vaativista algoritmeista. Linial kutsuu ongelmaa \textit{paikallisesti laskettavaksi}, mik‰li ongelma voidaan ratkaista alle $O$(diam($G$))-ajassa \cite{Lin92}.
+Mik‰li prosessorit voidaan erottaa toisistaan esimerkiksi tunnistenumeroilla, voidaan kaikki ongelmat ratkaista yhdistetyiss‰ verkoissa ajassa $O$(diam($G$)), jossa diam($G$) on verkon halkaisija. T‰ss‰ ajassa kaikille prosessoreille saadaan kommunikoitua koko verkon rakenne. Koska prosessorien k‰ytt‰m‰‰ laskenta-aikaa ei ole rajoitettu, voi jokainen prosessori k‰ytt‰‰ tarvittavan ajan ratkaisun lˆyt‰miseen, valita oman tilansa, ja lopettaa algoritmin suorituksen. T‰st‰ syyst‰ yleens‰ ollaan kiinnostuneita huomattavasti nopeammista algoritmeista, esimerkiksi polylogaritmisen tai vakioajan vaativista algoritmeista. Linial kutsuu ongelmaa \textit{paikallisesti laskettavaksi}, mik‰li ongelma voidaan ratkaista alle $O$(diam($G$))-ajassa \cite{Lin92}.
 
 \subsection{Porttinumerointimalli}
 Suomela mainitsee kaksi mielenkiintoista tutkimuskohdetta hajautetussa laskentamallissa: mit‰ voidaan ratkaista alle $O$(diam($G$))-ajassa, mik‰li tunnistenumerot ovat k‰ytˆss‰, ja mit‰ voidaan ratkaista, jos tunnistenumeroita ei ole k‰ytˆss‰ \cite{lecture1}. Malleista, joissa prosessoreilla ei ole tunnistenumeroita, Suomela mainitsee porttinumerointimallin. Porttinumerointimallissa solmu, jonka asteluku on $d$, voi viitata sen naapureihin kokonaisluvuilla $1,2,\dots{},d$. N‰m‰ viitenumerot annetaan jokaiselle solmulle ennen algoritmin ajoa. Porttinumerointi on luonnollinen l‰hestymistapa siksi, ett‰ prosessorin t‰ytyy mallin m‰‰ritelm‰n mukaisesti voida kommunikoida muiden prosessoreiden kanssa. Koska olemme kiinnostuneita vain determinisistist‰ malleista, t‰ytyy naapuriprosessorit antaa prosessoreille tietyss‰ j‰rjestyksess‰.
@@ -98,10 +101,14 @@ Porttinumerointimalli ei ole kovin vahva malli, ja se pystyy ratkaisemaan vain t
 
 Kuvassa \ref{fig:symmetria} on kaksi verkko-ongelmaa, joissa molemmissa kaikki verkon solmut ovat kesken‰‰n symmetrisessa tilanteessa. T‰llˆin, kaikkien solmujen ajaessa samaa algoritmia, niiden pit‰isi p‰‰ty‰ samaan lopputulokseen. On selv‰‰, ett‰ esimerkiksi verkon v‰ritysongelmassa ei ole kuitenkaan suotavaa, ett‰ kaikki verkon solmut valitsevat itselleen saman v‰rin. Verkon v‰ritys ei siis ole ongelma, jonka voisi kaikissa tapauksissa ratkaista porttinumerointimallissa.
 
-Symmetrian voi rikkoa satunnaisuuden avulla, mutta on olemassa myˆs deterministinen vaihtoehto symmetrian rikkomiseen. Uniikkeja tunnistenumeroita k‰ytt‰m‰ll‰ ei voida p‰‰ty‰ symmetriseen tilanteeseen \cite{Lin92}. Tunnistenumeroiden k‰ytt‰minen on yksinkertainen malli, jossa voidaan ratkaista kaikki ratkaistavissa olevat ongelmat. T‰m‰n vuoksi suuri osa alan tutkimuksesta keskittyy juuri tunnistenumeromalliin.
+Symmetrian voi rikkoa satunnaisuuden avulla, mutta on olemassa myˆs deterministinen vaihtoehto symmetrian rikkomiseen. Uniikkeja tunnistenumeroita k‰ytt‰m‰ll‰ ei voida p‰‰ty‰ symmetriseen tilanteeseen \cite{Lin92}. Tunnistenumeroiden k‰ytt‰minen on yksinkertainen malli, jossa voidaan ratkaista kaikki ratkaistavissa olevat ongelmat. T‰m‰n vuoksi suuri osa alan tutkimuksesta keskittyy juuri tunnistenumeromalliin. Myˆs t‰ss‰ tutkielmassa keskityt‰‰n analysoimaan tunnistenumeromallissa toimivia algoritmeja.
 
 \subsection{Tunnistenumeromalli}
-Tunnistenumeromallissa jokaiselle prosessorille annetaan uniikki tunnistenumero, jonka avulla muuten symmetrisessa tilanteessa olevat prosessorit voidaan erottaa toisistaan. Kuten aiemmin mainittiin, nyt koko verkon koostumus voidaan siirt‰‰ jokaiselle verkon solmulle. Toisin sanoen, mik‰li k‰ytet‰‰n tarpeeksi aikaa, mik‰ tahansa ongelma, jolla on ratkaisu, voidaan ratkaista algoritmilla \ref{algo:universal}. T‰m‰n vuoksi on luontevaa keskitty‰ tutkimaan ongelmia, jotka ovat paikallisesti laskettavia. Myˆs approksimaatioalgoritmien lˆyt‰minen on kiinnostava tutkimuskohde, varsinkin jos ongelman tarkka ratkaisu ei ole paikallisesti laskettavissa.
+Tunnistenumeromallissa jokaiselle prosessorille annetaan uniikki tunnistenumero, jonka avulla muuten symmetrisessa tilanteessa olevat prosessorit voidaan erottaa toisistaan. Kuten aiemmin mainittiin, nyt koko verkon koostumus voidaan siirt‰‰ jokaiselle verkon solmulle, mik‰li verkko on yhten‰inen. Toisin sanoen, mik‰li k‰ytet‰‰n tarpeeksi aikaa, mik‰ tahansa ongelma, jolla on ratkaisu yhten‰isiss‰ verkoissa, voidaan ratkaista algoritmilla \ref{algo:universal}.
+
+Vaikka algoritmin \ref{algo:universal} olemassaolo ei viel‰ takaa, ett‰ ongelmia voitaisiin ratkaista ep‰yhten‰isiss‰ verkoissa, suuri osa kiinnostavista verkko-ongelmista ei vaadi verkon yhten‰isyytt‰. Esimerkiksi pienimm‰n viritt‰v‰n puun, verkon v‰ritt‰misen tai maksimaalisen itsen‰isen joukon etsiminen komponentettain on j‰rkev‰‰. 
+
+Algoritmi \ref{algo:universal} on hyvin hidas, ja vie pahimmillaan lineaarisen ajan verkon kokoon n‰hden. T‰m‰n vuoksi on luontevaa keskitty‰ tutkimaan ongelmia, jotka ovat paikallisesti laskettavia. Usein myˆs approksimaatioalgoritmien lˆyt‰minen on kiinnostava tutkimuskohde, varsinkin jos ongelman tarkka ratkaisu ei ole paikallisesti laskettavissa.
 
 \begin{algorithm}[H]
 \caption{Algoritmi kaikkien yhdistetyiss‰ verkoissa ratkeavien ongelmien ratkaisemiseen tunnistenumeromallissa}
@@ -115,6 +122,10 @@ Tunnistenumeromallissa jokaiselle prosessorille annetaan uniikki tunnistenumero,
 \end{algorithmic}
 \end{algorithm}
 
+%Nopealla silm‰yksell‰ algoritmi \ref{algo:universal} ei n‰yt‰ tarvitsevan tunnistenumeroita laisinkaan. Her‰‰ siis kysymys, miksi t‰llaista algoritmia ei voi toteuttaa porttinumerointimallissa.
+
+Algoritmin \ref{algo:universal} perimm‰inen tarkoitus on selvitt‰‰ koko verkon koostumus jokaisen verkon solmun tietoon, jotta ne voisivat ratkaista ongelman itsen‰isesti. Koska jokaisella solmulla on uniikki tunnistenumero, on algoritmin helppo karsia kaikki tieto, jonka se saa useamman kerran, sek‰ yhdist‰‰ sen saamat tiedot oikeaan osaan verkkoa. Porttinumerointimallissa verkon koostumuksen ker‰‰minen on kuitenkin ongelmallista. Esimerkiksi jos saamme samaa dataa uudelleen, emme voi olla varmoja p‰‰dyimmekˆ jo k‰ytyyn solmuun, vai onko jossain p‰in verkkoa useita samanlaisia ymp‰ristˆj‰ nykyisen ker‰tyn tiedon perusteella. Symmetriaongelmat todistavat, ett‰ verkon koostumusta ei porttinumerointimallissa voi selvitt‰‰.
+
 %Seuraavassa kappaleessa esitell‰‰n ongelmatyyppej‰, joiden l‰hestyminen on luontevaa tunnistenumeromallissa. Seuraavassa kappaleessa pyrit‰‰n havainnollistamaan paikallisten algoritmien k‰ytt‰ytymist‰ ongelmanratkaisussa, ja analysoidaan tehokasta algoritmia v‰ritysongelmaan.
 
 \section{Verkon kolmiv‰ritys}
@@ -124,16 +135,18 @@ Tyypillinen ongelma hajautetussa laskentamallissa on verkon solmuv‰ritys. Solmuv
 
 Solmuv‰rityksen soveltuvuudesta paikallisten algoritmien maailmaan kertoo myˆs se, ett‰ monet merkitt‰v‰t tulokset hajautetussa laskentamallissa liittyv‰t juuri solmuv‰ritt‰miseen. Solmuv‰ritt‰misess‰ onkin monia tutkimuskohteita, esimerkiksi rajoitettujen verkkojen kolmiv‰ritt‰minen tai verkon ominaisuuksista, kuten solmujen maksimiasteesta riippuvien nopeiden v‰ritysalgoritmien lˆyt‰minen.
 
+Solmuv‰rityksen hyˆdyllisyys riippuu yleens‰ k‰ytettyjen v‰rien m‰‰r‰st‰. V‰rien m‰‰r‰n minimointi on useimmiten hyˆdyllist‰, ja verkon v‰rityst‰ voidaan k‰ytt‰‰ muiden ongelmien ratkaisemiseen. Verkon rakenteesta riippuu, kuinka montaa v‰ri‰ t‰ytyy k‰ytt‰‰, jotta verkko saadaan v‰ritetty‰. Colen-Vishkinin algoritmi kykenee v‰hent‰m‰‰n v‰rej‰ sellaisista suunnatuista verkoista, joissa jokaisella solmulla on korkeintaan yksi j‰lkel‰inen (ks. kuva \ref{fig:suunnattu}). T‰llaisissa verkoissa voidaan aina v‰hent‰‰ v‰rien m‰‰r‰ kolmeen. Colen-Vishkinin algoritmilla voidaan tehokkaasti v‰hent‰‰ v‰rien m‰‰r‰ korkeintaan kuuteen. Kuudesta v‰rist‰ p‰‰st‰‰n kolmeen v‰riin yksinkertaisemmilla algoritmeilla, tyypillisisesti sellaisilla, jotka v‰hent‰v‰t verkosta v‰rej‰ lineearisesti kommunikaatiokierrosten m‰‰r‰‰ kohti.
+
 \begin{figure}
     \begin{center}
         \includegraphics[scale=0.25]{cv1.eps}
     \end{center}
     \caption{\label{fig:suunnattu} Suunnattu verkko, jonka jokaisella solmulla on korkeintaan yksi j‰lkel‰inen. Verkon nuolet kuvaavat j‰lkel‰issuhteita siten, ett‰ nuolen p‰‰ss‰ oleva solmu on l‰htˆpisteess‰ olevan solmun j‰lkel‰inen. J‰lkel‰issolmu voi kommunikaatiokierroksen aikana siirt‰‰ tietoa is‰nt‰solmulleen. Solmut ovat kesken‰‰n naapureita, mik‰li toinen solmuista on toisen j‰lkel‰inen.}
-    
 \end{figure}
-Yksi ensimm‰isist‰ tuloksista hajautetussa laskentamallissa on Colen-Vishkinin v‰rien v‰hennysalgoritmi. Alun perin Colen-Vishkinin algoritmi oli tarkoitettu v‰rien v‰hent‰miseen linkitetyiss‰ listoissa hajautetusti \cite{colevishkin}. Algoritmi toimii kuitenkin myˆs paikallisena algoritmina. Algoritmi kuitenkin toimii vain suunnatussa verkossa, jossa jokaisella solmulla on korkeintaan yksi j‰lkel‰inen, ks. kuva \ref{fig:suunnattu}. Aiemmasta m‰‰ritelm‰st‰ poiketen prosessori $a$ voi siis keskustella prosessorin $b$ kanssa vain, jos on olemassa $e \in E$ siten, ett‰ $e = (a,b)$, jossa $(a,b)$ on suunnattu pari. Kuitenkin solmut $a$†ja $b$†ovat \textit{naapureita}, mik‰li on olemassa $(a,b) \in E$ tai $(b,a) \in E$.
 
-Solmuv‰rityksen hyˆdyllisyys riippuu yleens‰ k‰ytettyjen v‰rien m‰‰r‰st‰. V‰rien m‰‰r‰n minimointi on useimmiten hyˆdyllist‰, ja verkon v‰rityst‰ voidaan k‰ytt‰‰ muiden ongelmien ratkaisemiseen. Verkon rakenteesta riippuu, kuinka montaa v‰ri‰ t‰ytyy k‰ytt‰‰, jotta verkko saadaan v‰ritetty‰.
+\subsection{Colen-Vishkinin algoritmi}
+
+Yksi ensimm‰isist‰ tuloksista hajautetussa laskentamallissa on Colen-Vishkinin v‰rien v‰hennysalgoritmi. Alun perin Colen-Vishkinin algoritmi oli tarkoitettu v‰rien v‰hent‰miseen linkitetyiss‰ listoissa hajautetusti \cite{colevishkin}. Algoritmi toimii kuitenkin myˆs paikallisena algoritmina. Algoritmi toimii suunnatuissa verkoissa, joissa jokaisella solmulla on korkeintaan yksi j‰lkel‰inen, ks. kuva \ref{fig:suunnattu}. Prosessori $a$ voi siis keskustella prosessorin $b$ kanssa vain, jos on olemassa $e \in E$ siten, ett‰ $e = (a,b)$, jossa $(a,b)$ on suunnattu pari. Kuitenkin solmut $a$†ja $b$†ovat \textit{naapureita}, mik‰li on olemassa $(a,b) \in E$ tai $(b,a) \in E$. Colen-Vishkinin algoritmi vaatii myˆs, ett‰ solmujen v‰rit esitet‰‰n kokonaislukuina.
 
 %K‰ytett‰vill‰ v‰reill‰ on j‰rjestys
 
@@ -141,7 +154,7 @@ Colen-Vishkinin algoritmilla valmista verkon v‰rityst‰ voidaan askel askeleelta 
 
 Mik‰li ongelmaverkko on suuri, emme halua k‰ytt‰‰ algoritmeja, jotka v‰hent‰v‰t verkon v‰rej‰ lineaarisesti kommunikaatiokierrosten m‰‰r‰n suhteen, ellei verkon v‰rien m‰‰r‰ ole alussa hyvin v‰h‰inen. Tunnistenumeromallissa ainoa v‰ritys, mit‰ voimme alkutilanteessa k‰ytt‰‰, on juuri tunnistenumeroiden muodostama v‰ritys. Alussa siis v‰rien m‰‰r‰ on sama kuin verkon solmujen m‰‰r‰, joten on selv‰‰, ett‰ lineaarinen algoritmi olisi hyvin hidas, ja mik‰li se olisi optimaalinen, olisi se aikavaativuudeltaan samaa luokkaa kuin algoritmi \ref{algo:universal}.
 
-Lineaariseen aikavaativuuteen ei kuitenkaan tarvitse tyyty‰. Colen-Vishkinin algoritmi toimii siten, ett‰ jokaisella kierroksella verkon suurin v‰ri pienenee logaritmisesti. Vaikka Colen-Vishkinin algoritmissa kaikkien solmujen v‰ri ei v‰ltt‰m‰tt‰ pienene, niin verkon suurin v‰ri $x$ pienenee varmasti, jos $x > 5$. M‰‰ritelm‰n \ref{def:nc} mukaisesti solmu, jonka v‰ri $x$ on verkon suurin, voi valita uudeksi v‰rikseen korkeintaan arvon $2b+1$, jossa $b = \lfloor{\log_2 x}\rfloor + 1$, eli $x$:n bittien m‰‰r‰ bin‰‰riesityksess‰.
+Lineaariseen aikavaativuuteen ei kuitenkaan tarvitse tyyty‰. Colen-Vishkinin algoritmi toimii siten, ett‰ jokaisella kierroksella verkon suurin v‰ri pienenee logaritmisesti. Vaikka Colen-Vishkinin algoritmissa verkossa olevien v‰rien m‰‰r‰ voi kierroksen aikana jopa kasvaa, niin verkon suurin v‰ri $x$ pienenee varmasti, jos $x > 5$. M‰‰ritelm‰n \ref{def:ncolor} mukaisesti solmu, jonka v‰ri on $y$ on, voi valita uudeksi v‰rikseen korkeintaan arvon $2\cdot{}b(y)+1$, jossa $b(a) = \lfloor{\log_2 a}\rfloor + 1$, eli $b(y)$ on $y$:n bittien m‰‰r‰ bin‰‰riesityksess‰. N‰in yl‰raja verkon suurimmaksi v‰riksi kierroksen j‰lkeen on $2\cdot{}b(x)+1$.
 
 %sill‰ Colen-Vishkinin algoritmi kuitenkin v‰hent‰‰ v‰rien m‰‰r‰‰ kierroksen $i$†v‰rien m‰‰r‰‰ $c_i$ logaritmisesti, eli $\log(c_i) = c_{i+1}$. Kierroksella $i+2$ v‰rien m‰‰r‰ on vastaavasti luokkaa $\log(\log(c_i))$, eli algoritmi vaatii iteroidun logaritmin verran kommunikaatiokierroksia kuuden v‰rin saavuttamiseen. T‰ten algoritmin aikavaativuus on $O(\log^* k)$, jossa $k$ on v‰rien m‰‰r‰ alussa.
 
@@ -150,7 +163,9 @@ Lineaariseen aikavaativuuteen ei kuitenkaan tarvitse tyyty‰. Colen-Vishkinin alg
 \label{algo:CV}
 \begin{algorithmic}
 %\WHILE{$c(v) > 5$}
-\WHILE{Algoritmia ei ole ajettu tarpeeksi kauan}
+\STATE $k \gets $ tarvittavien askelten m‰‰r‰
+\STATE $v \gets $ solmu, jossa algoritmia ajetaan
+\FOR{$i = 1\dots{}k$}
     \IF{$v$:ll‰ on j‰lkel‰inen $u$}
         \STATE Odota, ett‰ j‰lkel‰inen $u$ kertoo v‰rins‰ $C(u)$. 
         \STATE Vertaa omaa v‰ri‰ $C(v)$†j‰lkel‰isen v‰riin $C(u)$.
@@ -159,7 +174,7 @@ Lineaariseen aikavaativuuteen ei kuitenkaan tarvitse tyyty‰. Colen-Vishkinin alg
     \ELSE
         \STATE Aseta uudeksi v‰riksi $C(v)_0$.
     \ENDIF
-\ENDWHILE
+\ENDFOR
 \end{algorithmic}
 \end{algorithm}
 
@@ -167,8 +182,8 @@ Lineaariseen aikavaativuuteen ei kuitenkaan tarvitse tyyty‰. Colen-Vishkinin alg
 
 \newtheorem{definition}[theocounter]{M‰‰ritelm‰}
 \begin{definition}
-Solmu $x$, jonka j‰lkel‰inen on solmu $y$, valitsee uudeksi v‰rikseen $nc(x,y)$:n. Funktion $nc$ arvo m‰‰r‰ytyy vertaamalla solmujen $x$ ja $y$ v‰rien bin‰‰rimuotoja $x_{n}\cdot{}2^n+x_{n-1}\cdot{}2^{n-1}+\dots{}+x_0\cdot{}2^0$ ja $y_{n}\cdot{}2^n+y_{n-1}\cdot{}2^{n-1}+\dots{}+y_0\cdot{}2^0$, $x_i, y_i \in \{0,1\}$. T‰llˆin $nc(x,y) = fi(x,y)\cdot{}2+x_{fi(x,y)}$, jossa $fi(x,y) = i$ siten, ett‰ $x_i \ne y_i$ ja $i$†on mahdollisimman pieni. Mik‰li solmulla $x$ ei ole j‰lkel‰ist‰, oletetaan j‰lkel‰iseksi solmu $p$ siten, ett‰ $fi(x,p) = 0$. T‰llˆin solmu $x$ valitsee sen uudeksi v‰rikseen $x_0$:n.
-\label{def:nc}
+Solmu $x$, jonka j‰lkel‰inen on solmu $y$, valitsee uudeksi v‰rikseen $n(x,y)$:n. Funktion $n$ arvo m‰‰r‰ytyy vertaamalla solmujen $x$ ja $y$ v‰rien bin‰‰rimuotoja $x_{n}\cdot{}2^n+x_{n-1}\cdot{}2^{n-1}+\dots{}+x_0\cdot{}2^0$ ja $y_{n}\cdot{}2^n+y_{n-1}\cdot{}2^{n-1}+\dots{}+y_0\cdot{}2^0$, $x_i, y_i \in \{0,1\}$. T‰llˆin $n(x,y) = f(x,y)\cdot{}2+x_{f(x,y)}$, jossa $f(x,y) = i$ siten, ett‰ $x_i \ne y_i$ ja $i$†on mahdollisimman pieni. Mik‰li solmulla $x$ ei ole j‰lkel‰ist‰, oletetaan j‰lkel‰iseksi solmu $p$ siten, ett‰ $f(x,p) = 0$. T‰llˆin solmu $x$ valitsee sen uudeksi v‰rikseen $x_0$:n.
+\label{def:ncolor}
 \end{definition}
 
 \newtheorem{claim}[theocounter]{V‰ite}
@@ -180,10 +195,30 @@ Jos verkko on laillisesti v‰ritetty ja yksik‰‰n solmu ei ole lopettanut algoritm
 %\newtheorem{proof}{Todistus}
 
 \begin{proof}
-Oletetaan, ett‰ solmut $a$ ja $b$ valitsevat v‰rikseen saman v‰rin algoritmin askeleen lopuksi. Yleisyytt‰ menett‰m‰tt‰ voidaan sopia, ett‰ solmu $b$ on $a$:n j‰lkel‰inen. Oletetaan, ett‰ $b$:ll‰ on j‰lkel‰inen $c$, $fi(a,b) = i$, ja $fi(b,c) = j$. Jotta solmut $a$ ja $b$†valitsisivat saman v‰rin, t‰ytyy p‰te‰ $nc(a,b) = nc(b,c) \Leftrightarrow fi(a,b)\cdot{}2+a_{fi(a,b)} = fi(b,c)\cdot{}2+b_{fi(b,c)}$. Edelleen seuraa $2\cdot{}(fi(a,b)-fi(b,c)) = b_{fi(b,c)}-a_{fi(a,b)}$. Nyt $b_{fi(b,c)}-a_{fi(a,b)}$ voi saada arvoja joukosta $\{-1,0,1\}$. Koska $2\cdot{}(fi(a,b)-fi(b,c))$ on aina parillinen, on oltava $a_{fi(a,b)} = b_{fi(b,c)}$, ja $fi(a,b) = fi(b,c)$, eli $a_{fi(a,b)} = b_{fi(a,b)}$. M‰‰ritelm‰n mukaan kuitenkin $a_{fi(a,b)} \ne b_{fi(a,b)}$, eli kyseess‰ on ristiriita, ja alkuper‰inen v‰ite on tosi.
+Oletetaan, ett‰ solmut $a$ ja $b$ valitsevat v‰rikseen saman v‰rin algoritmin askeleen lopuksi. Yleisyytt‰ menett‰m‰tt‰ voidaan sopia, ett‰ solmu $b$ on $a$:n j‰lkel‰inen. Oletetaan, ett‰ $b$:ll‰ on j‰lkel‰inen $c$, $f(a,b) = i$, ja $f(b,c) = j$. Jotta solmut $a$ ja $b$†valitsisivat saman v‰rin, t‰ytyy p‰te‰ $n(a,b) = n(b,c) \Leftrightarrow f(a,b)\cdot{}2+a_{f(a,b)} = f(b,c)\cdot{}2+b_{f(b,c)}$. Edelleen seuraa $2\cdot{}(f(a,b)-f(b,c)) = b_{f(b,c)}-a_{f(a,b)}$. Nyt $b_{f(b,c)}-a_{f(a,b)}$ voi saada arvoja joukosta $\{-1,0,1\}$. Koska $2\cdot{}(f(a,b)-f(b,c))$ on aina parillinen, on oltava $a_{f(a,b)} = b_{f(b,c)}$, ja $f(a,b) = f(b,c)$, eli $a_{f(a,b)} = b_{f(a,b)}$. M‰‰ritelm‰n mukaan kuitenkin $a_{f(a,b)} \ne b_{f(a,b)}$, eli kyseess‰ on ristiriita, ja alkuper‰inen v‰ite on tosi.
 \end{proof}
 
 Jokaisella kierroksella Colen-Vishkinin algoritmissa jokainen solmu, jolla on j‰lkel‰inen, kysyy j‰lkel‰isens‰ v‰ri‰. T‰m‰n j‰lkeen solmu vertaa omaa v‰ri‰‰n j‰lkel‰isens‰ v‰riin bin‰‰rimuodossa, ja etsii sen bitin indeksin, joka kahdessa v‰riss‰ poikkeaa ensimm‰isen‰ oikealta laskettuna. T‰llainen bitti lˆytyy, sill‰ naapurisolmujen v‰rit poikkeavat varmasti toisistaan laillisessa v‰rityksess‰. Kun bitin indeksi $i$ lˆytyy, indeksoinnin alkaessa nollasta, valitsee solmu uudeksi v‰rikseen $2\cdot{}i + c_i$:n, jossa $c_i$ on edellisen oman v‰rin bitin $i$ arvo, eli $0$ tai $1$. Mik‰li solmulla ei ole j‰lkel‰ist‰, se valitsee uudeksi v‰rikseen edellisen v‰rins‰ viimeisen bitin, aivan kuin se poikkeaisi olemattoman j‰lkel‰isens‰ v‰rist‰ jo bitiss‰ 0.
+
+Colen-Vishkinin algoritmi jatkaa suoritustaan, kunnes se voi j‰‰d‰ jumiin. Jos verkon suurin v‰ri on korkeintaan 5, on mahdollista, ett‰ algoritmi ei en‰‰ kykene pienent‰m‰‰n verkon suurinta v‰ri‰. Kuva \ref{fig:stuck} esitt‰‰ hyvin yksinkertaista verkkoa, jossa Colen-Vishkinin algoritmi ei pysty etenem‰‰n. 
+
+Mik‰li jokainen solmu tiet‰‰ verkon suurimman v‰rin arvon algoritmin alussa, voidaan algoritmin alussa laskea tarvittavien ajokierrosten m‰‰r‰. N‰iden ajokierrosten j‰lkeen voidaan olla varmoja, ett‰ verkossa on korkeintaan kuusi v‰ri‰. 
+
+On kuitenkin mahdollista, ett‰ prosessorit eiv‰t tied‰ alussa verkon suurinta arvoa. T‰llˆin Colen-Vishkinin algoritmi t‰ytyy toteuttaa monimutkaisemmin, jotta voidaan tiet‰‰, koska algoritmin suoritus voidaan huoletta lopettaa. Synkronoinnista t‰ytyy pit‰‰ huolta, sill‰ jos jokin solmu lopettaa algoritmin ajamisen aikaisemmin, ei ole takeita v‰rityksen laillisuuden s‰ilyvyydest‰.
+
+Huomionarvoista on myˆs, ett‰ kaikissa reaalimaailman tilanteissa kierrosten m‰‰r‰ voidaan asettaa esimerkiksi kymmeneen. Colen-Vishkinin algoritmi pienent‰‰ v‰rien m‰‰r‰‰ niin nopeasti, ett‰ verkon t‰ytyisi olla hyvin suuri, jotta kymmenen askelta ei riitt‰isi kuuden v‰rin saavuttamiseen.
+
+
+\begin{figure}
+  \begin{center}
+    \begin{minipage}[c]{0.1\linewidth}
+      \epsfig{file=stuck.eps, width=\linewidth}
+    \end{minipage}\hfill
+    \begin{minipage}[c]{0.80\linewidth}
+      \caption{\label{fig:stuck} Esimerkki verkosta, jonka v‰rityst‰ Colen-Vishkinin algoritmi ei voi en‰‰ muuttaa. Colen-Vishkinin algoritmi vertailisi v‰rien $5 = \underline{1}01_2$ ja $1 = \underline{0}01_2$ bin‰‰rimuotoja. T‰llˆin algoritmi valitsisi v‰ri‰ $5$ kantavan solmun uudeksi v‰riksi $2\cdot{}2+1$ ja juurisolmun uudeksi v‰riksi v‰rin $1$, joten verkko pysyisi t‰ysin samanlaisena.}
+    \end{minipage}
+  \end{center}
+\end{figure}
 
 %Jotta algoritmi toimisi oikein, t‰ytyy osoittaa, ett‰ se s‰ilytt‰‰ laillisen v‰rityksen jokaisella kierroksella. Jotta kaksi naapurisolmua $a$ ja $b$†voisivat valita saman v‰rin, t‰ytyy olla $2\cdot{}i_a + C(a)_{i_a} = 2\cdot{}i_b + C(b)_{i_b} \Leftrightarrow 2(i_a - i_b) = C(b)_{i_b} - C(a)_{i_a}$, jossa $i_a$ ja $i_b$ ovat indeksit, joissa solmujen $a$ ja $b$ v‰rit poikkeavat j‰lkel‰istens‰ v‰reist‰. Koska yht‰lˆn oikea puoli voi saada arvoja vain joukosta $\{-1,0,1\}$, t‰ytyy olla $i = i_a = i_b$, eli $0 = C(b)_i - C(a)_i \Leftrightarrow C(a)_i = C(b)_i$. N‰in ei kuitenkaan voi olla, sill‰ jos $a$ ja $b$ ovat toistensa naapureita, t‰ytyy toisen olla toisen j‰lkel‰inen. T‰llˆin $C(a)_i \neq C(b)_i$, eli $a$ ja $b$ valitsevat eri v‰rit, ja algoritmi tuottaa jokaisella kierroksella laillisen v‰rityksen.
 
@@ -192,15 +227,70 @@ Jokaisella kierroksella Colen-Vishkinin algoritmissa jokainen solmu, jolla on j‰
 \begin{figure}
     \begin{center}
         \includegraphics[scale=0.25]{cv2.eps}
-        \includegraphics[scale=0.25]{cv3.eps}
-        \hspace{20 mm}
+        \hspace{10 mm}
         \vspace{10 mm}
+        \includegraphics[scale=0.25]{cv3.eps}
+        \hspace{10 mm}
         \includegraphics[scale=0.25]{cv4.eps}
+        \hspace{10 mm}
         \includegraphics[scale=0.25]{cv5.eps}
     \end{center}
-    \caption{\label{fig:cvalgo} a) Suunnattu verkko. b) Suunnattu verkko, jossa jokaisella solmulla on v‰ri. c) Algoritmin suoritus kaikissa solmuissa samanaikaisesti. Solmu, jonka v‰ri on 100, vertaa omaa v‰ri‰‰n j‰lkel‰isens‰ v‰riin. d) Solmut, joilla on j‰lkel‰inen, ovat vaihtaneet v‰ri‰. e) Solmu, jolla ei ole j‰lkel‰ist‰, on vaihtanut v‰ri‰.}
+    \caption{\label{fig:cvalgo} Kuvasarja havainnollistamaan Colen-Vishkinin algoritmin yht‰ kierrosta. a) Suunnattu verkko, jossa jokaisella solmulla on v‰ri. b) Algoritmin suoritus kaikissa solmuissa samanaikaisesti. Solmu, jonka v‰ri on 100, vertaa omaa v‰ri‰‰n j‰lkel‰isens‰ v‰riin bin‰‰rimuodossa. V‰rit $100 = 110\underline{0}100_2$ ja $156 = 1001\underline{1}100_2$ poikkeavat toisistaan kolmannessa bitiss‰ oikealta laskettuna, joten solmu, jonka v‰ri on $100$, valitsee uudeksi v‰rikseen $3\cdot{}2+0 = 6$.  c) Kaikki solmut, joilla on j‰lkel‰inen ovat vaihtaneet v‰ri‰ b-kohdassa esitetyn menetelm‰n mukaisesti. d) Solmu, jolla ei ole j‰lkel‰ist‰, teeskentelee poikkeavansa olemattoman j‰lkel‰isens‰ kanssa jo nollannessa bitiss‰, jolloin se valitsee uudeksi v‰rikseen v‰rins‰ viimeisen bitin, nollan.}
     
 \end{figure}
+
+\subsection{Yksinkertainen v‰rinv‰hennysalgoritmi}
+Colen-Vishkinin algoritmilla v‰rien m‰‰r‰ pystyttiin pienent‰m‰‰n hyvin tehokkaasti hyvin pieniin v‰rim‰‰riin asti. Colen-Vishkinin algoritmi ei kuitenkaan takaa, ett‰ alle kuuden v‰rin p‰‰st‰isiin. Koska kolmiv‰ritys on kuitenkin mahdollista lˆyt‰‰, on mielenkiintoinen jatkokysymys, ett‰ voidaanko Colen-Vishkinin algoritmin j‰lkeen lˆyt‰‰ kolmiv‰ritys k‰ytt‰m‰ll‰ jotain muuta algoritmia?
+
+V‰rien m‰‰r‰‰ voidaan v‰hent‰‰ aina kolmeen asti algoritmilla, joka v‰hent‰‰ yhden v‰rin jokaista kommunikaatiokierrosta kohti. Koska Colen-Vishkinin algoritmin ajamisen j‰lkeen v‰rej‰ on maksimissaan kuusi, ei lineaarinen aikavaatimus haittaa, sill‰ kommunikaatiokierroksia tulee maksimissaan kolme lis‰‰, eli algoritmin aikavaativuus kasvaa vain vakiolla.
+
+\begin{figure}
+    \begin{center}
+        \includegraphics[scale=0.16]{naive1.eps}
+        \hspace{7mm}
+        \includegraphics[scale=0.16]{naive2.eps}
+        \hspace{7mm}
+        \includegraphics[scale=0.16]{naive3.eps}
+    \end{center}
+    \caption{\label{fig:shift} Jokainen solmu valitsee uudeksi v‰rikseen j‰lkel‰isens‰ vanhan v‰rin. Mik‰li solmulla ei ole j‰lkel‰ist‰, valitsee se v‰rin joukosta \{0,1,2\} niin, ett‰ sen v‰ri vaihtuu. Lopuksi eliminoidaan kaikki v‰ri‰ $5$ olevat solmut siten, ett‰ ne valitsevat joukosta $\{0,1,2\}$ v‰rin, jota niiden naapureilla ei ole. }
+    
+\end{figure}
+Lineaarisessa v‰rienv‰hennysalgoritmissa jokaisella kierroksella p‰‰tet‰‰n poistettava v‰ri $k$. V‰ri†$k$ poistetaan verkosta siten, ett‰ ensiksi suoritetaan v‰rien siirto-operaatio. V‰rien siirto-operaatiossa jokainen v‰ri valitsee uudeksi v‰rikseen j‰lkel‰isens‰ nykyisen v‰rin, ks. kuva \ref{fig:shift}. Mik‰li j‰lkel‰ist‰ ei ole, valitaan edellisest‰ poikkeava v‰ri joukosta $\{0,1,2\}$. V‰itteen \ref{claim:shift} mukaisesti siirto-operaatio s‰ilytt‰‰ laillisen v‰rityksen.
+
+\begin{claim}
+V‰rien siirto-operaatio s‰ilytt‰‰ laillisen v‰rityksen.
+\label{claim:shift}
+\end{claim}
+
+\begin{proof}
+Osoitetaan, ett‰ kaikki solmut valitsevat siirto-operaatiossa eri v‰rit naapurisolmujensa kanssa. Jaetaan todistus kahteen osaan, juurisolmuun, ja muihin solmuihin.
+
+Juurisolmun kaikki naapurit ovat sen is‰nt‰solmuja. Siirto-operaatiossa juurisolmun is‰nt‰solmut valitsevat uudeksi v‰rikseen juurisolmun vanhan v‰rin, ja juurisolmu valitsee itselleen uuden v‰rin. Juurisolmun mik‰‰n naapuri ei siis valitse sen kanssa samaa v‰ri‰.
+
+Siis kaikki juurisolmun is‰nn‰t valitsevat eri v‰rin j‰lkel‰isens‰ kanssa. Ne myˆs antavat vanhan v‰rins‰ kaikille is‰nnilleen, ja ottavat j‰lkel‰isens‰ vanhan v‰rin. Juurisolmun is‰nn‰t valitsevat siis eri v‰rin myˆs kaikkien omien is‰ntiens‰ kanssa, sill‰ juurisolmun is‰nn‰n uusi v‰ri, ja juurisolmun is‰nn‰n is‰nn‰n uusi v‰ri olivat vierekk‰in jo edellisess‰ verkossa, jonka v‰ritys oli laillinen. Sama p‰‰ttelyketju toistuu kaikissa muissakin verkon solmuissa. Verkon v‰ritys on siis edelleen laillinen.
+\end{proof}
+
+Kun jokainen solmu on valinnut itselleen v‰rin, jokainen solmu, jonka v‰ri on $k$, valitsee itselleen uuden v‰rin joukosta $\{0,1,2\}$, s‰ilytt‰en samalla laillisen v‰rityksen. Kaikki solmut, joiden v‰ri on $k$, voivat valita itselleen uuden v‰rin joukosta $\{0,1,2\}$ niin, ett‰ v‰ritys pysyy laillisena. Ensinn‰kin jokaisella solmulla on korkeintaan kahdenlaisia naapureita, is‰nti‰ ja j‰lkel‰isi‰. Solmulla voi olla vain yksi j‰lkel‰inen, ja kaikilla solmun is‰nt‰solmuilla on sama v‰ri, joten solmun naapurisolmuilla on yhteens‰ maksimissaan kahta eri v‰ri‰. T‰llˆin joukosta $\{0,1,2\}$ lˆytyy varmasti v‰ri, jota naapurisolmuilla ei ole, joten v‰ri $k$†saadaan eliminoitua verkosta.
+
+Ajettuamme Colen-Vishkinin algoritmin alkuper‰isess‰ v‰ritetyss‰ verkossa, tied‰mme, ett‰ verkon suurin v‰ri on korkeintaan $5$. Voimme siis poistaa algoritmilla \ref{algo:naive} verkosta ensin v‰rin $5$, jonka j‰lkeen v‰rit $4$ ja $3$ voidaan poistaa samalla prosessilla.
+
+\begin{algorithm}[H]
+\caption{Algoritmi v‰rien v‰hent‰miseen kuudesta kolmeen suunnatuissa verkoissa, joissa solmuilla on korkeintaan yksi j‰lkel‰inen}
+\label{algo:naive}
+\begin{algorithmic}
+\FOR{$i = 5,4,3$}
+    \IF{solmulla on j‰lkel‰inen $u$}
+        \STATE Valitse uudeksi v‰riksi solmun $u$ v‰ri.
+        \IF{solmun nykyinen v‰ri on $i$}
+            \STATE Valitse uudeksi v‰riksi v‰ri joukosta $\{0,1,2\}$, joka poikkeaa solmun vanhasta v‰rist‰, sek‰ v‰rist‰, jonka solmu $u$ valitsi uudeksi v‰rikseen.
+        \ENDIF
+    \ELSE
+        \STATE Valitse uusi, entisest‰ poikkeava, v‰ri joukosta $\{0,1,2\}$.
+    \ENDIF
+\ENDFOR
+
+\end{algorithmic}
+\end{algorithm}
 
 %\begin{figure}
 %    \begin{center}
@@ -209,6 +299,9 @@ Jokaisella kierroksella Colen-Vishkinin algoritmissa jokainen solmu, jolla on j‰
 %    \caption{Colen-Vishkinin algoritmin yhden askeleen havainnollistamista. Kuvassa solmu $f$†pyrkii ratkaisemaan seuraavan v‰rins‰, ja kysyy ainoan j‰lkel‰isens‰ $c$:n v‰ri‰. V‰rit $C(c)$ ja $C(f)$ poikkeavat indeksiss‰ $i = 3$ oikealta laskettuna. Algoritmin \ref{algo:CV} mukaisesti solmu $f$†valitsee uudeksi v‰rikseen $C'(f) = 2\cdot{}i+C(v)_i$. Muut solmut toimivat samoin, paitsi jos niill‰ ei ole j‰lkel‰ist‰. T‰llˆin solmu valitsee oman v‰rins‰ viimeisen bitin, eli solmun $d$ tapauksessa uudeksi v‰riksi tulee 1.}
 %    \label{fig:cvstep}
 %\end{figure}
+
+\section{V‰rityksen sovellutuksia}
+TODO: kirjoita maksimaalisesta itsen‰isest‰ joukosta ja maksimiparituksesta.
 
 \section{Tutkimuskohteita ja p‰‰telmi‰}
 T‰ss‰ tutkielmassa kuvattu osuus hajautettujen paikallisten hajautettujen verkkoalgoritmien tutkimuksesta on suppea. Vaikka t‰ss‰ tutkielmassa on esitelty paikallisia hajautettuja verkkoalgoritmeja teoreettisesta n‰kˆkulmasta, ei tutkimusalalla ole varsinaista konsensusta algoritmitutkimuksen teoreettisuusasteesta.
