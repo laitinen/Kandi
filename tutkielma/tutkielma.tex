@@ -14,6 +14,8 @@
 \begin{document}
 \onehalfspacing
 
+\floatname{algorithm}{Algoritmi}
+
 \title{Paikalliset hajautetut verkkoalgoritmit}
 \author{Mika Laitinen}
 \date{\today}
@@ -44,13 +46,13 @@ Paikalliset algoritmit ovat algoritmeja, joissa jokaisella verkon alueella on kä
 %PHV:t ovat siis algoritmeja, joissa prosessorien muodostama verkko on ongelmanratkaisijan lisäksi myös itse ongelma. Vaikka PHV:t kykenevät 
 %Prosessorien muodostama verkko luo ympäristön, jossa prosessorien väliset rajoitetut kommunikointimahdollisuudet 
 
-Paikalliset algoritmit poikkeavat ohjelmoinnille tyypillisestä ajatusmaailmasta --- sen sijaan, että ohjelmoitaisiin yksittäisiä prosessoreita, ohjelmoidaan verkkoja. Verkoissa tehokkaasti ratkeavat ongelmat poikkeavat usein merkittävästi yksittäisillä prosessoreilla tehokkaasti ratkeavista ongelmista. Esimerkiksi pienimmän virittävän puun löytäminen on paikallisille algoritmeille mahdotonta, mikäli sen alussa saama tieto on rajallista. Sen sijaan paikalliset algoritmit voivat kyetä ratkaisemaan hyvin tehokkaasti sellaisia ongelmia, joissa paikallisen ratkaisun oikeellisuuden osoittaminen ei ole hankalaa. Esimerkiksi solmuvärityksen oikeellisuuden osoittaminen on paikallisesti helppoa, sillä on yksinkertaista tarkistaa, että kaikkien naapurisolmujen väri poikkeaa omasta väristä \cite{loccomp}.
+Paikalliset algoritmit poikkeavat ohjelmoinnille tyypillisestä ajatusmaailmasta --- sen sijaan, että ohjelmoitaisiin yksittäisiä prosessoreita, ohjelmoidaan verkkoja. Verkoissa tehokkaasti ratkeavat ongelmat poikkeavat usein merkittävästi yksittäisillä prosessoreilla tehokkaasti ratkeavista ongelmista. Esimerkiksi pienimmän virittävän puun löytäminen on paikallisille algoritmeille mahdotonta, mikäli sen alussa saama tieto on rajallista. Sen sijaan paikalliset algoritmit voivat kyetä ratkaisemaan hyvin tehokkaasti sellaisia ongelmia, joissa paikallisen ratkaisun oikeellisuuden osoittaminen ei ole hankalaa. Tällainen ongelma on esimerkiksi solmuväritys, jossa ratkaisun oikeellisuuden osoittaminen on paikallisesti helppoa, sillä on yksinkertaista tarkistaa, että kaikkien naapurisolmujen väri poikkeaa omasta väristä \cite{loccomp}.
 
 Paikallisilla algoritmeilla pyritään tyypillisesti ratkaisemaan ongelmia hyvin suurissa verkoissa, sillä paikallisten algoritmien aikavaatimukset kasvavat usein hyvin hitaasti verkon koon funktiona, ja toisinaan ongelmat voidaan ratkaista jopa vakioajassa \cite{survey}. Mikäli nopeaa tarkan vastauksen antavaa paikallista algoritmia ei ole mahdollista kehittää, on usein kuitenkin mahdollista kehittää nopea paikallinen algoritmi approksimoimaan oikeaa tulosta. Varsinkin hyvin suurten verkkojen tapauksessa hyvä approksimaatio on usein lähes yhtä arvokas kuin optimaalinen ratkaisu.
 
-Usein suurissa verkoissa kommunikaatio solmujen välillä on huomattavasti hitaampaa kuin operaatiot itse solmujen sisällä. Esimerkiksi suurissa sensoriverkoissa yhteyden muodostaminen ja tiedon siirtäminen kahden sensorin välillä on hidas operaatio. Tästä syystä paikallisten algoritmien aikavaativuusanalyysissa ollaan kiinnostuneita vain prosessorien välisten kommunikaatiokierrosten määrästä \cite{Lin92}. Perinteiseseen aikavaativuusanalyysiin verrattuna ero on merkittävä, sillä kommunikaatiokierrosten väleissä prosessorit voisivat teoriassa tehdä minkä tahansa äärellisen määrän työtä vaikuttamatta aikavaativuuteen.
+Usein suurissa verkoissa kommunikaatio solmujen välillä on huomattavasti hitaampaa kuin operaatiot itse solmujen sisällä. Esimerkiksi suurissa sensoriverkoissa yhteyden muodostaminen ja tiedon siirtäminen kahden sensorin välillä on hidas operaatio. Tästä syystä paikallisten algoritmien aikavaativuusanalyysissa ollaan kiinnostuneita vain prosessorien välisten kommunikaatiokierrosten määrästä \cite{Lin92,Sparse}. Perinteiseseen aikavaativuusanalyysiin verrattuna ero on merkittävä, sillä kommunikaatiokierrosten väleissä prosessorit voisivat teoriassa tehdä minkä tahansa äärellisen määrän työtä vaikuttamatta aikavaativuuteen.
 
-Verkkojen ohjelmointi ajamalla samaa algoritmia jokaisessa verkon solmussa on mielenkiintoinen lähestymistapa myös siksi, että tällaista laskentamallia ei tunneta vielä kovin hyvin. On kuitenkin olemassa viitteitä, että joihinkin tiettyihin ongelmiin hajautettu laskentamalli voisi soveltua paremmin kuin aiemmat olemassaolevat mallit. Esimerkiksi ihmisten aivosolut näyttävät pystyvän tekemään päätöksiä oman tilansa suhteen vain paikallisen tiedon perusteella \cite{pricenear}. Analogia paikallisiin algoritmeihin on huomattava, sillä neuronit voivat olla yhteydessä vain rajalliseen määrään lähistöllä sijaitsevia muita neuroneita. Näiden neuroneiden täytyy keskenäisen kommunikointinsa perusteella päätyä yhteiseen lopputulokseen, joka vaikuttaa ihmisen toimintaan.
+Verkkojen ohjelmointi ajamalla samaa algoritmia jokaisessa verkon solmussa on mielenkiintoinen lähestymistapa myös siksi, että tällaista laskentamallia ei tunneta vielä kovin hyvin. Tutkimustulokset viittaavat kuitenkin siihen, että joihinkin tiettyihin ongelmiin hajautettu laskentamalli voisi soveltua paremmin kuin aiemmat olemassaolevat mallit. Näitä tuloksia tukevat myös jotkin luonnossa esiintyvät ilmiöt, esimerkiksi ihmisten aivosolut näyttävät pystyvän tekemään päätöksiä oman tilansa suhteen vain paikallisen tiedon perusteella \cite{pricenear}. Analogia paikallisiin algoritmeihin on huomattava, sillä neuronit voivat olla yhteydessä vain rajalliseen määrään lähistöllä sijaitsevia muita neuroneita. Näiden neuroneiden täytyy keskenäisen kommunikointinsa perusteella päätyä yhteiseen lopputulokseen, joka vaikuttaa ihmisen toimintaan.
 
 Paikallisten algoritmien tutkimus on vielä nuorta, eikä tutkimuksessa ole jumiuduttu tietyille urille, vaan alalla on vielä useita avoimia tutkimusongelmia, jotka poikkeavat parhaimmillaan hyvin paljon toisistaan. Tässä tutkielmassa esitellään hajautettu laskentamalli, jossa ratkeavista ongelmista erityisesti keskitytään verkon väritysongelmaan. Havainnollistamistarkoituksessa esitetään verkon väritysongelmaan yksi ensimmäisistä paikallisista algoritmeista. Lopuksi käydään läpi verkon värityksen sovellutusmahdollisuuksia, sekä analysoidaan hajautetun laskentamallin tulevaisuutta ja käytännön sovellutuksia.
 
@@ -106,10 +108,6 @@ Symmetrian voi rikkoa satunnaisuuden avulla, mutta on olemassa myös deterministi
 \subsection{Tunnistenumeromalli}
 Tunnistenumeromallissa jokaiselle prosessorille annetaan uniikki tunnistenumero, jonka avulla muuten symmetrisessa tilanteessa olevat prosessorit voidaan erottaa toisistaan. Kuten aiemmin mainittiin, nyt koko verkon koostumus voidaan siirtää jokaiselle verkon solmulle, mikäli verkko on yhtenäinen. Toisin sanoen, mikäli käytetään tarpeeksi aikaa, mikä tahansa ongelma, jolla on ratkaisu yhtenäisissä verkoissa, voidaan ratkaista algoritmilla \ref{algo:universal}.
 
-Vaikka algoritmin \ref{algo:universal} olemassaolo ei vielä takaa, että ongelmia voitaisiin ratkaista epäyhtenäisissä verkoissa, suuri osa kiinnostavista verkko-ongelmista ei vaadi verkon yhtenäisyyttä. Esimerkiksi pienimmän virittävän puun, verkon värittämisen tai maksimaalisen itsenäisen joukon etsiminen komponentettain on järkevää. 
-
-Algoritmi \ref{algo:universal} on hyvin hidas, ja vie pahimmillaan lineaarisen ajan verkon kokoon nähden. Tämän vuoksi on luontevaa keskittyä tutkimaan ongelmia, jotka ovat paikallisesti laskettavia. Usein myös approksimaatioalgoritmien löytäminen on kiinnostava tutkimuskohde, varsinkin jos ongelman tarkka ratkaisu ei ole paikallisesti laskettavissa.
-
 \begin{algorithm}[H]
 \caption{Algoritmi kaikkien yhdistetyissä verkoissa ratkeavien ongelmien ratkaisemiseen tunnistenumeromallissa}
 \label{algo:universal}
@@ -122,9 +120,25 @@ Algoritmi \ref{algo:universal} on hyvin hidas, ja vie pahimmillaan lineaarisen a
 \end{algorithmic}
 \end{algorithm}
 
+Vaikka algoritmin \ref{algo:universal} olemassaolo ei vielä takaa, että ongelmia voitaisiin ratkaista epäyhtenäisissä verkoissa, suuri osa kiinnostavista verkko-ongelmista ei vaadi verkon yhtenäisyyttä. Esimerkiksi pienimmän virittävän puun, verkon värittämisen tai maksimaalisen itsenäisen joukon etsiminen komponentettain on järkevää. 
+
+Algoritmi \ref{algo:universal} on hyvin hidas, ja vie pahimmillaan lineaarisen ajan verkon kokoon nähden. Tämän vuoksi on luontevaa keskittyä tutkimaan ongelmia, jotka ovat paikallisesti laskettavia. Usein myös approksimaatioalgoritmien löytäminen on kiinnostava tutkimuskohde, varsinkin jos ongelman tarkka ratkaisu ei ole paikallisesti laskettavissa.
+
 %Nopealla silmäyksellä algoritmi \ref{algo:universal} ei näytä tarvitsevan tunnistenumeroita laisinkaan. Herää siis kysymys, miksi tällaista algoritmia ei voi toteuttaa porttinumerointimallissa.
 
 Algoritmin \ref{algo:universal} perimmäinen tarkoitus on selvittää koko verkon koostumus jokaisen verkon solmun tietoon, jotta ne voisivat ratkaista ongelman itsenäisesti. Koska jokaisella solmulla on uniikki tunnistenumero, on algoritmin helppo karsia kaikki tieto, jonka se saa useamman kerran, sekä yhdistää sen saamat tiedot oikeaan osaan verkkoa. Porttinumerointimallissa verkon koostumuksen kerääminen on kuitenkin ongelmallista. Esimerkiksi jos saamme samaa dataa uudelleen, emme voi olla varmoja päädyimmekö jo käytyyn solmuun, vai onko jossain päin verkkoa useita samanlaisia ympäristöjä nykyisen kerätyn tiedon perusteella. Symmetriaongelmat todistavat, että verkon koostumusta ei porttinumerointimallissa voi selvittää.
+
+\begin{figure}
+    \begin{center}
+        \includegraphics[scale=0.15]{alg11.eps}
+        \hspace{10 mm}
+        \includegraphics[scale=0.15]{alg12.eps}
+        \hspace{10 mm}
+        \includegraphics[scale=0.15]{alg13.eps}
+    \end{center}
+    \caption{\label{fig:alg1} Kuvasarja algoritmin \ref{algo:universal} toiminnasta. Vasemmanpuolimmaisin kuva kuvastaa verkkoa ennen algoritmin ajon aloittamista. Oikealle mentäessä kuvat kuvastavat sitä, minkä muiden solmujen ympäristöt solmu tietää. Nämä solmut on listattu itse solmun yläpuolelle. Algoritmia ajetaan, kunnes kaikki solmut tietävät koko verkon koostumuksen. Kuvasarjassa solmu 4 tietää koko verkon koostumuksen jo kahden askeleen jälkeen (oikeanpuolimmaisin kuva).}
+    
+\end{figure}
 
 %Seuraavassa kappaleessa esitellään ongelmatyyppejä, joiden lähestyminen on luontevaa tunnistenumeromallissa. Seuraavassa kappaleessa pyritään havainnollistamaan paikallisten algoritmien käyttäytymistä ongelmanratkaisussa, ja analysoidaan tehokasta algoritmia väritysongelmaan.
 
@@ -135,22 +149,22 @@ Tyypillinen ongelma hajautetussa laskentamallissa on verkon solmuväritys. Solmuv
 
 Solmuvärityksen soveltuvuudesta paikallisten algoritmien maailmaan kertoo myös se, että monet merkittävät tulokset hajautetussa laskentamallissa liittyvät juuri solmuvärittämiseen. Solmuvärittämisessä onkin monia tutkimuskohteita, esimerkiksi rajoitettujen verkkojen kolmivärittäminen tai verkon ominaisuuksista, kuten solmujen maksimiasteesta riippuvien nopeiden väritysalgoritmien löytäminen.
 
-Solmuvärityksen hyödyllisyys riippuu yleensä käytettyjen värien määrästä. Värien määrän minimointi on useimmiten hyödyllistä, ja verkon väritystä voidaan käyttää muiden ongelmien ratkaisemiseen. Verkon rakenteesta riippuu, kuinka montaa väriä täytyy käyttää, jotta verkko saadaan väritettyä. Colen-Vishkinin algoritmi kykenee vähentämään värejä sellaisista suunnatuista verkoista, joissa jokaisella solmulla on korkeintaan yksi jälkeläinen (ks. kuva \ref{fig:suunnattu}). Tällaisissa verkoissa voidaan aina vähentää värien määrä kolmeen. Colen-Vishkinin algoritmilla voidaan tehokkaasti vähentää värien määrä korkeintaan kuuteen. Kuudesta väristä päästään kolmeen väriin yksinkertaisemmilla algoritmeilla, tyypillisisesti sellaisilla, jotka vähentävät verkosta värejä lineearisesti kommunikaatiokierrosten määrää kohti.
+Solmuvärityksen hyödyllisyys riippuu yleensä käytettyjen värien määrästä. Värien määrän minimointi on useimmiten hyödyllistä, ja verkon väritystä voidaan käyttää muiden ongelmien ratkaisemiseen. Verkon rakenteesta riippuu, kuinka montaa väriä täytyy käyttää, jotta verkko saadaan väritettyä. Colen-Vishkinin algoritmi kykenee vähentämään värejä sellaisista suunnatuista verkoista, joissa jokaisella solmulla on korkeintaan yksi lapsi (ks. kuva \ref{fig:suunnattu}). Tällaisissa verkoissa voidaan aina vähentää värien määrä kolmeen \cite{Parallel}. Colen-Vishkinin algoritmilla voidaan tehokkaasti vähentää värien määrä korkeintaan kuuteen. Kuudesta väristä päästään kolmeen väriin yksinkertaisemmilla algoritmeilla, tyypillisisesti sellaisilla, jotka vähentävät verkosta värejä lineearisesti kommunikaatiokierrosten määrää kohti.
 
 \begin{figure}
     \begin{center}
         \includegraphics[scale=0.25]{cv1.eps}
     \end{center}
-    \caption{\label{fig:suunnattu} Suunnattu verkko, jonka jokaisella solmulla on korkeintaan yksi jälkeläinen. Verkon nuolet kuvaavat jälkeläissuhteita siten, että nuolen päässä oleva solmu on lähtöpisteessä olevan solmun jälkeläinen. Jälkeläissolmu voi kommunikaatiokierroksen aikana siirtää tietoa isäntäsolmulleen. Solmut ovat keskenään naapureita, mikäli toinen solmuista on toisen jälkeläinen.}
+    \caption{\label{fig:suunnattu} Suunnattu verkko, jonka jokaisella solmulla on korkeintaan yksi lapsi. Verkon nuolet kuvaavat jälkeläissuhteita siten, että nuolen päässä oleva solmu on lähtöpisteessä olevan solmun lapsi. Lapsisolmu voi kommunikaatiokierroksen aikana siirtää tietoa isäntäsolmulleen. Solmut ovat keskenään naapureita, mikäli toinen solmuista on toisen lapsi.}
 \end{figure}
 
 \subsection{Colen-Vishkinin algoritmi}
 
-Yksi ensimmäisistä tuloksista hajautetussa laskentamallissa on Colen-Vishkinin värien vähennysalgoritmi. Alun perin Colen-Vishkinin algoritmi oli tarkoitettu värien vähentämiseen linkitetyissä listoissa hajautetusti \cite{colevishkin}. Algoritmi toimii kuitenkin myös paikallisena algoritmina. Algoritmi toimii suunnatuissa verkoissa, joissa jokaisella solmulla on korkeintaan yksi jälkeläinen, ks. kuva \ref{fig:suunnattu}. Prosessori $a$ voi siis keskustella prosessorin $b$ kanssa vain, jos on olemassa $e \in E$ siten, että $e = (a,b)$, jossa $(a,b)$ on suunnattu pari. Kuitenkin solmut $a$ ja $b$ ovat \textit{naapureita}, mikäli on olemassa $(a,b) \in E$ tai $(b,a) \in E$. Colen-Vishkinin algoritmi vaatii myös, että solmujen värit esitetään kokonaislukuina.
+Yksi ensimmäisistä tuloksista hajautetussa laskentamallissa on Colen-Vishkinin värien vähennysalgoritmi. Alun perin Colen-Vishkinin algoritmi oli tarkoitettu värien vähentämiseen linkitetyissä listoissa hajautetusti \cite{colevishkin}. Algoritmi toimii kuitenkin myös paikallisena algoritmina. Algoritmi toimii suunnatuissa verkoissa, joissa jokaisella solmulla on korkeintaan yksi lapsi, ks. kuva \ref{fig:suunnattu}. Prosessori $a$ voi siis keskustella prosessorin $b$ kanssa vain, jos on olemassa $e \in E$ siten, että $e = (a,b)$, jossa $(a,b)$ on suunnattu pari. Kuitenkin solmut $a$ ja $b$ ovat \textit{naapureita}, mikäli on olemassa $(a,b) \in E$ tai $(b,a) \in E$. Colen-Vishkinin algoritmi vaatii myös, että solmujen värit esitetään kokonaislukuina.
 
 %Käytettävillä väreillä on järjestys
 
-Colen-Vishkinin algoritmilla valmista verkon väritystä voidaan askel askeleelta vähentää siihen asti, kunnes verkossa on jäljellä enää kuusi väriä. Suunnatussa verkossa, jossa solmuilla on korkeintaan yksi jälkeläinen, on mahdollista löytää kolmiväritys. Colen-Vishkinin algoritmin löytämästä kuusivärityksestä voidaan päästä kolmiväritykseen vakioajassa käyttämällä algoritmeja, jotka vähentävät verkosta yhden värin kommunikaatiokierrosta kohti \cite{colevishkin, lecture2}.
+Colen-Vishkinin algoritmilla valmista verkon väritystä voidaan askel askeleelta vähentää siihen asti, kunnes verkossa on jäljellä enää kuusi väriä. Suunnatussa verkossa, jossa solmuilla on korkeintaan yksi lapsi, on mahdollista löytää kolmiväritys. Colen-Vishkinin algoritmin löytämästä kuusivärityksestä voidaan päästä kolmiväritykseen vakioajassa käyttämällä algoritmeja, jotka vähentävät verkosta yhden värin kommunikaatiokierrosta kohti \cite{colevishkin, lecture2}.
 
 Mikäli ongelmaverkko on suuri, emme halua käyttää algoritmeja, jotka vähentävät verkon värejä lineaarisesti kommunikaatiokierrosten määrän suhteen, ellei verkon värien määrä ole alussa hyvin vähäinen. Tunnistenumeromallissa ainoa väritys, mitä voimme alkutilanteessa käyttää, on juuri tunnistenumeroiden muodostama väritys. Alussa siis värien määrä on sama kuin verkon solmujen määrä, joten on selvää, että lineaarinen algoritmi olisi hyvin hidas, ja mikäli se olisi optimaalinen, olisi se aikavaativuudeltaan samaa luokkaa kuin algoritmi \ref{algo:universal}.
 
@@ -166,9 +180,9 @@ Lineaariseen aikavaativuuteen ei kuitenkaan tarvitse tyytyä. Colen-Vishkinin alg
 \STATE $k \gets $ tarvittavien askelten määrä
 \STATE $v \gets $ solmu, jossa algoritmia ajetaan
 \FOR{$i = 1\dots{}k$}
-    \IF{$v$:llä on jälkeläinen $u$}
-        \STATE Odota, että jälkeläinen $u$ kertoo värinsä $C(u)$. 
-        \STATE Vertaa omaa väriä $C(v)$ jälkeläisen väriin $C(u)$.
+    \IF{$v$:llä on lapsi $u$}
+        \STATE Odota, että lapsi $u$ kertoo värinsä $C(u)$. 
+        \STATE Vertaa omaa väriä $C(v)$ lapsen väriin $C(u)$.
         \STATE Etsi binäärimuodossa oikeanpuolimmaisin bitti, indeksiltään $i$, jossa värit poikkeavat.
         \STATE Valitse uudeksi väriksi $2\cdot{}i+C(v)_i$, jossa $C(v)_i$ on nykyisen värin $i$:nnen bitin arvo, eli $0$ tai $1$.
     \ELSE
@@ -182,7 +196,7 @@ Lineaariseen aikavaativuuteen ei kuitenkaan tarvitse tyytyä. Colen-Vishkinin alg
 
 \newtheorem{definition}[theocounter]{Määritelmä}
 \begin{definition}
-Solmu $x$, jonka jälkeläinen on solmu $y$, valitsee uudeksi värikseen $n(x,y)$:n. Funktion $n$ arvo määräytyy vertaamalla solmujen $x$ ja $y$ värien binäärimuotoja $x_{n}\cdot{}2^n+x_{n-1}\cdot{}2^{n-1}+\dots{}+x_0\cdot{}2^0$ ja $y_{n}\cdot{}2^n+y_{n-1}\cdot{}2^{n-1}+\dots{}+y_0\cdot{}2^0$, $x_i, y_i \in \{0,1\}$. Tällöin $n(x,y) = f(x,y)\cdot{}2+x_{f(x,y)}$, jossa $f(x,y) = i$ siten, että $x_i \ne y_i$ ja $i$ on mahdollisimman pieni. Mikäli solmulla $x$ ei ole jälkeläistä, oletetaan jälkeläiseksi solmu $p$ siten, että $f(x,p) = 0$. Tällöin solmu $x$ valitsee sen uudeksi värikseen $x_0$:n.
+Solmu $x$, jonka lapsi on solmu $y$, valitsee uudeksi värikseen $n(x,y)$:n. Funktion $n$ arvo määräytyy vertaamalla solmujen $x$ ja $y$ värien binäärimuotoja $x_{n}\cdot{}2^n+x_{n-1}\cdot{}2^{n-1}+\dots{}+x_0\cdot{}2^0$ ja $y_{n}\cdot{}2^n+y_{n-1}\cdot{}2^{n-1}+\dots{}+y_0\cdot{}2^0$, $x_i, y_i \in \{0,1\}$. Tällöin $n(x,y) = f(x,y)\cdot{}2+x_{f(x,y)}$, jossa $f(x,y) = i$ siten, että $x_i \ne y_i$ ja $i$ on mahdollisimman pieni. Mikäli solmulla $x$ ei ole lasta, oletetaan lapseksi olematon solmu $p$ siten, että $f(x,p) = 0$. Tällöin solmu $x$ valitsee sen uudeksi värikseen $x_0$:n.
 \label{def:ncolor}
 \end{definition}
 
@@ -195,10 +209,10 @@ Jos verkko on laillisesti väritetty ja yksikään solmu ei ole lopettanut algoritm
 %\newtheorem{proof}{Todistus}
 
 \begin{proof}
-Oletetaan, että solmut $a$ ja $b$ valitsevat värikseen saman värin algoritmin askeleen lopuksi. Yleisyyttä menettämättä voidaan sopia, että solmu $b$ on $a$:n jälkeläinen. Oletetaan, että $b$:llä on jälkeläinen $c$, $f(a,b) = i$, ja $f(b,c) = j$. Jotta solmut $a$ ja $b$ valitsisivat saman värin, täytyy päteä $n(a,b) = n(b,c) \Leftrightarrow f(a,b)\cdot{}2+a_{f(a,b)} = f(b,c)\cdot{}2+b_{f(b,c)}$. Edelleen seuraa $2\cdot{}(f(a,b)-f(b,c)) = b_{f(b,c)}-a_{f(a,b)}$. Nyt $b_{f(b,c)}-a_{f(a,b)}$ voi saada arvoja joukosta $\{-1,0,1\}$. Koska $2\cdot{}(f(a,b)-f(b,c))$ on aina parillinen, on oltava $a_{f(a,b)} = b_{f(b,c)}$, ja $f(a,b) = f(b,c)$, eli $a_{f(a,b)} = b_{f(a,b)}$. Määritelmän mukaan kuitenkin $a_{f(a,b)} \ne b_{f(a,b)}$, eli kyseessä on ristiriita, ja alkuperäinen väite on tosi.
+Oletetaan, että solmut $a$ ja $b$ valitsevat värikseen saman värin algoritmin askeleen lopuksi. Yleisyyttä menettämättä voidaan sopia, että solmu $b$ on $a$:n lapsi. Oletetaan, että $b$:llä on lapsi $c$, $f(a,b) = i$, ja $f(b,c) = j$. Jotta solmut $a$ ja $b$ valitsisivat saman värin, täytyy päteä $n(a,b) = n(b,c) \Leftrightarrow f(a,b)\cdot{}2+a_{f(a,b)} = f(b,c)\cdot{}2+b_{f(b,c)}$. Edelleen seuraa $2\cdot{}(f(a,b)-f(b,c)) = b_{f(b,c)}-a_{f(a,b)}$. Nyt $b_{f(b,c)}-a_{f(a,b)}$ voi saada arvoja joukosta $\{-1,0,1\}$. Koska $2\cdot{}(f(a,b)-f(b,c))$ on aina parillinen, on oltava $a_{f(a,b)} = b_{f(b,c)}$, ja $f(a,b) = f(b,c)$, eli $a_{f(a,b)} = b_{f(a,b)}$. Määritelmän mukaan kuitenkin $a_{f(a,b)} \ne b_{f(a,b)}$, eli kyseessä on ristiriita, ja alkuperäinen väite on tosi.
 \end{proof}
 
-Jokaisella kierroksella Colen-Vishkinin algoritmissa jokainen solmu, jolla on jälkeläinen, kysyy jälkeläisensä väriä. Tämän jälkeen solmu vertaa omaa väriään jälkeläisensä väriin binäärimuodossa, ja etsii sen bitin indeksin, joka kahdessa värissä poikkeaa ensimmäisenä oikealta laskettuna. Tällainen bitti löytyy, sillä naapurisolmujen värit poikkeavat varmasti toisistaan laillisessa värityksessä. Kun bitin indeksi $i$ löytyy, indeksoinnin alkaessa nollasta, valitsee solmu uudeksi värikseen $2\cdot{}i + c_i$:n, jossa $c_i$ on edellisen oman värin bitin $i$ arvo, eli $0$ tai $1$. Mikäli solmulla ei ole jälkeläistä, se valitsee uudeksi värikseen edellisen värinsä viimeisen bitin, aivan kuin se poikkeaisi olemattoman jälkeläisensä väristä jo bitissä 0.
+Jokaisella kierroksella Colen-Vishkinin algoritmissa jokainen solmu, jolla on lapsi, kysyy lapsensa väriä. Tämän jälkeen solmu vertaa omaa väriään lapsensa väriin binäärimuodossa, ja etsii sen bitin indeksin, joka kahdessa värissä poikkeaa ensimmäisenä oikealta laskettuna. Tällainen bitti löytyy, sillä naapurisolmujen värit poikkeavat varmasti toisistaan laillisessa värityksessä. Kun bitin indeksi $i$ löytyy, indeksoinnin alkaessa nollasta, valitsee solmu uudeksi värikseen $2\cdot{}i + c_i$:n, jossa $c_i$ on edellisen oman värin bitin $i$ arvo, eli $0$ tai $1$. Mikäli solmulla ei ole lasta, se valitsee uudeksi värikseen edellisen värinsä viimeisen bitin, aivan kuin se poikkeaisi olemattoman lapsensa väristä jo bitissä 0.
 
 Colen-Vishkinin algoritmi jatkaa suoritustaan, kunnes se voi jäädä jumiin. Jos verkon suurin väri on korkeintaan 5, on mahdollista, että algoritmi ei enää kykene pienentämään verkon suurinta väriä. Kuva \ref{fig:stuck} esittää hyvin yksinkertaista verkkoa, jossa Colen-Vishkinin algoritmi ei pysty etenemään. 
 
@@ -235,7 +249,7 @@ Huomionarvoista on myös, että kaikissa reaalimaailman tilanteissa kierrosten mää
         \hspace{10 mm}
         \includegraphics[scale=0.25]{cv5.eps}
     \end{center}
-    \caption{\label{fig:cvalgo} Kuvasarja havainnollistamaan Colen-Vishkinin algoritmin yhtä kierrosta. a) Suunnattu verkko, jossa jokaisella solmulla on väri. b) Algoritmin suoritus kaikissa solmuissa samanaikaisesti. Solmu, jonka väri on 100, vertaa omaa väriään jälkeläisensä väriin binäärimuodossa. Värit $100 = 110\underline{0}100_2$ ja $156 = 1001\underline{1}100_2$ poikkeavat toisistaan kolmannessa bitissä oikealta laskettuna, joten solmu, jonka väri on $100$, valitsee uudeksi värikseen $3\cdot{}2+0 = 6$.  c) Kaikki solmut, joilla on jälkeläinen ovat vaihtaneet väriä b-kohdassa esitetyn menetelmän mukaisesti. d) Solmu, jolla ei ole jälkeläistä, teeskentelee poikkeavansa olemattoman jälkeläisensä kanssa jo nollannessa bitissä, jolloin se valitsee uudeksi värikseen värinsä viimeisen bitin, nollan.}
+    \caption{\label{fig:cvalgo} Kuvasarja havainnollistamaan Colen-Vishkinin algoritmin yhtä kierrosta. a) Suunnattu verkko, jossa jokaisella solmulla on väri. b) Algoritmin suoritus kaikissa solmuissa samanaikaisesti. Solmu, jonka väri on 100, vertaa omaa väriään lapsensa väriin binäärimuodossa. Värit $100 = 110\underline{0}100_2$ ja $156 = 1001\underline{1}100_2$ poikkeavat toisistaan kolmannessa bitissä oikealta laskettuna, joten solmu, jonka väri on $100$, valitsee uudeksi värikseen $3\cdot{}2+0 = 6$.  c) Kaikki solmut, joilla on lapsi, ovat vaihtaneet väriä b-kohdassa esitetyn menetelmän mukaisesti. d) Solmu, jolla ei ole lasta, teeskentelee poikkeavansa olemattoman lapsensa kanssa jo nollannessa bitissä, jolloin se valitsee uudeksi värikseen värinsä viimeisen bitin, nollan.}
     
 \end{figure}
 
@@ -252,10 +266,10 @@ Värien määrää voidaan vähentää aina kolmeen asti algoritmilla, joka vähentää yhd
         \hspace{7mm}
         \includegraphics[scale=0.16]{naive3.eps}
     \end{center}
-    \caption{\label{fig:shift} Jokainen solmu valitsee uudeksi värikseen jälkeläisensä vanhan värin. Mikäli solmulla ei ole jälkeläistä, valitsee se värin joukosta \{0,1,2\} niin, että sen väri vaihtuu. Lopuksi eliminoidaan kaikki väriä $5$ olevat solmut siten, että ne valitsevat joukosta $\{0,1,2\}$ värin, jota niiden naapureilla ei ole. }
+    \caption{\label{fig:shift} Jokainen solmu valitsee uudeksi värikseen lapsensa vanhan värin. Mikäli solmulla ei ole lasta, valitsee se värin joukosta \{0,1,2\} niin, että sen väri vaihtuu. Lopuksi eliminoidaan kaikki väriä $5$ olevat solmut siten, että ne valitsevat joukosta $\{0,1,2\}$ värin, jota niiden naapureilla ei ole. }
     
 \end{figure}
-Lineaarisessa värienvähennysalgoritmissa jokaisella kierroksella päätetään poistettava väri $k$. Väri $k$ poistetaan verkosta siten, että ensiksi suoritetaan värien siirto-operaatio. Värien siirto-operaatiossa jokainen väri valitsee uudeksi värikseen jälkeläisensä nykyisen värin, ks. kuva \ref{fig:shift}. Mikäli jälkeläistä ei ole, valitaan edellisestä poikkeava väri joukosta $\{0,1,2\}$. Väitteen \ref{claim:shift} mukaisesti siirto-operaatio säilyttää laillisen värityksen.
+Lineaarisessa värienvähennysalgoritmissa jokaisella kierroksella päätetään poistettava väri $k$. Väri $k$ poistetaan verkosta siten, että ensiksi suoritetaan värien siirto-operaatio. Värien siirto-operaatiossa jokainen väri valitsee uudeksi värikseen lapsensa nykyisen värin, ks. kuva \ref{fig:shift}. Mikäli lasta ei ole, valitaan edellisestä poikkeava väri joukosta $\{0,1,2\}$. Väitteen \ref{claim:shift} mukaisesti siirto-operaatio säilyttää laillisen värityksen.
 
 \begin{claim}
 Värien siirto-operaatio säilyttää laillisen värityksen.
@@ -267,19 +281,19 @@ Osoitetaan, että kaikki solmut valitsevat siirto-operaatiossa eri värit naapuris
 
 Juurisolmun kaikki naapurit ovat sen isäntäsolmuja. Siirto-operaatiossa juurisolmun isäntäsolmut valitsevat uudeksi värikseen juurisolmun vanhan värin, ja juurisolmu valitsee itselleen uuden värin. Juurisolmun mikään naapuri ei siis valitse sen kanssa samaa väriä.
 
-Siis kaikki juurisolmun isännät valitsevat eri värin jälkeläisensä kanssa. Ne myös antavat vanhan värinsä kaikille isännilleen, ja ottavat jälkeläisensä vanhan värin. Juurisolmun isännät valitsevat siis eri värin myös kaikkien omien isäntiensä kanssa, sillä juurisolmun isännän uusi väri, ja juurisolmun isännän isännän uusi väri olivat vierekkäin jo edellisessä verkossa, jonka väritys oli laillinen. Sama päättelyketju toistuu kaikissa muissakin verkon solmuissa. Verkon väritys on siis edelleen laillinen.
+Siis kaikki juurisolmun isännät valitsevat eri värin lapsensa kanssa. Ne myös antavat vanhan värinsä kaikille isännilleen, ja ottavat lapsensa vanhan värin. Juurisolmun isännät valitsevat siis eri värin myös kaikkien omien isäntiensä kanssa, sillä juurisolmun isännän uusi väri, ja juurisolmun isännän isännän uusi väri olivat vierekkäin jo edellisessä verkossa, jonka väritys oli laillinen. Sama päättelyketju toistuu kaikissa muissakin verkon solmuissa. Verkon väritys on siis edelleen laillinen.
 \end{proof}
 
-Kun jokainen solmu on valinnut itselleen värin, jokainen solmu, jonka väri on $k$, valitsee itselleen uuden värin joukosta $\{0,1,2\}$, säilyttäen samalla laillisen värityksen. Kaikki solmut, joiden väri on $k$, voivat valita itselleen uuden värin joukosta $\{0,1,2\}$ niin, että väritys pysyy laillisena. Ensinnäkin jokaisella solmulla on korkeintaan kahdenlaisia naapureita, isäntiä ja jälkeläisiä. Solmulla voi olla vain yksi jälkeläinen, ja kaikilla solmun isäntäsolmuilla on sama väri, joten solmun naapurisolmuilla on yhteensä maksimissaan kahta eri väriä. Tällöin joukosta $\{0,1,2\}$ löytyy varmasti väri, jota naapurisolmuilla ei ole, joten väri $k$ saadaan eliminoitua verkosta.
+Kun jokainen solmu on valinnut itselleen värin, jokainen solmu, jonka väri on $k$, valitsee itselleen uuden värin joukosta $\{0,1,2\}$, säilyttäen samalla laillisen värityksen. Kaikki solmut, joiden väri on $k$, voivat valita itselleen uuden värin joukosta $\{0,1,2\}$ niin, että väritys pysyy laillisena. Ensinnäkin jokaisella solmulla on korkeintaan kahdenlaisia naapureita, isäntiä ja lapsia. Solmulla voi olla vain yksi lapsi, ja kaikilla solmun isäntäsolmuilla on sama väri, joten solmun naapurisolmuilla on yhteensä maksimissaan kahta eri väriä. Tällöin joukosta $\{0,1,2\}$ löytyy varmasti väri, jota naapurisolmuilla ei ole, joten väri $k$ saadaan eliminoitua verkosta.
 
 Ajettuamme Colen-Vishkinin algoritmin alkuperäisessä väritetyssä verkossa, tiedämme, että verkon suurin väri on korkeintaan $5$. Voimme siis poistaa algoritmilla \ref{algo:naive} verkosta ensin värin $5$, jonka jälkeen värit $4$ ja $3$ voidaan poistaa samalla prosessilla.
 
 \begin{algorithm}[H]
-\caption{Algoritmi värien vähentämiseen kuudesta kolmeen suunnatuissa verkoissa, joissa solmuilla on korkeintaan yksi jälkeläinen}
+\caption{Algoritmi värien vähentämiseen kuudesta kolmeen suunnatuissa verkoissa, joissa solmuilla on korkeintaan yksi lapsi}
 \label{algo:naive}
 \begin{algorithmic}
 \FOR{$i = 5,4,3$}
-    \IF{solmulla on jälkeläinen $u$}
+    \IF{solmulla on lapsi $u$}
         \STATE Valitse uudeksi väriksi solmun $u$ väri.
         \IF{solmun nykyinen väri on $i$}
             \STATE Valitse uudeksi väriksi väri joukosta $\{0,1,2\}$, joka poikkeaa solmun vanhasta väristä, sekä väristä, jonka solmu $u$ valitsi uudeksi värikseen.
@@ -310,7 +324,7 @@ Tässä tutkielmassa on annettu esimerkkejä vain tilanteista, joissa prosessorit s
 
 Monet julkaisut paikallisten hajautettujen verkkoalgoritmien tutkimusalalla ovat esittäneet algoritmeja, joissa käytännön rajoitukset on otettu huomioon. Näissä algoritmeissa on tyypillisesti osoitettu, että lähetettävät viestit ovat kooltaan maltillisia. Lisäksi approksimaatioalgoritmeissa kasvattamalla alussa annetun tiedon määrää voi usein parantaa saavutetun tuloksen approksimaatiotarkkuutta.
 
-Vaikka paikallisten algoritmien tutkimus on ollut teoreettislähtöistä, voidaan jo olemassaolevista komponenteista rakentaa käytännössä hyödyttäviä kokonaisuuksia. Esimerkiksi mobiiliverkoissa hajautettuja paikallisia algoritmeja käytetään jo nykyään, ja muissakin sensoriverkoissa jo olemassaolevia komponentteja voidaan hyödyntää \cite{wireless}. Yksinkertaisena esimerkkinä voidaan mainita esimerkiksi pienimmän virittävän puun laskenta sensoriverkossa siten, että kaaren paino on sitä pienempi, mitä vähemmän energiaa kuluu lähetettäessä tietoa kaaren yli. Näin voidaan ratkaista, mitä yhteyksiä sensoreiden välillä kannattaa käyttää.
+Vaikka paikallisten algoritmien tutkimus on ollut teoreettislähtöistä, voidaan jo olemassaolevista komponenteista rakentaa käytännössä hyödyttäviä kokonaisuuksia. Esimerkiksi mobiiliverkoissa hajautettuja paikallisia algoritmeja käytetään jo nykyään \cite{Partitions}, ja muissakin sensoriverkoissa jo olemassaolevia komponentteja voidaan hyödyntää \cite{wireless}. Yksinkertaisena esimerkkinä voidaan mainita esimerkiksi pienimmän virittävän puun laskenta sensoriverkossa siten, että kaaren paino on sitä pienempi, mitä vähemmän energiaa kuluu lähetettäessä tietoa kaaren yli. Näin voidaan ratkaista, mitä yhteyksiä sensoreiden välillä kannattaa käyttää.
 
 Vaikka paikallisten algoritmien tutkimus on vielä nuorta, vaikuttaa siltä, että paikallisille algoritmeille voi löytyä tulevaisuudessa useita käytännön sovellutuksia. Käsiteltävät tietomäärät kasvavat jatkuvasti, ja tietoa hajautetaan jatkuvasti enemmän. Tällöin paikalliset algoritmit, jotka kykenevät parhaimmillaan jopa vakioaikaiseen toimintaan, voivat olla huomattavan arvokkaita työkaluja ongelmanratkaisuun. Aivan kaikkiin ongelmiin paikallisten algoritmien yleistymistä ei kuitenkaan liene realistista olettaa, sillä prosessoriverkon luominen on usein aivan liian suuri prosessi, ellei prosessoriverkkoa ole jo valmiiksi käyttövalmiina.
 

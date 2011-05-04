@@ -1,10 +1,15 @@
-\begin{thebibliography}{KMW06}
+\begin{thebibliography}{WKLL11}
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
 \input babelbst.tex
 \newcommand{\Capitalize}[1]{\uppercase{#1}}
 \newcommand{\capitalize}[1]{\expandafter\Capitalize#1}
+
+\bibitem[AP90]{Partitions}
+Awerbuch, B. \bbland{} Peleg, D., Sparse partitions (extended abstract).
+\newblock  {\em In IEEE Symposium on Foundations of Computer Science}. IEEE,
+  1990, \bblpages{} 503--513.
 
 \bibitem[CV86]{colevishkin}
 Cole, R. \bbland{} Vishkin, U., Deterministic coin tossing with applications to
@@ -16,6 +21,12 @@ Gallager, R., Humblet, P. \bbland{} Spira, P., A distributed algorithm for
   minimum weight spanning trees.
 \newblock {\em ACM Transactions on Programming Languages and Systems (TOPLAS)},
   5,1(1983).
+
+\bibitem[GPS87]{Parallel}
+Goldberg, A., Plotkin, S. \bbland{} Shannon, G., Parallel symmetry-breaking in
+  sparse graphs.
+\newblock  {\em STOC '87 Proceedings of the nineteenth annual ACM symposium on
+  Theory of computing}. ACM, 1987, \bblpages{} 315--324.
 
 \bibitem[KMW06]{pricenear}
 Kuhn, F., Moscibroda, T. \bbland{} Wattenhofer, R., The price of being
@@ -30,6 +41,11 @@ Linial, N., Locality in distributed graph algorithms.
 \bibitem[NS95]{loccomp}
 Naor, M. \bbland{} Stockmeyer, L., What can be computed locally?
 \newblock {\em SIAM Journal on Computing}, 24,6(1995), \bblpages{} 1259--1277.
+
+\bibitem[PR01]{Sparse}
+Panconesi, A. \bbland{} Rizzi, R., Some simple distributed algorithms for
+  sparse networks.
+\newblock {\em Distributed computing}, 14,2(2001), \bblpages{} 97--100.
 
 \bibitem[PS09]{3appr}
 Polishchuk, V. \bbland{} Suomela, J., A simple local 3-approximation algorithm
@@ -57,5 +73,10 @@ Suomela, J., Survey of local algorithms, 2011.
 Urrutia, J., Local solutions for global problems in wireless networks.
 \newblock {\em Journal of Discrete Algorithms}, 5,3(2007), \bblpages{}
   395--407.
+
+\bibitem[WKLL11]{Principles}
+Wattenhofer, R., Kuhn, F., Lenzen, C. \bbland{} Locher, T., Principles of
+  distributed computing, 2011.
+\newblock \url{http://dcg.ethz.ch/lectures/podc_allstars/lecture/podc.pdf}
 
 \end{thebibliography}
