@@ -1,4 +1,4 @@
-\begin{thebibliography}{WKLL11}
+\begin{thebibliography}{LPPSP03}
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
@@ -48,6 +48,12 @@ Kuhn, F., Moscibroda, T. \bbland{} Wattenhofer, R., The price of being
 \bibitem[Lin92]{Lin92}
 Linial, N., Locality in distributed graph algorithms.
 \newblock {\em SIAM Journal on Computing}, 21,1(1992), \bblpages{} 193--201.
+
+\bibitem[LPPSP03]{Lotker}
+Lotker, Z., Pavlov, E., Patt-Shamir, B. \bbland{} Peleg, D., {MST} construction
+  in ${O(\log \log n)}$ communication rounds.
+\newblock  {\em Proceedings of the fifteenth annual ACM symposium on Parallel
+  algorithms and architectures}, SPAA '03. ACM, 2003, \bblpages{} 94--100.
 
 \bibitem[NS95]{loccomp}
 Naor, M. \bbland{} Stockmeyer, L., What can be computed locally?

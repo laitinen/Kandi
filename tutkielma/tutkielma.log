@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.3.22)  6 MAY 2011 06:04
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.3.22)  6 MAY 2011 22:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -617,24 +617,18 @@ File: naive3c-eps-converted-to.pdf Graphic file (type pdf)
 <use naive3c-eps-converted-to.pdf> [12 <./stuck-eps-converted-to.pdf>] [13 <./c
 v2c-eps-converted-to.pdf> <./cv3c-eps-converted-to.pdf> <./cv4c-eps-converted-t
 o.pdf> <./cv5c-eps-converted-to.pdf>] [14 <./naive1c-eps-converted-to.pdf> <./n
-aive2c-eps-converted-to.pdf> <./naive3c-eps-converted-to.pdf>] [15]
-Overfull \hbox (12.37094pt too wide) in paragraph at lines 347--348
-\OT1/cmr/m/n/12 ^^A + 1$ \T1/cmr/m/n/12 -väritykseksi yk-sin-ker-tai-sel-la vä-
-rin-vä-hen-ny-sal-go-rit-mil-la $\OT1/cmr/m/n/12 2[]$ \T1/cmr/m/n/12 as-ke-lees
--sa [[]].
- []
-
-[16] [17] [18] (./tutkielma.bbl (./babelbst.tex (./finnbst.tex)) [19]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 69.
+aive2c-eps-converted-to.pdf> <./naive3c-eps-converted-to.pdf>] [15] [16]
+[17] [18] (./tutkielma.bbl (./babelbst.tex (./finnbst.tex)) [19]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 75.
 
 (/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )) [20] (./tutkielma.aux) ) 
 Here is how much of TeX's memory you used:
- 3584 strings out of 493848
- 47141 string characters out of 1152823
- 113938 words of memory out of 3000000
- 6735 multiletter control sequences out of 15000+50000
+ 3585 strings out of 493848
+ 47149 string characters out of 1152823
+ 112948 words of memory out of 3000000
+ 6736 multiletter control sequences out of 15000+50000
  17647 words of font info for 47 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  41i,8n,26p,1213b,577s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -652,7 +646,7 @@ share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/ty
 pe1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/
 sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/s
 hare/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on tutkielma.pdf (23 pages, 400645 bytes).
+Output written on tutkielma.pdf (23 pages, 401522 bytes).
 PDF statistics:
  186 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
