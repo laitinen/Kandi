@@ -18,54 +18,64 @@
 \citation{lecture1}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces  Havainnollistus paikallisten algoritmien toiminnasta. Jokaisen kommunikaatiokierroksen v\"aliss\"a algoritmi selvitt\"a\"a, onko se saanut tarpeeksi tietoa, jotta se voisi ratkaista oman paikallisen ongelmansa. Mik\"ali tietoa ei ole viel\"a tarpeeksi, pyrit\"a\"an seuraavalla kommunikaatiokierroksella ker\"a\"am\"a\"an lis\"a\"a tietoa ongelmanratkaisua varten.}}{4}}
 \newlabel{fig:ajatusmaailma}{{1}{4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Porttinumerointimalli}{4}}
 \citation{3appr}
 \citation{mst}
-\citation{Lin92}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces  Vasemmalla kuva kolmisolmuisesta verkosta, jossa kaikki solmut ovat kesken\"a\"an symmetrisess\"a tilanteessa, joten tilanne on porttinumerointimallissa ratkaisukelvoton. Kuvan kokonaisluvut kuvaavat solmujen naapureiden porttinumerointeja. Vastaavasti oikealla symmetrinen tilanne pienimm\"an viritt\"av\"an puun ongelmassa, jossa kaikilla kaarilla on samat painot.}}{5}}
 \newlabel{fig:symmetria}{{2}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Porttinumerointimalli}{5}}
+\citation{Lin92}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Tunnistenumeromalli}{6}}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Algoritmi kaikkien yhdistetyiss\"a verkoissa ratkeavien ongelmien ratkaisemiseen tunnistenumeromallissa}}{6}}
 \newlabel{algo:universal}{{1}{6}}
 \citation{loccomp}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces  Kuvasarja algoritmin \ref  {algo:universal} toiminnasta. Vasemmanpuolimmaisin kuva kuvastaa verkkoa ennen algoritmin ajon aloittamista. Oikealle ment\"aess\"a kuvat kuvastavat sit\"a, mink\"a muiden solmujen ymp\"arist\"ot solmu tiet\"a\"a. N\"am\"a solmut on listattu itse solmun yl\"apuolelle. Algoritmia ajetaan, kunnes kaikki solmut tiet\"av\"at koko verkon koostumuksen. Kuvasarjassa solmu 4 tiet\"a\"a koko verkon koostumuksen jo kahden askeleen j\"alkeen (oikeanpuolimmaisin kuva).}}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces  Kuvasarja algoritmin \ref  {algo:universal} toiminnasta. a) Suuntaamaton verkko ennen algoritmin ajoa. Solmut on numeroitu. b) Solmujen tiet\"amys verkosta algoritmin ensimm\"aisen askeleen j\"alkeen listattuna solmun yl\"apuolelle. Esimerkiksi solmu 5 tiet\"a\"a oman ymp\"arist\"ons\"a lis\"aksi solmujen 4 ja 7 ymp\"arist\"ot. c) Solmujen tiet\"amys verkosta algoritmin toisen askeleen j\"alkeen. Nyt solmu 4 tiet\"a\"a kaikkien verkon solmujen ymp\"arist\"on, eli on ker\"annyt kaiken tarvittavan tiedon, jotta se voi muodostaa oikean k\"asityksen verkon rakenteesta.}}{7}}
 \newlabel{fig:alg1}{{3}{7}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Verkon kolmiv\"aritys}{7}}
 \citation{Principles}
 \citation{Parallel}
 \citation{colevishkin}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces  Suunnattu verkko, jonka jokaisella solmulla on korkeintaan yksi lapsi. Verkon nuolet kuvaavat j\"alkel\"aissuhteita siten, ett\"a nuolen p\"a\"ass\"a oleva solmu on l\"aht\"opisteess\"a olevan solmun lapsi. Lapsisolmu voi kommunikaatiokierroksen aikana siirt\"a\"a tietoa is\"ant\"asolmulleen. Solmut ovat kesken\"a\"an naapureita, mik\"ali toinen solmuista on toisen lapsi.}}{8}}
-\newlabel{fig:suunnattu}{{4}{8}}
+\citation{Lin92}
+\citation{Principles}
+\citation{lecture2}
+\citation{colevishkin}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Colen-Vishkinin algoritmi}{8}}
 \citation{colevishkin}
 \citation{lecture2}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces  Suunnattu verkko, jonka jokaisella solmulla on korkeintaan yksi lapsi. Verkon nuolet kuvaavat j\"alkel\"aissuhteita siten, ett\"a nuolen p\"a\"ass\"a oleva solmu on l\"aht\"opisteess\"a olevan solmun lapsi. Lapsisolmu voi kommunikaatiokierroksen aikana siirt\"a\"a tietoa is\"ant\"asolmulleen. Solmut ovat kesken\"a\"an naapureita, mik\"ali toinen solmuista on toisen lapsi.}}{9}}
+\newlabel{fig:suunnattu}{{4}{9}}
 \citation{Principles}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Colen-Vishkinin algoritmi}{9}}
 \newlabel{def:ncolor}{{1}{10}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Colen-Vishkinin algoritmi}}{10}}
-\newlabel{algo:CV}{{2}{10}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Yksinkertainen v\"arinv\"ahennysalgoritmi}{11}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Colen-Vishkinin algoritmi}}{11}}
+\newlabel{algo:CV}{{2}{11}}
 \citation{Principles}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces  Esimerkki verkosta, jonka v\"arityst\"a Colen-Vishkinin algoritmi ei voi en\"a\"a muuttaa. Colen-Vishkinin algoritmi vertailisi v\"arien $5 = \relax $\@@underline {\hbox {1}}\mathsurround \z@ $\relax 01_2$ ja $1 = \relax $\@@underline {\hbox {0}}\mathsurround \z@ $\relax 01_2$ bin\"a\"arimuotoja. T\"all\"oin algoritmi valitsisi v\"ari\"a $5$ kantavan solmun uudeksi v\"ariksi $2\cdot {}2+1$ ja juurisolmun uudeksi v\"ariksi v\"arin $1$, joten verkko pysyisi t\"aysin samanlaisena.}}{12}}
 \newlabel{fig:stuck}{{5}{12}}
-\newlabel{claim:shift}{{3}{12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces  Kuvasarja havainnollistamaan Colen-Vishkinin algoritmin yht\"a kierrosta. a) Suunnattu verkko, jossa jokaisella solmulla on v\"ari. b) Algoritmin suoritus kaikissa solmuissa samanaikaisesti. Solmu, jonka v\"ari on 100, vertaa omaa v\"ari\"a\"an lapsensa v\"ariin bin\"a\"arimuodossa. V\"arit $100 = 110\relax $\@@underline {\hbox {0}}\mathsurround \z@ $\relax 100_2$ ja $156 = 1001\relax $\@@underline {\hbox {1}}\mathsurround \z@ $\relax 100_2$ poikkeavat toisistaan kolmannessa bitiss\"a oikealta laskettuna (indeksoinnin alkaessa nollasta), joten solmu, jonka v\"ari on $100$, valitsee uudeksi v\"arikseen $3\cdot {}2+0 = 6$. c) Kaikki solmut, joilla on lapsi, ovat vaihtaneet v\"ari\"a b-kohdassa esitetyn menetelm\"an mukaisesti. d) Solmu, jolla ei ole lasta, teeskentelee poikkeavansa olemattoman lapsensa kanssa jo nollannessa bitiss\"a, jolloin se valitsee uudeksi v\"arikseen nykyisen v\"arins\"a viimeisen bitin, nollan.}}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Yksinkertainen v\"arinv\"ahennysalgoritmi}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces  Havainnollistus Colen-Vishkinin algoritmin yhdest\"a kierroksesta. a) Suunnattu verkko, jossa jokaisella solmulla on v\"ari. b) Algoritmin suoritus kaikissa solmuissa samanaikaisesti. Solmu, jonka v\"ari on 100, vertaa omaa v\"ari\"a\"an lapsensa v\"ariin bin\"a\"arimuodossa. V\"arit $100 = 110\relax $\@@underline {\hbox {0}}\mathsurround \z@ $\relax 100_2$ ja $156 = 1001\relax $\@@underline {\hbox {1}}\mathsurround \z@ $\relax 100_2$ poikkeavat toisistaan kolmannessa bitiss\"a oikealta laskettuna (indeksoinnin alkaessa nollasta), joten solmu, jonka v\"ari on $100$, valitsee uudeksi v\"arikseen $3\cdot {}2+0 = 6$. c) Kaikki solmut, joilla on lapsi, ovat vaihtaneet v\"ari\"a b-kohdassa esitetyn menetelm\"an mukaisesti. d) Solmu, jolla ei ole lasta, teeskentelee poikkeavansa olemattoman lapsensa kanssa jo nollannessa bitiss\"a, jolloin se valitsee uudeksi v\"arikseen nykyisen v\"arins\"a viimeisen bitin, nollan. Todellisuudessa lapsetonkin solmu vaihtaa v\"ari\"a\"an samaan aikaan muiden solmujen kanssa jo c-kohdassa, ja se on erotettu omaan kuvaansa vain esityksen selkeyden vuoksi.}}{13}}
 \newlabel{fig:cvalgo}{{6}{13}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces  Jokainen solmu valitsee uudeksi v\"arikseen lapsensa vanhan v\"arin. Mik\"ali solmulla ei ole lasta, valitsee se v\"arin joukosta \{0,1,2\} niin, ett\"a sen v\"ari vaihtuu. Lopuksi eliminoidaan kaikki v\"ari\"a $5$ olevat solmut siten, ett\"a ne valitsevat joukosta $\{0,1,2\}$ v\"arin, jota niiden naapureilla ei ole. }}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces  Kuvasarja v\"arienv\"ahennysalgoritmin toiminnasta. a) Laillisesti v\"aritetty suunnattu verkko. Solmuissa olevat numerot kuvaavat solmun v\"ari\"a. b) Jokainen solmu on perinyt lapsensa v\"arin. Lapsettomat solmut ovat valinneet uuden v\"arin itselleen joukosta \{0,1,2\}. c) V\"ari $5$ on eliminoitu verkosta siten, ett\"a jokainen solmu, jonka v\"ari oli $5$, valitsi sellaisen v\"arin joukosta \{0,1,2\} jota mill\"a\"an naapurilla ei b-vaiheen j\"alkeen ollut.}}{14}}
 \newlabel{fig:shift}{{7}{14}}
-\citation{Principles}
+\newlabel{claim:shift}{{3}{14}}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces Algoritmi v\"arien v\"ahent\"amiseen kuudesta kolmeen suunnatuissa verkoissa, joissa solmuilla on korkeintaan yksi lapsi}}{15}}
 \newlabel{algo:naive}{{3}{15}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Yleisten verkkojen v\"aritt\"aminen ja v\"arityksen soveltaminen}{15}}
+\citation{Awerbuch89}
+\citation{Lin92}
+\citation{Delta1}
+\citation{Principles}
+\citation{Principles}
 \citation{Principles}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {4}{\ignorespaces Algoritmi maksimaalisen riippumattoman joukon muodostamiseen $c$-v\"arityksen avulla}}{17}}
 \newlabel{algo:toindependent}{{4}{17}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Tutkimuskohteita ja p\"a\"atelmi\"a}{17}}
 \citation{Partitions}
 \citation{wireless}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Yhteenveto}{18}}
 \citation{*}
 \bibstyle{tktl}
 \bibdata{lahteet}
+\bibcite{Awerbuch89}{AGLP89}
 \bibcite{Partitions}{AP90}
+\bibcite{Delta1}{BE09}
 \bibcite{colevishkin}{CV86}
 \bibcite{mst}{GHS83}
 \bibcite{Parallel}{GPS87}
@@ -73,12 +83,12 @@
 \bibcite{Lin92}{Lin92}
 \bibcite{loccomp}{NS95}
 \bibcite{Sparse}{PR01}
+\@writefile{toc}{\contentsline {section}{L\"ahteet}{19}}
 \bibcite{3appr}{PS09}
 \bibcite{lecture1}{Suo10a}
 \bibcite{lecture2}{Suo10b}
 \bibcite{survey}{Suo11}
 \bibcite{wireless}{Urr07}
-\@writefile{toc}{\contentsline {section}{L\"ahteet}{19}}
 \bibcite{Principles}{WKLL11}
 \newlabel{lastpage}{{5}{20}}
 \newlabel{@lastappendixpage}{{0}{0}}

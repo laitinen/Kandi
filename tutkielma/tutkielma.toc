@@ -1,11 +1,11 @@
 \select@language {finnish}
 \contentsline {section}{\numberline {1}Johdanto}{1}
 \contentsline {section}{\numberline {2}Hajautettu laskentamalli}{2}
-\contentsline {subsection}{\numberline {2.1}Porttinumerointimalli}{4}
+\contentsline {subsection}{\numberline {2.1}Porttinumerointimalli}{5}
 \contentsline {subsection}{\numberline {2.2}Tunnistenumeromalli}{6}
 \contentsline {section}{\numberline {3}Verkon kolmiv\"aritys}{7}
-\contentsline {subsection}{\numberline {3.1}Colen-Vishkinin algoritmi}{9}
-\contentsline {subsection}{\numberline {3.2}Yksinkertainen v\"arinv\"ahennysalgoritmi}{11}
+\contentsline {subsection}{\numberline {3.1}Colen-Vishkinin algoritmi}{8}
+\contentsline {subsection}{\numberline {3.2}Yksinkertainen v\"arinv\"ahennysalgoritmi}{12}
 \contentsline {section}{\numberline {4}Yleisten verkkojen v\"aritt\"aminen ja v\"arityksen soveltaminen}{15}
-\contentsline {section}{\numberline {5}Tutkimuskohteita ja p\"a\"atelmi\"a}{17}
+\contentsline {section}{\numberline {5}Yhteenveto}{18}
 \contentsline {section}{L\"ahteet}{19}

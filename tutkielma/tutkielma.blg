@@ -3,44 +3,46 @@ The top-level auxiliary file: tutkielma.aux
 The style file: tktl.bst
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: lahteet.bib
-You've used 14 entries,
+Warning--empty booktitle in Awerbuch89
+You've used 16 entries,
             3861 wiz_defined-function locations,
-            821 strings with 7604 characters,
-and the built_in function-call counts, 6221 in all, are:
-= -- 662
-> -- 232
-< -- 13
-+ -- 83
-- -- 79
-* -- 411
-:= -- 931
-add.period$ -- 30
-call.type$ -- 14
-change.case$ -- 84
-chr.to.int$ -- 13
-cite$ -- 14
-duplicate$ -- 280
-empty$ -- 470
-format.name$ -- 107
-if$ -- 1346
+            833 strings with 7985 characters,
+and the built_in function-call counts, 7393 in all, are:
+= -- 786
+> -- 280
+< -- 15
++ -- 101
+- -- 97
+* -- 485
+:= -- 1095
+add.period$ -- 35
+call.type$ -- 16
+change.case$ -- 98
+chr.to.int$ -- 15
+cite$ -- 17
+duplicate$ -- 335
+empty$ -- 562
+format.name$ -- 129
+if$ -- 1608
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 10
-newline$ -- 68
-num.names$ -- 42
-pop$ -- 101
+missing$ -- 12
+newline$ -- 76
+num.names$ -- 48
+pop$ -- 123
 preamble$ -- 1
-purify$ -- 98
+purify$ -- 114
 quote$ -- 0
-skip$ -- 282
+skip$ -- 335
 stack$ -- 0
-substring$ -- 352
-swap$ -- 83
-text.length$ -- 13
+substring$ -- 430
+swap$ -- 104
+text.length$ -- 15
 text.prefix$ -- 5
 top$ -- 0
-type$ -- 140
-warning$ -- 0
-while$ -- 61
-width$ -- 15
-write$ -- 179
+type$ -- 160
+warning$ -- 1
+while$ -- 73
+width$ -- 17
+write$ -- 203
+(There was 1 warning)

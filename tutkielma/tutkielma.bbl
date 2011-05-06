@@ -6,10 +6,21 @@
 \newcommand{\Capitalize}[1]{\uppercase{#1}}
 \newcommand{\capitalize}[1]{\expandafter\Capitalize#1}
 
+\bibitem[AGLP89]{Awerbuch89}
+Awerbuch, B., Goldberg, A.~V., Luby, M. \bbland{} Plotkin, S.~A., Network
+  decomposition and locality in distributed computation (extended abstract).
+\newblock 1989, \bblpages{} 364--369.
+
 \bibitem[AP90]{Partitions}
 Awerbuch, B. \bbland{} Peleg, D., Sparse partitions (extended abstract).
 \newblock  {\em In IEEE Symposium on Foundations of Computer Science}. IEEE,
   1990, \bblpages{} 503--513.
+
+\bibitem[BE09]{Delta1}
+Barenboim, L. \bbland{} Elkin, M., Distributed $({\Delta + 1})$-coloring in
+  linear (in ${\Delta}$) time.
+\newblock  {\em STOC '09: Proceedings of the 41st Annual ACM Symposium on
+  Theory of Computing}. ACM, 2009, \bblpages{} 111--120.
 
 \bibitem[CV86]{colevishkin}
 Cole, R. \bbland{} Vishkin, U., Deterministic coin tossing with applications to
